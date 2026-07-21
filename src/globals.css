@@ -1,0 +1,144 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&f[]=satoshi@300,400,500,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #2F7D4F;
+  --primary-light: #98CC65;
+  --dark: #0F3D2E;
+  --accent: #D63C3C;
+  --text: #1A1A1A;
+  --white: #FFFFFF;
+}
+
+body {
+  font-family: 'Satoshi', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-clash {
+  font-family: 'Clash Display', sans-serif;
+}
+
+.font-satoshi {
+  font-family: 'Satoshi', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 147 45% 34%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 147 20% 95%;
+    --secondary-foreground: 147 45% 20%;
+    --muted: 147 10% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 147 20% 95%;
+    --accent-foreground: 147 45% 20%;
+    --destructive: 0 60% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 147 45% 34%;
+    --radius: 0.5rem;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   LandingV4 light theme — scoped overrides of the hardcoded dark
+   palette. Activated by the .theme-light class on the .v2-page root.
+   ───────────────────────────────────────────────────────────── */
+.v2-page.theme-light { background-color: #F6F7F8; color: #17181A; color-scheme: light; }
+
+/* neutral solid surfaces: dark → light */
+.v2-page.theme-light .bg-\[\#0F0F0F\] { background-color: #F6F7F8; }
+.v2-page.theme-light .bg-\[\#0F0F0F\]\/90 { background-color: rgba(255,255,255,0.9); }
+.v2-page.theme-light .bg-\[\#141618\] { background-color: #FFFFFF; }
+.v2-page.theme-light .bg-\[\#1A1A1A\] { background-color: #F0F0F0; }
+.v2-page.theme-light .bg-\[\#3A3A3A\] { background-color: #E4E4E4; }
+.v2-page.theme-light .bg-\[\#0F3D2E\] { background-color: #E9F3EC; }
+
+/* base + tiered white text → near-black */
+.v2-page.theme-light .text-white { color: #17181A; }
+.v2-page.theme-light .text-white\/85 { color: rgba(23,24,26,0.85); }
+.v2-page.theme-light .text-white\/80 { color: rgba(23,24,26,0.80); }
+.v2-page.theme-light .text-white\/75 { color: rgba(23,24,26,0.75); }
+.v2-page.theme-light .text-white\/70 { color: rgba(23,24,26,0.70); }
+.v2-page.theme-light .text-white\/65 { color: rgba(23,24,26,0.66); }
+.v2-page.theme-light .text-white\/60 { color: rgba(23,24,26,0.62); }
+.v2-page.theme-light .text-white\/55 { color: rgba(23,24,26,0.58); }
+.v2-page.theme-light .text-white\/50 { color: rgba(23,24,26,0.54); }
+.v2-page.theme-light .text-white\/45 { color: rgba(23,24,26,0.50); }
+.v2-page.theme-light .text-white\/40 { color: rgba(23,24,26,0.47); }
+.v2-page.theme-light .text-white\/35 { color: rgba(23,24,26,0.44); }
+.v2-page.theme-light .text-white\/30 { color: rgba(23,24,26,0.41); }
+.v2-page.theme-light .text-white\/25 { color: rgba(23,24,26,0.39); }
+.v2-page.theme-light .text-white\/20 { color: rgba(23,24,26,0.36); }
+
+/* borders: white → black */
+.v2-page.theme-light .border-white\/10 { border-color: rgba(0,0,0,0.10); }
+.v2-page.theme-light .border-white\/15 { border-color: rgba(0,0,0,0.12); }
+.v2-page.theme-light .border-white\/20 { border-color: rgba(0,0,0,0.15); }
+.v2-page.theme-light .border-white\/30 { border-color: rgba(0,0,0,0.20); }
+.v2-page.theme-light .border-white\/\[0\.06\] { border-color: rgba(0,0,0,0.08); }
+
+/* faint white surfaces → faint black surfaces */
+.v2-page.theme-light .bg-white\/5 { background-color: rgba(0,0,0,0.04); }
+.v2-page.theme-light .bg-white\/10 { background-color: rgba(0,0,0,0.06); }
+.v2-page.theme-light .bg-white\/15 { background-color: rgba(0,0,0,0.08); }
+.v2-page.theme-light .bg-white\/40 { background-color: rgba(0,0,0,0.38); }
+.v2-page.theme-light .bg-white\/50 { background-color: rgba(0,0,0,0.42); }
+.v2-page.theme-light .bg-white\/\[0\.07\] { background-color: rgba(0,0,0,0.05); }
+
+/* low-contrast accent text darkened for readability on white */
+.v2-page.theme-light .text-\[\#98CC65\],
+.v2-page.theme-light .text-\[\#98CC65\]\/70,
+.v2-page.theme-light .text-\[\#98CC65\]\/80 { color: #2F7D4F; }
+.v2-page.theme-light .text-\[\#F5C451\] { color: #9A6B00; }
+.v2-page.theme-light .text-\[\#7BA9E0\] { color: #2563EB; }
+.v2-page.theme-light .text-\[\#F87171\],
+.v2-page.theme-light .text-\[\#F87171\]\/70 { color: #DC2626; }
+.v2-page.theme-light .text-\[\#F59E0B\],
+.v2-page.theme-light .text-\[\#F59E0B\]\/70 { color: #B45309; }
+
+/* near-white CTA button → green gradient so it reads on white */
+.v2-page.theme-light .from-\[\#F5F3F1\] {
+  --tw-gradient-from: #2F7D4F var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(47,125,79,0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.v2-page.theme-light .to-\[\#F5F3F1\] { --tw-gradient-to: #98CC65 var(--tw-gradient-to-position); }
+.v2-page.theme-light .to-\[\#0F0F0F\] { --tw-gradient-to: #F6F7F8 var(--tw-gradient-to-position); }
+
+/* keep white text on solid colored buttons/badges */
+.v2-page.theme-light [class*="bg-[#2F7D4F]"].text-white,
+.v2-page.theme-light [class*="bg-[#F87171]"].text-white,
+.v2-page.theme-light [class*="bg-[#F59E0B]"].text-white,
+.v2-page.theme-light [class*="bg-[#DC2626]"].text-white { color: #FFFFFF; }
