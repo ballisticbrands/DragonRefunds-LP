@@ -171,11 +171,11 @@ function Navbar({ light, onToggle, links = navLinks, showWorksWith = true, ctaLa
       >
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center gap-3">
-            <motion.img src="/DragonBot-logo.png" alt="DragonBot" className="h-10"
+            <motion.img src="/DragonBot-logo.png" alt="Dragon Refunds" className="h-10"
               animate={{ y: [0, -4, 0] }}
               transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }} />
             {brand || (
-              <span className="font-bold text-[28px] text-white" style={{ lineHeight: '1' }}>get<span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">DragonBot</span><span className="text-white">.com</span></span>
+              <span className="font-bold text-[28px] text-white" style={{ lineHeight: '1' }}>dragon<span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">refunds</span><span className="text-white">.com</span></span>
             )}
           </a>
           <div className="hidden md:flex items-center gap-8">
@@ -645,7 +645,7 @@ function ReimbursementDashboardV2({ feature = 'Amazon reimbursements', showHeadi
         {/* header + region/program tabs (toggleable) */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
           <div className="flex items-center gap-2">
-            <img src="/DragonBot-avatar.png" alt="DragonBot" className="w-[18px] h-[18px] object-contain" />
+            <img src="/DragonBot-avatar.png" alt="Dragon Refunds" className="w-[18px] h-[18px] object-contain" />
             <span className="text-[13px] font-semibold text-white/80">Shipment Refunds</span>
           </div>
           <div className="flex items-center gap-1">
@@ -1449,7 +1449,7 @@ function ReimbursementCasesPanel() {
       <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-[#141618]" style={{ fontFamily: sysFont }}>
         <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
           <div className="flex items-center gap-2">
-            <img src="/DragonBot-avatar.png" alt="DragonBot" className="w-[18px] h-[18px] object-contain" />
+            <img src="/DragonBot-avatar.png" alt="Dragon Refunds" className="w-[18px] h-[18px] object-contain" />
             <span className="text-[13px] font-semibold text-white/80">Open cases</span>
           </div>
           <span className="text-[10px] font-semibold text-white/40" style={{ fontFamily: monoFont }}>4 tracked · 2 need you</span>
@@ -2016,7 +2016,7 @@ function DragonFinalCTA({ phrases = BUBBLE_PHRASES }) {
           <rect x="6" y="4" width="1" height="1" fill="#0F0F0F" />
         </svg>
       </div>
-      <img src="/DragonBot-logo.png" alt="DragonBot" className="w-auto" style={{ height: '168px' }} />
+      <img src="/DragonBot-logo.png" alt="Dragon Refunds" className="w-auto" style={{ height: '168px' }} />
     </>
   );
 }
@@ -2144,7 +2144,7 @@ export default function LandingV4({ page = null }) {
             <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[13px] font-medium tracking-[-0.01em]">
               <a href="https://sellercentral.amazon.com/selling-partner-appstore/dp/amzn1.sp.solution.d78b7343-017b-4e68-92e4-a1defb51aa6f"
                 target="_blank" rel="noopener noreferrer"
-                title="View DragonBot on Amazon.com"
+                title="View Dragon Refunds on Amazon.com"
                 className="flex items-center gap-2 text-[#98CC65] hover:text-white transition-colors">
                 <BadgeCheck className="w-4 h-4" />
                 <span className="underline decoration-[#98CC65]/40 underline-offset-2">Amazon approved</span>
@@ -2508,7 +2508,7 @@ export default function LandingV4({ page = null }) {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="flex items-center gap-2.5">
-              <img src="/DragonBot-logo.png" alt="DragonBot" className="h-8" />
+              <img src="/DragonBot-logo.png" alt="Dragon Refunds" className="h-8" />
               <span className="font-bold text-lg text-white">{page?.demo?.type === 'dashboard2' ? 'Dragon Refunds' : 'DragonBot'}</span>
             </div>
             <div className="flex flex-wrap justify-center gap-8">
