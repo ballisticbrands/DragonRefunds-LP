@@ -14,7 +14,7 @@ if (!monoLink) {
 const sysFont = "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
 const monoFont = "'Roboto Mono', monospace";
 
-const SIGNUP = 'https://app.getdragonbot.com/sign-up';
+const SIGNUP = 'https://app.dragonrefunds.com/sign-up';
 
 /* ─── Navbar ─── */
 function Navbar() {

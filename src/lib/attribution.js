@@ -1,37 +1,39 @@
-// Attribution preservation across the whole getdragonbot.com surface.
+// Attribution preservation across the whole dragonrefunds.com surface.
 //
 // Two responsibilities, both tied to the same goal: no matter where the
 // visitor first lands with a UTM (or a click id auto-added by Google /
 // Meta / Microsoft Ads), those parameters should still be present on
 // the sign-up URL when they eventually click through to
-// app.getdragonbot.com/sign-up.
+// app.dragonrefunds.com/sign-up.
 //
 //   1. On page load: capture UTMs / click ids from the current URL and
-//      persist to a cookie SCOPED TO `.getdragonbot.com` so it's
+//      persist to a cookie SCOPED TO `.dragonrefunds.com` so it's
 //      readable from every subdomain (the LP + the app share it).
 //      First-touch: if a cookie already exists we don't overwrite —
 //      matches the app's localStorage first-touch model, so a visitor
 //      who came in via one campaign and later returned via another
 //      keeps the original attribution.
 //
-//   2. On any click on an anchor pointing to `*.getdragonbot.com/*`
-//      (LP → LP internal nav OR LP → app.getdragonbot.com), rewrite
+//   2. On any click on an anchor pointing to `*.dragonrefunds.com/*`
+//      (LP → LP internal nav OR LP → app.dragonrefunds.com), rewrite
 //      the `href` at click-time to append the saved attribution
 //      params. Only fills in keys that aren't already in the URL —
 //      doesn't stomp on an explicitly-set link.
 //
 // Backend counterpart (sellerconnect repo, User attribution columns +
 // /v1/auth/sign-up handler) + app-side captureAttribution() (in
-// DragonBot-frontend/src/lib/attribution.ts) reads the resulting URL
-// params on the app side. This module is the bridge — LP-side.
+// @ballisticbrands/frontend-shared) reads the resulting URL params on
+// the app side. This module is the bridge — LP-side.
 
 // ─── Config ─────────────────────────────────────────────────────────
 
 const COOKIE_NAME = "dragonbot_attribution";
 // Leading dot means "this cookie is available to all subdomains of
-// getdragonbot.com" — LP (getdragonbot.com) writes it; app
-// (app.getdragonbot.com) reads it. Required for cross-subdomain flow.
-const COOKIE_DOMAIN = ".getdragonbot.com";
+// dragonrefunds.com" — LP (dragonrefunds.com) writes it; app
+// (app.dragonrefunds.com) reads it. Required for cross-subdomain
+// flow. NOTE: must match the domain THIS LP is served from, or the
+// browser silently drops the Set-Cookie.
+const COOKIE_DOMAIN = ".dragonrefunds.com";
 const COOKIE_MAX_AGE_SECONDS = 30 * 24 * 60 * 60; // 30 days
 
 const UTM_KEYS = [
@@ -47,7 +49,7 @@ const CLICK_ID_KEYS = ["gclid", "fbclid", "msclkid"];
 const ALL_ATTR_KEYS = [...UTM_KEYS, ...CLICK_ID_KEYS];
 
 // First-touch landing context — the visitor's REAL first page on
-// getdragonbot.com + the referrer that sent them. Stored in the SAME
+// dragonrefunds.com + the referrer that sent them. Stored in the SAME
 // cookie but kept OUT of ALL_ATTR_KEYS on purpose: the click-time URL
 // rewriter must not append these to outbound links (a full URL as a
 // query param bloats links and re-encodes awkwardly). The app reads them
@@ -160,17 +162,17 @@ function saveAttrToCookie(attr) {
 // ─── URL rewriting for outbound clicks ──────────────────────────────
 
 /**
- * True when the URL targets the getdragonbot.com brand — either the
- * apex `getdragonbot.com/*` or any subdomain `*.getdragonbot.com/*`.
+ * True when the URL targets the dragonrefunds.com brand — either the
+ * apex `dragonrefunds.com/*` or any subdomain `*.dragonrefunds.com/*`.
  * We rewrite hrefs on this set only (never touching third-party links
  * — e.g. links out to docs.anthropic.com or GitHub).
  */
-function urlIsGetDragonBot(hrefLike) {
+function urlIsDragonRefunds(hrefLike) {
   try {
     const url = new URL(hrefLike, window.location.href);
     if (url.protocol !== "http:" && url.protocol !== "https:") return false;
     const h = url.hostname.toLowerCase();
-    return h === "getdragonbot.com" || h.endsWith(".getdragonbot.com");
+    return h === "dragonrefunds.com" || h.endsWith(".dragonrefunds.com");
   } catch {
     return false;
   }
@@ -199,7 +201,7 @@ function appendAttrToUrl(href, attr) {
 
 /**
  * Attach a document-level click handler that rewrites the href of any
- * clicked anchor pointing to a getdragonbot.com URL. Capture phase so
+ * clicked anchor pointing to a dragonrefunds.com URL. Capture phase so
  * we run BEFORE React Router / other listeners see the click, which
  * means the native navigation (or the router's push) picks up our
  * new href.
@@ -212,7 +214,7 @@ function attachClickHandler(attr) {
       const target = event.target;
       const a = target && target.closest ? target.closest("a") : null;
       if (!a || !a.href) return;
-      if (!urlIsGetDragonBot(a.href)) return;
+      if (!urlIsDragonRefunds(a.href)) return;
       const newHref = appendAttrToUrl(a.href, attr);
       if (newHref !== a.href) a.href = newHref;
     },
@@ -233,7 +235,7 @@ function attachClickHandler(attr) {
  *      surface).
  *   2. Saves the effective attribution back to the cookie (idempotent
  *      when it's already there).
- *   3. Installs a click handler that rewrites outbound getdragonbot.com
+ *   3. Installs a click handler that rewrites outbound dragonrefunds.com
  *      hrefs to include the attribution.
  */
 export function initAttribution() {

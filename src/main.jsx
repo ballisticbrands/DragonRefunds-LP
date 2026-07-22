@@ -5,7 +5,7 @@ import './globals.css'
 
 // Capture UTMs / click ids from this landing (or a saved cookie) and
 // install a click-time href rewriter so any outbound link to a
-// getdragonbot.com URL (LP → LP or LP → app.getdragonbot.com) carries
+// dragonrefunds.com URL (LP → LP or LP → app.dragonrefunds.com) carries
 // them through to the sign-up destination. See src/lib/attribution.js.
 initAttribution()
 
