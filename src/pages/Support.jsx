@@ -36,8 +36,8 @@ export default function Support() {
                 <h3 className="font-semibold text-lg mb-2">Email</h3>
                 <p className="text-white/70 leading-relaxed">
                   Send us an email at{' '}
-                  <a href="mailto:info@getdragonbot.com" className="text-[#98CC65] hover:text-[#2F7D4F] underline transition-colors font-semibold">
-                    info@getdragonbot.com
+                  <a href="mailto:info@dragonrefunds.com" className="text-[#98CC65] hover:text-[#2F7D4F] underline transition-colors font-semibold">
+                    info@dragonrefunds.com
                   </a>
                 </p>
               </div>
@@ -90,8 +90,8 @@ export default function Support() {
           <h2 className="font-bold text-2xl mb-4">Urgent issues</h2>
           <p className="text-white/70 leading-relaxed">
             If you're experiencing a critical issue with your Amazon account or believe DragonBot took an unintended action, email us at{' '}
-            <a href="mailto:info@getdragonbot.com" className="text-[#98CC65] hover:text-[#2F7D4F] underline transition-colors font-semibold">
-              info@getdragonbot.com
+            <a href="mailto:info@dragonrefunds.com" className="text-[#98CC65] hover:text-[#2F7D4F] underline transition-colors font-semibold">
+              info@dragonrefunds.com
             </a>{' '}
             with "URGENT" in the subject line. We prioritize these and aim to respond within 1 hour during business hours.
           </p>

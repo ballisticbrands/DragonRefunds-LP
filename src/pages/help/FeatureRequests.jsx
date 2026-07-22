@@ -13,7 +13,7 @@ export default function FeatureRequests() {
         <p>Two ways:</p>
         <ul className="list-disc list-inside space-y-2 ml-2 mt-2">
           <li><strong className="text-white">In Slack:</strong> Tell DragonBot directly. Type something like <code className="bg-white/10 px-2 py-0.5 rounded text-[#98CC65] text-sm">@DragonBot I wish you could...</code> and it will log the request for our team.</li>
-          <li><strong className="text-white">By email:</strong> Send your idea to <a href="mailto:info@getdragonbot.com" className="text-[#98CC65] underline">info@getdragonbot.com</a> with "Feature request" in the subject line.</li>
+          <li><strong className="text-white">By email:</strong> Send your idea to <a href="mailto:info@dragonrefunds.com" className="text-[#98CC65] underline">info@dragonrefunds.com</a> with "Feature request" in the subject line.</li>
         </ul>
       </section>
 

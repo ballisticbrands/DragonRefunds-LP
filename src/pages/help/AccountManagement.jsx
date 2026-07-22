@@ -21,12 +21,12 @@ export default function AccountManagement() {
 
       <section>
         <h2 className="font-bold text-xl text-white mb-3">Changing your plan</h2>
-        <p>Upgrade, downgrade, or cancel at any time. No commitments, no cancellation fees. Visit our <a href="/pricing" className="text-[#98CC65] underline">pricing page</a> to see available plans, or contact us at <a href="mailto:info@getdragonbot.com" className="text-[#98CC65] underline">info@getdragonbot.com</a>.</p>
+        <p>Upgrade, downgrade, or cancel at any time. No commitments, no cancellation fees. Visit our <a href="/pricing" className="text-[#98CC65] underline">pricing page</a> to see available plans, or contact us at <a href="mailto:info@dragonrefunds.com" className="text-[#98CC65] underline">info@dragonrefunds.com</a>.</p>
       </section>
 
       <section>
         <h2 className="font-bold text-xl text-white mb-3">Deleting your account</h2>
-        <p>To delete your account and all associated data, email us at <a href="mailto:info@getdragonbot.com" className="text-[#98CC65] underline">info@getdragonbot.com</a> with the subject "Delete my account". We will:</p>
+        <p>To delete your account and all associated data, email us at <a href="mailto:info@dragonrefunds.com" className="text-[#98CC65] underline">info@dragonrefunds.com</a> with the subject "Delete my account". We will:</p>
         <ul className="list-disc list-inside space-y-1 ml-2 mt-2">
           <li>Revoke all connected service authorizations</li>
           <li>Delete all stored data, reports, and conversation history</li>

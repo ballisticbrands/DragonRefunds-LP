@@ -188,7 +188,7 @@ export default function Privacy() {
             </ul>
             <p className="text-white/70 leading-relaxed">
               We maintain technical and organizational processes to assist you with data subject access requests. You can exercise these rights by contacting us at{' '}
-              <a href="mailto:info@getdragonbot.com" className="text-[#98CC65] hover:text-[#2F7D4F] underline transition-colors">info@getdragonbot.com</a>.
+              <a href="mailto:info@dragonrefunds.com" className="text-[#98CC65] hover:text-[#2F7D4F] underline transition-colors">info@dragonrefunds.com</a>.
             </p>
           </section>
 
@@ -217,8 +217,8 @@ export default function Privacy() {
             <h2 className="font-bold text-xl mb-4">13. Contact Us</h2>
             <p className="text-white/70 leading-relaxed">
               If you have any questions or requests regarding this Policy, your data, or your privacy rights, please contact us at:{' '}
-              <a href="mailto:info@getdragonbot.com" className="text-[#98CC65] hover:text-[#2F7D4F] underline transition-colors">
-                info@getdragonbot.com
+              <a href="mailto:info@dragonrefunds.com" className="text-[#98CC65] hover:text-[#2F7D4F] underline transition-colors">
+                info@dragonrefunds.com
               </a>
             </p>
             <p className="text-white/70 leading-relaxed mt-3">

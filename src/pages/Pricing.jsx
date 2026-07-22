@@ -178,7 +178,7 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a href="mailto:info@getdragonbot.com"
+              <a href="mailto:info@dragonrefunds.com"
                 className="flex items-center justify-center gap-2 px-7 py-3.5 bg-white/5 hover:bg-white/10 text-white border border-white/15 hover:border-white/30 font-semibold uppercase tracking-wide rounded-lg transition-all">
                 Contact Sales
               </a>
@@ -232,7 +232,7 @@ export default function Pricing() {
               <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Privacy</a>
               <a href="/tos" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Terms</a>
               <a href="/support" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Support</a>
-              <a href="mailto:info@getdragonbot.com" className="text-sm text-white/50 hover:text-white transition-colors">info@getdragonbot.com</a>
+              <a href="mailto:info@dragonrefunds.com" className="text-sm text-white/50 hover:text-white transition-colors">info@dragonrefunds.com</a>
             </div>
             <div className="text-center md:text-right">
               <p className="text-sm text-white/30">&copy; {new Date().getFullYear()} Chacha Advisory LLC. All rights reserved.</p>

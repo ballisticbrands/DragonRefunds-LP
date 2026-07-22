@@ -41,12 +41,12 @@ export default function Beta() {
           </p>
 
           <a
-            href="mailto:info@getdragonbot.com?subject=DragonBot%20beta%20access%20request"
+            href="mailto:info@dragonrefunds.com?subject=DragonBot%20beta%20access%20request"
             className="inline-flex items-center gap-3 px-7 py-3.5 bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-xl hover:shadow-[#2F7D4F]/25"
             style={{ fontFamily: monoFont }}
           >
             <Mail className="w-4 h-4" />
-            info@getdragonbot.com
+            info@dragonrefunds.com
           </a>
 
           <div className="mt-8 pt-6 border-t border-white/10">

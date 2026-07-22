@@ -145,7 +145,7 @@ export default function Terms() {
             <h2 className="font-bold text-xl mb-4">19. Contact</h2>
             <p className="text-white/70 leading-relaxed">
               If you have questions about these Terms, contact us at:{' '}
-              <a href="mailto:info@getdragonbot.com" className="text-[#98CC65] hover:text-[#2F7D4F] underline transition-colors">info@getdragonbot.com</a>
+              <a href="mailto:info@dragonrefunds.com" className="text-[#98CC65] hover:text-[#2F7D4F] underline transition-colors">info@dragonrefunds.com</a>
             </p>
             <p className="text-white/70 leading-relaxed mt-3">
               Chacha Advisory LLC<br />

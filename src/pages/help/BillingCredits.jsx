@@ -27,7 +27,7 @@ export default function BillingCredits() {
 
       <section>
         <h2 className="font-bold text-xl text-white mb-3">Payment methods</h2>
-        <p>We accept all major credit cards. Enterprise customers can request invoicing with custom billing terms — contact us at <a href="mailto:info@getdragonbot.com" className="text-[#98CC65] underline">info@getdragonbot.com</a>.</p>
+        <p>We accept all major credit cards. Enterprise customers can request invoicing with custom billing terms — contact us at <a href="mailto:info@dragonrefunds.com" className="text-[#98CC65] underline">info@dragonrefunds.com</a>.</p>
       </section>
 
       <section>

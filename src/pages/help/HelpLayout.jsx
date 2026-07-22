@@ -25,7 +25,7 @@ export default function HelpLayout({ title, children }) {
         </div>
         <div className="mt-16 pt-8 border-t border-white/10 text-center">
           <p className="text-white/50 text-sm mb-2">Still need help?</p>
-          <a href="mailto:info@getdragonbot.com" className="text-[#98CC65] hover:text-[#2F7D4F] underline transition-colors font-semibold">info@getdragonbot.com</a>
+          <a href="mailto:info@dragonrefunds.com" className="text-[#98CC65] hover:text-[#2F7D4F] underline transition-colors font-semibold">info@dragonrefunds.com</a>
           <p className="text-xs text-white/30 mt-6">&copy; {new Date().getFullYear()} Chacha Advisory LLC. All rights reserved.</p>
           <p className="text-xs text-white/20 mt-1">30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
         </div>
