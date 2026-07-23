@@ -190,7 +190,6 @@ function Navbar({ light, onToggle, links = navLinks, showWorksWith = true, ctaLa
               {light ? <Moon size={18} /> : <Sun size={18} />}
             </button>
             <a href="https://app.dragonrefunds.com/sign-up"
-            <a href="https://app.dragonrefunds.com/sign-up"
               className="px-5 py-2.5 bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] text-sm font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-lg hover:shadow-[#2F7D4F]/25">
               {ctaLabel}
             </a>
@@ -214,7 +213,6 @@ function Navbar({ light, onToggle, links = navLinks, showWorksWith = true, ctaLa
                 <a key={l.label} href={l.href} onClick={() => setMobileOpen(false)} className="text-lg font-medium text-white">{l.label}</a>
               ))}
               {showWorksWith && <WorksWithDropdownMobile onItemClick={() => setMobileOpen(false)} />}
-              <a href="https://app.dragonrefunds.com/sign-up" onClick={() => setMobileOpen(false)}
               <a href="https://app.dragonrefunds.com/sign-up" onClick={() => setMobileOpen(false)}
                 className="mt-4 px-6 py-3 bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] text-center font-semibold uppercase tracking-wide rounded-lg transition-all">
                 {ctaLabel}
@@ -841,7 +839,6 @@ function ReimbursementAuditIntro() {
       </div>
 
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
-        <a href="https://app.dragonrefunds.com/sign-up"
         <a href="https://app.dragonrefunds.com/sign-up"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#2F7D4F] hover:bg-[#98CC65] hover:text-[#0F0F0F] text-white text-[14px] font-bold transition-colors">
           Get my free audit <ArrowRight className="w-4 h-4" />
@@ -1597,7 +1594,6 @@ function ReimbursementComparePanel() {
 
       <div className="flex justify-center mt-10">
         <a href="https://app.dragonrefunds.com/sign-up"
-        <a href="https://app.dragonrefunds.com/sign-up"
           className="px-10 py-5 text-lg bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-xl hover:shadow-[#2F7D4F]/25 hover:-translate-y-0.5 flex items-center gap-3">
           Connect your account <ArrowRight className="w-5 h-5" />
         </a>
@@ -2128,7 +2124,6 @@ export default function LandingV4({ page = null }) {
             {page ? (
               <div className="flex justify-center mb-10">
                 <a href="https://app.dragonrefunds.com/sign-up"
-                <a href="https://app.dragonrefunds.com/sign-up"
                   className="px-10 py-5 text-lg bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-xl hover:shadow-[#2F7D4F]/25 hover:-translate-y-0.5 flex items-center gap-3">
                   {page?.demo?.type === 'dashboard2' ? 'Connect your account' : 'Get it free'} <ArrowRight className="w-5 h-5" />
                 </a>
@@ -2136,7 +2131,6 @@ export default function LandingV4({ page = null }) {
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-3xl mx-auto mb-10">
                 {HOSTS.map(h => (
-                  <a key={h.id} href="https://app.dragonrefunds.com/sign-up"
                   <a key={h.id} href="https://app.dragonrefunds.com/sign-up"
                     className="flex items-center justify-center gap-2.5 px-4 py-3.5 bg-white/5 hover:bg-[#2F7D4F]/15 border border-white/15 hover:border-[#98CC65]/40 rounded-lg transition-all text-[13px] sm:text-sm font-semibold text-white/85 hover:text-white cursor-pointer">
                     <HostMark host={h} size={20} />
