@@ -11,10 +11,10 @@ export default function Privacy() {
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
-            Back to DragonBot
+            Back to Dragon Refunds
           </a>
           <div className="flex items-center gap-3 mb-4">
-            <img src="/DragonBot-logo.png" alt="DragonBot" className="h-8" />
+            <img src="/DragonBot-logo.png" alt="Dragon Refunds" className="h-8" />
             <span className="text-sm font-medium text-[#2F7D4F] bg-[#2F7D4F]/10 px-3 py-1 rounded-full">Legal</span>
           </div>
           <h1 className="font-extrabold text-4xl">Privacy &amp; Data Protection Policy</h1>
@@ -25,7 +25,7 @@ export default function Privacy() {
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-14">
         <p className="text-white/70 leading-relaxed mb-8">
-          Your privacy matters to us. This Privacy &amp; Data Protection Policy explains how DragonBot, operated by Chacha Advisory LLC ("we", "us", "our"), collects, uses, stores, shares, and protects your information when you use our application (the "App"). DragonBot is an authorized Amazon Selling Partner API (SP-API) application. Chacha Advisory LLC is located at 30 N Gould St Ste R, Sheridan, WY 82801, USA.
+          Your privacy matters to us. This Privacy &amp; Data Protection Policy explains how Dragon Refunds, operated by Chacha Advisory LLC ("we", "us", "our"), collects, uses, stores, shares, and protects your information when you use our application (the "App"). Dragon Refunds is an authorized Amazon Selling Partner API (SP-API) application. Chacha Advisory LLC is located at 30 N Gould St Ste R, Sheridan, WY 82801, USA.
         </p>
         <p className="text-white/70 leading-relaxed mb-12">
           By using the App, you acknowledge that you have read and understood this Policy and consent to the collection and use of your information as described below. You may withdraw your consent at any time by contacting us.

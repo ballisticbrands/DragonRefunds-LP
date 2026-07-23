@@ -2504,28 +2504,32 @@ export default function LandingV4({ page = null }) {
       </section>
 
       {/* ─── FOOTER ─── */}
-      <footer className="bg-[#0F3D2E] py-16">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="flex items-center gap-2.5">
-              <img src="/DragonBot-logo.png" alt="Dragon Refunds" className="h-8" />
-              <span className="font-bold text-lg text-white">{page?.demo?.type === 'dashboard2' ? 'Dragon Refunds' : 'DragonBot'}</span>
-            </div>
-            <div className="flex flex-wrap justify-center gap-8">
-              <a href="/" className="text-sm text-white/50 hover:text-white transition-colors">Product</a>
-              <a href="/pricing" className="text-sm text-white/50 hover:text-white transition-colors">Pricing</a>
-              <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Privacy</a>
-              <a href="/tos" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Terms</a>
-              <a href="/support" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Support</a>
-              <a href="mailto:info@dragonrefunds.com" className="text-sm text-white/50 hover:text-white transition-colors">info@dragonrefunds.com</a>
-            </div>
-            <div className="text-center md:text-right">
-              <p className="text-sm text-white/30">&copy; {new Date().getFullYear()} Chacha Advisory LLC. All rights reserved.</p>
-              <p className="text-xs text-white/20 mt-1">30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
+      {page?.demo?.type === 'dashboard2' ? (
+        <RefundsFooter />
+      ) : (
+        <footer className="bg-[#0F3D2E] py-16">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="flex items-center gap-2.5">
+                <img src="/DragonBot-logo.png" alt="DragonBot" className="h-8" />
+                <span className="font-bold text-lg text-white">DragonBot</span>
+              </div>
+              <div className="flex flex-wrap justify-center gap-8">
+                <a href="/" className="text-sm text-white/50 hover:text-white transition-colors">Product</a>
+                <a href="/pricing" className="text-sm text-white/50 hover:text-white transition-colors">Pricing</a>
+                <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Privacy</a>
+                <a href="/tos" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Terms</a>
+                <a href="/support" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Support</a>
+                <a href="mailto:info@getdragonbot.com" className="text-sm text-white/50 hover:text-white transition-colors">info@getdragonbot.com</a>
+              </div>
+              <div className="text-center md:text-right">
+                <p className="text-sm text-white/30">&copy; {new Date().getFullYear()} Chacha Advisory LLC. All rights reserved.</p>
+                <p className="text-xs text-white/20 mt-1">30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
+              </div>
             </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      )}
     </div>
   );
 }

@@ -11,10 +11,10 @@ export default function Terms() {
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
-            Back to DragonBot
+            Back to Dragon Refunds
           </a>
           <div className="flex items-center gap-3 mb-4">
-            <img src="/DragonBot-logo.png" alt="DragonBot" className="h-8" />
+            <img src="/DragonBot-logo.png" alt="Dragon Refunds" className="h-8" />
             <span className="text-sm font-medium text-[#2F7D4F] bg-[#2F7D4F]/10 px-3 py-1 rounded-full">Legal</span>
           </div>
           <h1 className="font-extrabold text-4xl">Terms of Service</h1>
@@ -25,19 +25,19 @@ export default function Terms() {
       {/* Content */}
       <div className="max-w-3xl mx-auto px-6 py-14">
         <p className="text-white/70 leading-relaxed mb-8">
-          These Terms of Service ("Terms") govern your use of DragonBot, operated by Chacha Advisory LLC ("Company", "we", "us", "our"), located at 30 N Gould St Ste R, Sheridan, WY 82801, USA. By accessing or using DragonBot (the "Service"), you agree to be bound by these Terms. If you do not agree, do not use the Service.
+          These Terms of Service ("Terms") govern your use of Dragon Refunds, operated by Chacha Advisory LLC ("Company", "we", "us", "our"), located at 30 N Gould St Ste R, Sheridan, WY 82801, USA. By accessing or using Dragon Refunds (the "Service"), you agree to be bound by these Terms. If you do not agree, do not use the Service.
         </p>
 
         <div className="space-y-12">
 
           <section>
             <h2 className="font-bold text-xl mb-4">1. Description of Service</h2>
-            <p className="text-white/70 leading-relaxed">DragonBot is an AI-powered assistant that connects to your eCommerce tools (including Amazon Seller Central via the official SP-API) and performs tasks on your behalf. The Service operates through Slack and integrates with third-party platforms you choose to connect.</p>
+            <p className="text-white/70 leading-relaxed">Dragon Refunds is an AI-powered assistant that connects to your eCommerce tools (including Amazon Seller Central via the official SP-API) and performs tasks on your behalf. The Service operates through Slack and integrates with third-party platforms you choose to connect.</p>
           </section>
 
           <section>
             <h2 className="font-bold text-xl mb-4">2. Eligibility</h2>
-            <p className="text-white/70 leading-relaxed">You must be at least 18 years old and have the authority to bind the entity on whose behalf you are using the Service. By using DragonBot, you represent and warrant that you meet these requirements.</p>
+            <p className="text-white/70 leading-relaxed">You must be at least 18 years old and have the authority to bind the entity on whose behalf you are using the Service. By using Dragon Refunds, you represent and warrant that you meet these requirements.</p>
           </section>
 
           <section>
@@ -61,12 +61,12 @@ export default function Terms() {
 
           <section>
             <h2 className="font-bold text-xl mb-4">5. Third-Party Integrations</h2>
-            <p className="text-white/70 leading-relaxed">The Service integrates with third-party platforms (Amazon, Google, Shopify, Slack, etc.). Your use of these integrations is subject to the respective platform's terms of service. We are not responsible for the availability, accuracy, or policies of third-party services. You authorize DragonBot to access and interact with these services on your behalf within the permission level you configure.</p>
+            <p className="text-white/70 leading-relaxed">The Service integrates with third-party platforms (Amazon, Google, Shopify, Slack, etc.). Your use of these integrations is subject to the respective platform's terms of service. We are not responsible for the availability, accuracy, or policies of third-party services. You authorize Dragon Refunds to access and interact with these services on your behalf within the permission level you configure.</p>
           </section>
 
           <section>
             <h2 className="font-bold text-xl mb-4">6. Amazon SP-API Usage</h2>
-            <p className="text-white/70 leading-relaxed">DragonBot accesses Amazon data through the official Selling Partner API. We comply with Amazon's Data Protection Policy and Acceptable Use Policy. You acknowledge that your use of DragonBot in connection with Amazon is also subject to Amazon's terms. We will not use Amazon data for purposes other than providing the Service to you as authorized.</p>
+            <p className="text-white/70 leading-relaxed">Dragon Refunds accesses Amazon data through the official Selling Partner API. We comply with Amazon's Data Protection Policy and Acceptable Use Policy. You acknowledge that your use of Dragon Refunds in connection with Amazon is also subject to Amazon's terms. We will not use Amazon data for purposes other than providing the Service to you as authorized.</p>
           </section>
 
           <section>
@@ -83,12 +83,12 @@ export default function Terms() {
 
           <section>
             <h2 className="font-bold text-xl mb-4">8. AI-Generated Outputs</h2>
-            <p className="text-white/70 leading-relaxed">DragonBot uses artificial intelligence to analyze data and generate outputs (reports, recommendations, drafted messages, etc.). While we strive for accuracy, AI outputs may contain errors. You are responsible for reviewing and verifying all outputs before acting on them. We are not liable for decisions made based on AI-generated content.</p>
+            <p className="text-white/70 leading-relaxed">Dragon Refunds uses artificial intelligence to analyze data and generate outputs (reports, recommendations, drafted messages, etc.). While we strive for accuracy, AI outputs may contain errors. You are responsible for reviewing and verifying all outputs before acting on them. We are not liable for decisions made based on AI-generated content.</p>
           </section>
 
           <section>
             <h2 className="font-bold text-xl mb-4">9. Supervised & Autonomous Modes</h2>
-            <p className="text-white/70 leading-relaxed">DragonBot offers configurable permission modes (read-only, supervised, autonomous). In supervised mode, DragonBot requests your approval before taking actions. In autonomous mode, DragonBot may take routine actions without prior approval. You are responsible for configuring the appropriate permission level for your use case. We are not liable for actions taken in autonomous mode that you have authorized.</p>
+            <p className="text-white/70 leading-relaxed">Dragon Refunds offers configurable permission modes (read-only, supervised, autonomous). In supervised mode, Dragon Refunds requests your approval before taking actions. In autonomous mode, Dragon Refunds may take routine actions without prior approval. You are responsible for configuring the appropriate permission level for your use case. We are not liable for actions taken in autonomous mode that you have authorized.</p>
           </section>
 
           <section>

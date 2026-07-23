@@ -11,10 +11,10 @@ export default function Support() {
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
-            Back to DragonBot
+            Back to Dragon Refunds
           </a>
           <div className="flex items-center gap-3 mb-4">
-            <img src="/DragonBot-logo.png" alt="DragonBot" className="h-8" />
+            <img src="/DragonBot-logo.png" alt="Dragon Refunds" className="h-8" />
             <span className="text-sm font-medium text-[#2F7D4F] bg-[#2F7D4F]/10 px-3 py-1 rounded-full">Support</span>
           </div>
           <h1 className="font-extrabold text-4xl">Support &amp; Help Center</h1>
@@ -50,7 +50,7 @@ export default function Support() {
               <div>
                 <h3 className="font-semibold text-lg mb-2">Slack</h3>
                 <p className="text-white/70 leading-relaxed">
-                  Already a DragonBot user? Message us directly in your Slack workspace — just type <code className="bg-white/10 px-2 py-0.5 rounded text-[#98CC65] text-sm">@DragonBot help</code> and we'll be there.
+                  Already a Dragon Refunds user? Message us directly in your Slack workspace — just type <code className="bg-white/10 px-2 py-0.5 rounded text-[#98CC65] text-sm">@Dragon Refunds help</code> and we'll be there.
                 </p>
               </div>
             </div>
@@ -62,12 +62,12 @@ export default function Support() {
           <h2 className="font-bold text-2xl mb-6">Common topics</h2>
           <div className="grid sm:grid-cols-2 gap-4">
             {[
-              { title: 'Getting started', desc: 'How to connect DragonBot to Slack, link your Amazon account, and start your first task.', href: '/support/getting-started' },
+              { title: 'Getting started', desc: 'How to connect Dragon Refunds to Slack, link your Amazon account, and start your first task.', href: '/support/getting-started' },
               { title: 'Billing & credits', desc: 'Questions about your $100 free credits, plan pricing, or payment methods.', href: '/support/billing-credits' },
               { title: 'Amazon integration', desc: 'Setting up the Amazon SP-API connection, permissions, and troubleshooting access issues.', href: '/support/amazon-integration' },
               { title: 'Security & privacy', desc: 'How we handle your data, TOS compliance, and permission controls.', href: '/support/security-privacy' },
               { title: 'Account management', desc: 'Updating your profile, managing team members, or deleting your account.', href: '/support/account-management' },
-              { title: 'Feature requests', desc: 'Have an idea for DragonBot? We\'d love to hear it — send us a message.', href: '/support/feature-requests' },
+              { title: 'Feature requests', desc: 'Have an idea for Dragon Refunds? We\'d love to hear it — send us a message.', href: '/support/feature-requests' },
             ].map((topic, i) => (
               <a key={i} href={topic.href} className="bg-white/5 border border-white/10 rounded-xl p-5 hover:border-[#2F7D4F]/30 transition-colors block">
                 <h3 className="font-semibold mb-1">{topic.title}</h3>
@@ -77,19 +77,11 @@ export default function Support() {
           </div>
         </section>
 
-        {/* FAQ link */}
-        <section className="mb-16">
-          <h2 className="font-bold text-2xl mb-4">Frequently asked questions</h2>
-          <p className="text-white/70 leading-relaxed mb-4">
-            Check our <a href="/#faq" className="text-[#98CC65] hover:text-[#2F7D4F] underline transition-colors">FAQ section</a> for quick answers to the most common questions about DragonBot.
-          </p>
-        </section>
-
         {/* Emergency */}
         <section className="mb-16">
           <h2 className="font-bold text-2xl mb-4">Urgent issues</h2>
           <p className="text-white/70 leading-relaxed">
-            If you're experiencing a critical issue with your Amazon account or believe DragonBot took an unintended action, email us at{' '}
+            If you're experiencing a critical issue with your Amazon account or believe Dragon Refunds took an unintended action, email us at{' '}
             <a href="mailto:info@dragonrefunds.com" className="text-[#98CC65] hover:text-[#2F7D4F] underline transition-colors font-semibold">
               info@dragonrefunds.com
             </a>{' '}
