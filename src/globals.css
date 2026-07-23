@@ -87,6 +87,7 @@ html {
 
 /* base + tiered white text → near-black */
 .v2-page.theme-light .text-white { color: #17181A; }
+.v2-page.theme-light .text-white\/90 { color: rgba(23,24,26,0.90); }
 .v2-page.theme-light .text-white\/85 { color: rgba(23,24,26,0.85); }
 .v2-page.theme-light .text-white\/80 { color: rgba(23,24,26,0.80); }
 .v2-page.theme-light .text-white\/75 { color: rgba(23,24,26,0.75); }

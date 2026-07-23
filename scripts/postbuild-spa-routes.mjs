@@ -12,6 +12,7 @@ import { fileURLToPath } from 'node:url';
 
 import { lpPages } from '../src/data/lpPages.js';
 import { competitors } from '../src/data/competitors.js';
+import { refundsCompetitors } from '../src/data/refundsCompetitors.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
@@ -33,8 +34,9 @@ const lpRoutes = lpPages.map(p => p.path);
 const vsRoutes = Object.entries(competitors)
   .filter(([, c]) => !c.hidden)
   .map(([slug]) => `/vs/${slug}`);
+const refundsVsRoutes = Object.keys(refundsCompetitors).map(slug => `/vs/${slug}`);
 
-const routes = [...new Set([...staticRoutes, ...lpRoutes, ...vsRoutes])];
+const routes = [...new Set([...staticRoutes, ...lpRoutes, ...vsRoutes, ...refundsVsRoutes])];
 
 let n = 0;
 for (const route of routes) {
