@@ -49,7 +49,7 @@ const plans = [
     price: '$0',
     unit: 'free forever',
     tagline: 'Find every recoverable claim yourself and keep 100% of what you recover.',
-    cta: 'Get my free audit',
+    cta: 'See what Amazon owes you',
     highlight: false,
     features: [
       'Full audit of your reimbursement history',
@@ -64,7 +64,7 @@ const plans = [
     price: '15%',
     unit: 'of what we recover',
     tagline: 'We file every claim for you and chase it to close. Pay only on what we actually recover.',
-    cta: 'Connect your account',
+    cta: 'Get my money back',
     highlight: true,
     badge: 'Done-for-you',
     features: [

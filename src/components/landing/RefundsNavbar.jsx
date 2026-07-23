@@ -21,6 +21,7 @@ const navLinks = [
   { label: 'Features', href: '/#shipment-refunds' },
   { label: 'Automated workflow', href: '/#automated-workflow' },
   { label: 'vs. others', href: '/#vs-others' },
+  { label: 'Pricing', href: '/pricing' },
 ];
 
 export default function RefundsNavbar({ light, onToggle }) {
@@ -63,7 +64,7 @@ export default function RefundsNavbar({ light, onToggle }) {
             </button>
             <a href={REFUNDS_SIGNUP_URL}
               className="px-5 py-2.5 bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] text-sm font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-lg hover:shadow-[#2F7D4F]/25">
-              Connect your account
+              Find my refunds
             </a>
           </div>
           <div className="md:hidden flex items-center gap-1">
@@ -86,7 +87,7 @@ export default function RefundsNavbar({ light, onToggle }) {
               ))}
               <a href={REFUNDS_SIGNUP_URL} onClick={() => setMobileOpen(false)}
                 className="mt-4 px-6 py-3 bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] text-[#0F0F0F] text-center font-semibold uppercase tracking-wide rounded-lg">
-                Connect your account
+                Find my refunds
               </a>
             </div>
           </motion.div>

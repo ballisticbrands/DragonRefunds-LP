@@ -148,6 +148,7 @@ const REIMB_NAV_LINKS = [
   { label: 'Features', href: '#shipment-refunds' },
   { label: 'Automated workflow', href: '#automated-workflow' },
   { label: 'vs. others', href: '#vs-others' },
+  { label: 'Pricing', href: '/pricing' },
 ];
 
 function Navbar({ light, onToggle, links = navLinks, showWorksWith = true, ctaLabel = 'Get it free', brand = null }) {
@@ -237,7 +238,7 @@ function Section({ id, className = '', children }) {
 /* ─── Eyebrow label ─── */
 function Eyebrow({ children }) {
   return (
-    <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#2F7D4F]/10 rounded-full text-sm font-medium text-white mb-6 max-w-[90vw]">
+    <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#2F7D4F]/10 rounded-full text-sm font-medium text-white/90 mb-6 max-w-[90vw]">
       <span className="w-2 h-2 rounded-full bg-[#98CC65] animate-pulse shrink-0" />
       <span>{children}</span>
     </span>
@@ -841,7 +842,7 @@ function ReimbursementAuditIntro() {
       <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
         <a href="https://app.dragonrefunds.com/sign-up"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#2F7D4F] hover:bg-[#98CC65] hover:text-[#0F0F0F] text-white text-[14px] font-bold transition-colors">
-          Get my free audit <ArrowRight className="w-4 h-4" />
+          See what Amazon owes you <ArrowRight className="w-4 h-4" />
         </a>
         <span className="text-[12px] text-white/40">No card. No call. The audit is yours to keep either way.</span>
       </div>
@@ -1595,7 +1596,7 @@ function ReimbursementComparePanel() {
       <div className="flex justify-center mt-10">
         <a href="https://app.dragonrefunds.com/sign-up"
           className="px-10 py-5 text-lg bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-xl hover:shadow-[#2F7D4F]/25 hover:-translate-y-0.5 flex items-center gap-3">
-          Connect your account <ArrowRight className="w-5 h-5" />
+          See what Amazon owes you <ArrowRight className="w-5 h-5" />
         </a>
       </div>
     </div>
@@ -2064,7 +2065,7 @@ export default function LandingV4({ page = null }) {
       <Navbar light={light} onToggle={() => setLight(v => !v)}
         links={page?.demo?.type === 'dashboard2' ? REIMB_NAV_LINKS : navLinks}
         showWorksWith={page?.demo?.type !== 'dashboard2'}
-        ctaLabel={page?.demo?.type === 'dashboard2' ? 'Connect your account' : 'Get it free'}
+        ctaLabel={page?.demo?.type === 'dashboard2' ? 'Find my refunds' : 'Get it free'}
         brand={page?.demo?.type === 'dashboard2' ? (
           <span className="font-bold text-[22px] sm:text-[25px] text-white whitespace-nowrap" style={{ lineHeight: '1' }}>
             Dragon <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">Refunds</span>
@@ -2125,7 +2126,7 @@ export default function LandingV4({ page = null }) {
               <div className="flex justify-center mb-10">
                 <a href="https://app.dragonrefunds.com/sign-up"
                   className="px-10 py-5 text-lg bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-xl hover:shadow-[#2F7D4F]/25 hover:-translate-y-0.5 flex items-center gap-3">
-                  {page?.demo?.type === 'dashboard2' ? 'Connect your account' : 'Get it free'} <ArrowRight className="w-5 h-5" />
+                  {page?.demo?.type === 'dashboard2' ? 'See what Amazon owes you' : 'Get it free'} <ArrowRight className="w-5 h-5" />
                 </a>
               </div>
             ) : (

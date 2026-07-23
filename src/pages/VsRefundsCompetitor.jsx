@@ -29,7 +29,7 @@ function Section({ id, className = '', children }) {
 
 function Eyebrow({ children }) {
   return (
-    <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#2F7D4F]/15 rounded-full text-sm font-medium text-white mb-6">
+    <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#2F7D4F]/15 rounded-full text-sm font-medium text-white/90 mb-6">
       <span className="w-2 h-2 rounded-full bg-[#98CC65] animate-pulse shrink-0" />
       <span>{children}</span>
     </span>
@@ -141,7 +141,7 @@ export default function VsRefundsCompetitor({ slug: slugProp }) {
             <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
               <a href={SIGNUP_URL}
                 className="px-9 py-4 text-lg bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-xl hover:shadow-[#2F7D4F]/25 hover:-translate-y-0.5 flex items-center gap-3">
-                Get my free audit <ArrowRight className="w-5 h-5" />
+                See what Amazon owes you <ArrowRight className="w-5 h-5" />
               </a>
               <a href="/"
                 className="px-9 py-4 text-lg bg-white/5 hover:bg-white/10 text-white border border-white/15 hover:border-white/30 font-semibold uppercase tracking-wide rounded-lg transition-all flex items-center gap-3">
@@ -332,7 +332,7 @@ export default function VsRefundsCompetitor({ slug: slugProp }) {
           <div className="flex flex-wrap items-center justify-center gap-3">
             <a href={SIGNUP_URL}
               className="inline-flex items-center gap-3 px-9 py-4 text-lg bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-xl hover:shadow-[#2F7D4F]/25 hover:-translate-y-0.5">
-              Get my free audit <ArrowRight className="w-5 h-5" />
+              Show me what I'm owed <ArrowRight className="w-5 h-5" />
             </a>
             <a href="/"
               className="inline-flex items-center gap-3 px-9 py-4 text-lg bg-white/5 hover:bg-white/10 text-white border border-white/15 hover:border-white/30 font-semibold uppercase tracking-wide rounded-lg transition-all">
