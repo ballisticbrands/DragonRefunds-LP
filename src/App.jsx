@@ -16,7 +16,6 @@ import LandingV3 from './pages/LandingV3';
 import LandingV4 from './pages/LandingV4';
 import VsCompetitor from './pages/VsCompetitor';
 import VsRefundsCompetitor from './pages/VsRefundsCompetitor';
-import Beta from './pages/Beta';
 import LpPage from './pages/LpPage';
 import { lpPages } from './data/lpPages';
 
@@ -61,7 +60,6 @@ function App() {
         <Route path="/vs/getida" element={<VsRefundsCompetitor slug="getida" />} />
         <Route path="/vs/seller-investigators" element={<VsRefundsCompetitor slug="seller-investigators" />} />
         <Route path="/vs/:slug" element={<VsCompetitor />} />
-        <Route path="/beta" element={<Beta />} />
         <Route path="*" element={<LandingV4 page={refundsPage} />} />
       </Routes>
     </Router>

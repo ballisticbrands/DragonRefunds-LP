@@ -5,7 +5,7 @@ export default function GettingStarted() {
     <HelpLayout title="Getting started">
       <section>
         <h2 className="font-bold text-xl text-white mb-3">1. Add DragonBot to Slack</h2>
-        <p>DragonBot is currently in private beta. <a href="/beta" className="text-[#98CC65] underline">Request access here</a> and we'll follow up with onboarding steps for your Slack workspace. Once you're in, DragonBot will appear as an app in your Slack sidebar — you can mention it in any channel or DM it directly.</p>
+        <p>DragonBot is currently in private beta. <a href="https://app.dragonrefunds.com/sign-up" className="text-[#98CC65] underline">Request access here</a> and we'll follow up with onboarding steps for your Slack workspace. Once you're in, DragonBot will appear as an app in your Slack sidebar — you can mention it in any channel or DM it directly.</p>
       </section>
 
       <section>

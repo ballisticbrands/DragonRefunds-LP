@@ -58,7 +58,7 @@ function NavbarV2() {
             <CompareDropdown />
           </div>
           <div className="hidden md:flex items-center gap-3">
-            <a href="/beta"
+            <a href="https://app.dragonrefunds.com/sign-up"
               className="px-5 py-2.5 bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] text-sm font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-lg hover:shadow-[#2F7D4F]/25">
               Request Access
             </a>
@@ -77,7 +77,7 @@ function NavbarV2() {
                 <a key={l.label} href={l.href} onClick={() => setMobileOpen(false)} className="text-lg font-medium text-white">{l.label}</a>
               ))}
               <CompareDropdownMobile onItemClick={() => setMobileOpen(false)} />
-              <a href="/beta" onClick={() => setMobileOpen(false)}
+              <a href="https://app.dragonrefunds.com/sign-up" onClick={() => setMobileOpen(false)}
                 className="mt-4 px-6 py-3 bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] text-center font-semibold uppercase tracking-wide rounded-lg transition-all">
                 Request Access
               </a>
@@ -1226,7 +1226,7 @@ export default function LandingV3() {
             </p>
 
             <div className="flex items-center justify-center mb-8">
-              <a href="/beta"
+              <a href="https://app.dragonrefunds.com/sign-up"
                 className="px-10 py-5 text-lg bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-xl hover:shadow-[#2F7D4F]/25 hover:-translate-y-0.5 flex items-center gap-3">
                 Request Access <ArrowRight className="w-5 h-5" />
               </a>
@@ -1455,7 +1455,7 @@ export default function LandingV3() {
               transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }} />
             <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">DragonBot</span>
           </h4>
-          <a href="/beta"
+          <a href="https://app.dragonrefunds.com/sign-up"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-xl">
             Request Access <ArrowRight className="w-4 h-4" />
           </a>
@@ -1523,7 +1523,7 @@ export default function LandingV3() {
               No credit card, no sales call, no catch. When you need more, it starts at $50/month.
             </p>
             <div className="flex flex-wrap gap-3">
-              <a href="/beta"
+              <a href="https://app.dragonrefunds.com/sign-up"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-xl hover:shadow-[#2F7D4F]/25">
                 Request Access <ArrowRight className="w-4 h-4" />
               </a>

@@ -58,7 +58,7 @@ function WorksWithDropdown() {
               {HOSTS.map(h => (
                 <a
                   key={h.id}
-                  href="/beta"
+                  href="https://app.dragonrefunds.com/sign-up"
                   className="flex items-center gap-2.5 px-3 py-2 text-sm text-white/80 hover:bg-white/5 hover:text-white rounded-md transition-colors"
                 >
                   <HostMark host={h} size={18} />
@@ -88,7 +88,7 @@ function WorksWithDropdownMobile({ onItemClick }) {
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
             <div className="pt-3 pl-3 flex flex-col gap-3 border-l border-white/10 ml-2">
               {HOSTS.map(h => (
-                <a key={h.id} href="/beta" onClick={onItemClick} className="flex items-center gap-3 text-base text-white/70">
+                <a key={h.id} href="https://app.dragonrefunds.com/sign-up" onClick={onItemClick} className="flex items-center gap-3 text-base text-white/70">
                   <HostMark host={h} size={20} />
                   <span>{h.label}</span>
                 </a>
@@ -2486,7 +2486,7 @@ export default function LandingV4({ page = null }) {
                 </li>
               ))}
             </ul>
-            <a href="/beta"
+            <a href="https://app.dragonrefunds.com/sign-up"
               className="block text-center px-6 py-3 bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-xl hover:shadow-[#2F7D4F]/25">
               Request beta access
             </a>
@@ -2521,7 +2521,7 @@ export default function LandingV4({ page = null }) {
                 <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Privacy</a>
                 <a href="/tos" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Terms</a>
                 <a href="/support" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Support</a>
-                <a href="mailto:info@getdragonbot.com" className="text-sm text-white/50 hover:text-white transition-colors">info@getdragonbot.com</a>
+                <a href="mailto:info@dragonrefunds.com" className="text-sm text-white/50 hover:text-white transition-colors">info@dragonrefunds.com</a>
               </div>
               <div className="text-center md:text-right">
                 <p className="text-sm text-white/30">&copy; {new Date().getFullYear()} Chacha Advisory LLC. All rights reserved.</p>
