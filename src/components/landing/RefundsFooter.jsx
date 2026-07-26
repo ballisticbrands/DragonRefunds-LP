@@ -1,4 +1,5 @@
 import React from 'react';
+import { refundsCompetitors } from '../../data/refundsCompetitors';
 
 /* ─── Dragon Refunds footer (Jarvio-style columns) ───
    Shared by the /refunds landing page and every /vs/* comparison page.
@@ -17,10 +18,12 @@ const COMPANY_LINKS = [
   { label: 'Support', href: '/support', newTab: true },
 ];
 
-const RESOURCE_LINKS = [
-  { label: 'Dragon Refunds vs GETIDA', href: '/vs/getida' },
-  { label: 'Dragon Refunds vs Seller Investigators', href: '/vs/seller-investigators' },
-];
+// One footer link per comparison page — derived from the data file so new
+// competitors added there appear (and get crawled) automatically.
+const RESOURCE_LINKS = Object.entries(refundsCompetitors).map(([slug, c]) => ({
+  label: `Dragon Refunds vs ${c.name}`,
+  href: `/vs/${slug}`,
+}));
 
 function FooterColumn({ title, links }) {
   return (

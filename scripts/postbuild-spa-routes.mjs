@@ -24,7 +24,7 @@ if (!existsSync(src)) {
 }
 
 const staticRoutes = [
-  '/v1', '/v2', '/v3', '/chats', '/privacy', '/tos', '/pricing', '/beta',
+  '/v1', '/v2', '/v3', '/chats', '/privacy', '/tos', '/pricing',
   '/support', '/support/getting-started', '/support/billing-credits',
   '/support/amazon-integration', '/support/security-privacy',
   '/support/account-management', '/support/feature-requests',

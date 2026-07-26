@@ -250,12 +250,14 @@ export default function VsRefundsCompetitor({ slug: slugProp }) {
             <div className="self-stretch w-px bg-white/10" />
             <div className="flex-1 max-w-[200px] flex flex-col items-center">
               <span className="inline-block h-[19px] mb-2 text-[9px] font-bold uppercase tracking-[0.12em] text-white/45 border border-white/20 rounded-full px-2 py-0.5" style={{ fontFamily: monoFont }}>Hands-off</span>
-              <div className="text-3xl sm:text-4xl font-extrabold text-white/50">$7,500</div>
+              <div className="text-3xl sm:text-4xl font-extrabold text-white/50">{c.commission.themAmount || '$7,500'}</div>
               <div className="text-[12px] text-white/45 mt-1.5">with {c.name} ({c.commission.them})</div>
             </div>
           </div>
           <p className="mt-6 text-[14px] text-white/60 leading-relaxed max-w-xl mx-auto">
-            File it yourself through the free tier and keep the full <span className="text-[#98CC65] font-semibold">$10,000</span> — or hand it off for {c.commission.us} and still keep <span className="text-[#98CC65] font-semibold">$1,000 more</span> than a {c.commission.them} service.
+            {c.commission.line || (
+              <>File it yourself through the free tier and keep the full <span className="text-[#98CC65] font-semibold">$10,000</span> — or hand it off for {c.commission.us} and still keep <span className="text-[#98CC65] font-semibold">$1,000 more</span> than a {c.commission.them} service.</>
+            )}
           </p>
         </div>
       </Section>

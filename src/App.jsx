@@ -18,6 +18,7 @@ import VsCompetitor from './pages/VsCompetitor';
 import VsRefundsCompetitor from './pages/VsRefundsCompetitor';
 import LpPage from './pages/LpPage';
 import { lpPages } from './data/lpPages';
+import { getRefundsCompetitorSlugs } from './data/refundsCompetitors';
 
 // This repo (DragonRefunds-LP) is a single-purpose deployment of the /refunds
 // landing page served at the domain root (dragonrefunds.com). Root + unknown
@@ -57,8 +58,9 @@ function App() {
         {/* Dragon Refunds comparison pages (footer-linked only). These static
             /vs/* entries outrank /vs/:slug in RRv6 and render the
             Dragon-Refunds-branded template, not the DragonBot one. */}
-        <Route path="/vs/getida" element={<VsRefundsCompetitor slug="getida" />} />
-        <Route path="/vs/seller-investigators" element={<VsRefundsCompetitor slug="seller-investigators" />} />
+        {getRefundsCompetitorSlugs().map(slug => (
+          <Route key={slug} path={`/vs/${slug}`} element={<VsRefundsCompetitor slug={slug} />} />
+        ))}
         <Route path="/vs/:slug" element={<VsCompetitor />} />
         <Route path="*" element={<LandingV4 page={refundsPage} />} />
       </Routes>
