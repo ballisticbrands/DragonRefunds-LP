@@ -15,4 +15,17 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        // Split heavy vendor libs into their own cached chunks so they load in
+        // parallel with app code and persist across route navigations.
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'framer-motion': ['framer-motion'],
+          'lucide': ['lucide-react'],
+        },
+      },
+    },
+  },
 })
