@@ -16,6 +16,8 @@ export default defineConfig({
     },
   },
   build: {
+    // Modern browsers only (ad traffic) — skip legacy transpile/polyfills.
+    target: 'es2020',
     rollupOptions: {
       output: {
         // Split heavy vendor libs into their own cached chunks so they load in
