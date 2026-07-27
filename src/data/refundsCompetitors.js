@@ -934,6 +934,122 @@ export const refundsCompetitors = {
       },
     ],
   },
+  'refunzo': {
+    name: 'Refunzo',
+    metaTitle: 'Dragon Refunds vs Refunzo: FBA Reimbursements Compared (2026)',
+    metaDescription:
+      'Honest comparison of Dragon Refunds and Refunzo. Both offer free FBA reconciliation and 15% managed filing — so the difference is claim coverage and transparency, not price. Here is the side-by-side.',
+    eyebrow: 'Dragon Refunds vs Refunzo',
+    h1: {
+      plain: 'Refunzo also does free reconciliation and 15% managed filing.',
+      accent: 'Dragon Refunds recovers more categories — and shows you every dollar.',
+    },
+    subhead:
+      'Refunzo is the closest match to Dragon Refunds on the market: free lifetime reconciliation, plus optional managed filing at 15%. So price is a tie — which means the real questions are how much each one finds, and how clearly it shows you where the money came from. Here is an honest, side-by-side breakdown.',
+    tldr: {
+      them:
+        'Choose Refunzo if you want an established, funded service with offices across the US, UK, Germany and Australia, and a managed fee capped at $5,000 — which makes it cheaper than a flat 15% on very large recoveries.',
+      us:
+        'Choose Dragon Refunds if you want broader claim coverage — including COGS / sourcing-cost errors most tools skip — and fully itemized transparency, at the same free-plus-15% model.',
+    },
+    compare: [
+      {
+        label: 'The model (nearly identical)',
+        rows: [
+          { feature: 'Free tier — find and file yourself at no cost', note: 'DIY',
+            values: ['yes', 'yes'] },
+          { feature: 'Managed commission', values: [{ t: '15%' }, { t: '15% (cap $5k)' }] },
+          { feature: 'Who files', values: [{ t: 'You, or us' }, { t: 'You, or them' }] },
+        ],
+      },
+      {
+        label: 'What we recover',
+        rows: [
+          { feature: 'Lost / damaged shipments', values: ['yes', 'yes'] },
+          { feature: 'Fee overcharges', values: ['yes', 'yes'] },
+          { feature: 'Warehouse-damaged & destroyed inventory', values: ['yes', 'partial'] },
+          { feature: 'COGS & sourcing-cost errors', values: ['yes', 'no'] },
+        ],
+      },
+      {
+        label: 'Transparency',
+        rows: [
+          { feature: 'Shows the cause of each claim', note: 'lost / damaged / dimension / COGS',
+            values: [{ t: 'Itemized per claim' }, 'partial'] },
+          { feature: 'Full claim ledger', note: 'found → filed → paid → denied',
+            values: ['yes', 'partial'] },
+        ],
+      },
+    ],
+    themWins: [
+      {
+        title: 'Established, funded, and reviewed',
+        desc:
+          'Refunzo is a real company with offices across the US, UK, Germany, and Australia and a base of public reviews. If operating history and a physical footprint reassure you, they have more of both than a newer product.',
+      },
+      {
+        title: 'The $5,000 fee cap',
+        desc:
+          'Refunzo caps its managed fee at "15% or $5,000, whichever is lower." For most sellers 15% is the number — but on a very large recovery (say $100k), that cap makes them meaningfully cheaper than a flat 15%. If you recover huge sums, that is a genuine edge.',
+      },
+      {
+        title: '21 documented reconciliation checks',
+        desc:
+          'They publish a clear list of 21 automated checks across shipments, inventory, payments, fees, and returns. It is a well-defined, transparent scope for the standard categories.',
+      },
+    ],
+    usWins: [
+      {
+        title: 'Recovers categories Refunzo skips',
+        desc:
+          'On top of the shared lost-and-damaged and fee-overcharge claims, Dragon Refunds chases COGS / sourcing-cost errors — cases where Amazon reimburses lost units below their true value — and digs into warehouse-damaged and destroyed inventory. More categories checked means more dollars found from the same account.',
+      },
+      {
+        title: 'You see where every dollar came from',
+        desc:
+          'Both give you a report. Dragon Refunds goes further: it itemizes the cause of every claim — the exact lost shipment, damaged unit, dimension mismatch, or COGS error — and keeps the full found → filed → paid → denied ledger visible, so you always know what is outstanding vs paid vs denied.',
+      },
+      {
+        title: 'Same free tier, same 15% — no cap games',
+        desc:
+          'Dragon Refunds matches Refunzo on the parts that matter to most sellers: free self-file to keep 100%, or 15% managed. Flat and published, no whichever-is-lower math to reason about unless you are recovering six figures.',
+      },
+      {
+        title: 'Part of a broader Amazon operator',
+        desc:
+          'Refunzo does reconciliation and reimbursements. Dragon Refunds is built on the same platform as a full Amazon operator — so as you grow, the reimbursement engine sits alongside the rest of your account instead of being a standalone silo.',
+      },
+    ],
+    commission: {
+      us: '15%',
+      them: '15%',
+      themAmount: '$8,500',
+      line:
+        'Refunzo matches our 15% managed rate (capped at $5,000 — better than flat 15% only on very large recoveries), and it also has a free self-file tier. So on price it is a tie: file it yourself free and keep the full $10,000 with either. The real difference is how many categories get checked and how clearly each claim is shown.',
+    },
+    faq: [
+      {
+        q: 'Is Dragon Refunds cheaper than Refunzo?',
+        a: 'On headline price they are the same: both offer free self-file reconciliation (keep 100%) and 15% managed filing. Refunzo caps its managed fee at $5,000, which is cheaper than flat 15% only if you recover very large sums (roughly $33k+). For most sellers the cost is identical — so choose on coverage and transparency, not price.',
+      },
+      {
+        q: 'What can Dragon Refunds recover that Refunzo doesn\'t?',
+        a: 'Both cover the standard lost-and-damaged and fee-overcharge categories. Dragon Refunds additionally surfaces COGS / sourcing-cost errors — where Amazon reimburses lost units below their true sourcing value — and digs deeper into warehouse-damaged and destroyed inventory. More categories checked means more recoverable dollars from the same account.',
+      },
+      {
+        q: 'Can I really file claims myself for free with both?',
+        a: 'Yes — free self-file is the shared strength here. Dragon Refunds finds every recoverable shipment, fee, and unit and hands you a step-by-step SOP to file through Seller Central yourself, keeping 100%. Hand off only what you would rather not do, for 15%.',
+      },
+      {
+        q: 'Is Dragon Refunds Amazon-compliant?',
+        a: 'Yes. Dragon Refunds connects through Amazon\'s official Selling Partner API (SP-API), read-only by default. No scraping, no gray areas — 100% Amazon Terms of Service compliant.',
+      },
+      {
+        q: 'I am evaluating both — how do I decide?',
+        a: 'Run both free reconciliations side by side — neither charges for detection. Compare what each one finds on your actual account. If Dragon Refunds surfaces COGS and sourcing-cost claims Refunzo misses, that is your answer; if you recover six figures and value the $5k cap, that is theirs. Let the free audits decide.',
+      },
+    ],
+  },
 };
 
 export function getRefundsCompetitor(slug) {
