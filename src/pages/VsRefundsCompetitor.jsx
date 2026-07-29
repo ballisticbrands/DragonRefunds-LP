@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, ArrowRight, Check, Shield, BadgeCheck, ExternalLink } from 'lucide-react';
 import { getRefundsCompetitor } from '../data/refundsCompetitors';
 import RefundsFooter from '../components/landing/RefundsFooter';
-import RefundsNavbar, { DragonRefundsBrand, REFUNDS_SIGNUP_URL as SIGNUP_URL } from '../components/landing/RefundsNavbar';
+import RefundsNavbar, { DragonRefundsBrand, REFUNDS_CTA_HREF } from '../components/landing/RefundsNavbar';
 
 /* ─── Fonts ─── */
 const monoLink = document.querySelector('link[data-roboto-mono]');
@@ -139,7 +139,7 @@ export default function VsRefundsCompetitor({ slug: slugProp }) {
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-              <a href={SIGNUP_URL}
+              <a href={REFUNDS_CTA_HREF}
                 className="px-9 py-4 text-lg bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-xl hover:shadow-[#2F7D4F]/25 hover:-translate-y-0.5 flex items-center gap-3">
                 See what Amazon owes you <ArrowRight className="w-5 h-5" />
               </a>
@@ -332,7 +332,7 @@ export default function VsRefundsCompetitor({ slug: slugProp }) {
             Connect in two minutes over Amazon's official API — read-only. The audit is free, and it's yours to keep either way.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <a href={SIGNUP_URL}
+            <a href={REFUNDS_CTA_HREF}
               className="inline-flex items-center gap-3 px-9 py-4 text-lg bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-xl hover:shadow-[#2F7D4F]/25 hover:-translate-y-0.5">
               Show me what I'm owed <ArrowRight className="w-5 h-5" />
             </a>

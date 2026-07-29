@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Check, ChevronDown, Shield, BadgeCheck } from 'lucide-react';
-import RefundsNavbar, { REFUNDS_SIGNUP_URL } from '../components/landing/RefundsNavbar';
+import RefundsNavbar, { REFUNDS_CTA_HREF } from '../components/landing/RefundsNavbar';
 import RefundsFooter from '../components/landing/RefundsFooter';
 
 const sysFont = "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
@@ -137,7 +137,7 @@ export default function Pricing() {
                     </li>
                   ))}
                 </ul>
-                <a href={REFUNDS_SIGNUP_URL}
+                <a href={REFUNDS_CTA_HREF}
                   className={`flex items-center justify-center gap-2 px-7 py-3.5 font-semibold uppercase tracking-wide rounded-lg transition-all ${plan.highlight
                     ? 'bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] hover:shadow-xl hover:shadow-[#2F7D4F]/25'
                     : 'bg-white/10 hover:bg-white/15 text-white border border-white/15 hover:border-white/30'}`}>

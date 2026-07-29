@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Sun, Moon } from 'lucide-react';
+import { REFUNDS_CTA_URL } from '../../lib/refundsEstimate';
 
 /* ─── Shared Dragon Refunds header ───
    Used by the /vs/* comparison pages and the /pricing page so every page
@@ -8,7 +9,11 @@ import { Menu, X, Sun, Moon } from 'lucide-react';
    sections, working light/dark toggle, and CTA). */
 
 const monoFont = "'Roboto Mono', monospace";
-export const REFUNDS_SIGNUP_URL = 'https://app.dragonrefunds.com/sign-up';
+
+/* Every Dragon Refunds CTA lands on the app's /sign-up, which leads with the
+   reimbursement estimate before the form. Re-exported here so the /vs/* and
+   /pricing pages have one import site for the header + its CTA. */
+export const REFUNDS_CTA_HREF = REFUNDS_CTA_URL;
 
 export const DragonRefundsBrand = () => (
   <span className="font-bold text-[22px] sm:text-[25px] text-white whitespace-nowrap" style={{ lineHeight: '1' }}>
@@ -62,7 +67,7 @@ export default function RefundsNavbar({ light, onToggle }) {
               className="p-2 rounded-lg text-white/60 hover:text-white hover:bg-white/10 transition-colors">
               {light ? <Moon size={18} /> : <Sun size={18} />}
             </button>
-            <a href={REFUNDS_SIGNUP_URL}
+            <a href={REFUNDS_CTA_HREF}
               className="px-5 py-2.5 bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] text-sm font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-lg hover:shadow-[#2F7D4F]/25">
               Find my refunds
             </a>
@@ -85,7 +90,7 @@ export default function RefundsNavbar({ light, onToggle }) {
               {navLinks.map(l => (
                 <a key={l.label} href={l.href} onClick={() => setMobileOpen(false)} className="text-lg font-medium text-white">{l.label}</a>
               ))}
-              <a href={REFUNDS_SIGNUP_URL} onClick={() => setMobileOpen(false)}
+              <a href={REFUNDS_CTA_HREF} onClick={() => setMobileOpen(false)}
                 className="mt-4 px-6 py-3 bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] text-[#0F0F0F] text-center font-semibold uppercase tracking-wide rounded-lg">
                 Find my refunds
               </a>

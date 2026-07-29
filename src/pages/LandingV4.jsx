@@ -8,6 +8,14 @@ import {
 } from 'lucide-react';
 import { sellerVideos } from '../data/sellerVideos';
 import RefundsFooter from '../components/landing/RefundsFooter';
+import { FBA_RECOVERY_RATE, REPORT_ETA_HOURS, REFUNDS_CTA_URL } from '../lib/refundsEstimate';
+
+/* Where CTAs point. Both surfaces land on the app's /sign-up, but they're
+   kept as separate constants on purpose: the refunds page sells a
+   reimbursement audit (REFUNDS_CTA_URL) and the DragonBot surface — MCP host
+   connect buttons, feature-page "Get it free" — sells the AI assistant. If
+   either brand ever gets its own entry point, only one of these moves. */
+const SIGNUP_URL = 'https://app.dragonrefunds.com/sign-up';
 
 /* ─── Fonts ─── */
 const monoLink = document.querySelector('link[data-roboto-mono]');
@@ -151,7 +159,7 @@ const REIMB_NAV_LINKS = [
   { label: 'Pricing', href: '/pricing' },
 ];
 
-function Navbar({ light, onToggle, links = navLinks, showWorksWith = true, ctaLabel = 'Get it free', brand = null }) {
+function Navbar({ light, onToggle, links = navLinks, showWorksWith = true, ctaLabel = 'Get it free', ctaHref = SIGNUP_URL, brand = null }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -190,7 +198,7 @@ function Navbar({ light, onToggle, links = navLinks, showWorksWith = true, ctaLa
               className="p-2 rounded-lg text-white/60 hover:text-white hover:bg-white/10 transition-colors">
               {light ? <Moon size={18} /> : <Sun size={18} />}
             </button>
-            <a href="https://app.dragonrefunds.com/sign-up"
+            <a href={ctaHref}
               className="px-5 py-2.5 bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] text-sm font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-lg hover:shadow-[#2F7D4F]/25">
               {ctaLabel}
             </a>
@@ -214,7 +222,7 @@ function Navbar({ light, onToggle, links = navLinks, showWorksWith = true, ctaLa
                 <a key={l.label} href={l.href} onClick={() => setMobileOpen(false)} className="text-lg font-medium text-white">{l.label}</a>
               ))}
               {showWorksWith && <WorksWithDropdownMobile onItemClick={() => setMobileOpen(false)} />}
-              <a href="https://app.dragonrefunds.com/sign-up" onClick={() => setMobileOpen(false)}
+              <a href={ctaHref} onClick={() => setMobileOpen(false)}
                 className="mt-4 px-6 py-3 bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] text-center font-semibold uppercase tracking-wide rounded-lg transition-all">
                 {ctaLabel}
               </a>
@@ -721,8 +729,8 @@ function ReimbursementDashboardV2({ feature = 'Amazon reimbursements', showHeadi
                       <td className="px-4 py-2.5 text-right whitespace-nowrap">
                         {r.action === 'sop' && (
                           <span className="inline-flex items-center gap-1.5">
-                            <span className="text-[11px] font-semibold text-white/80 border border-white/15 rounded px-2 py-0.5">Get SOP</span>
-                            <span className="text-[11px] font-semibold text-[#0F0F0F] bg-[#98CC65] rounded px-2 py-0.5">File for me</span>
+                            <span className="text-[11px] font-semibold text-white/80 border border-white/15 rounded px-2 py-0.5">File it myself</span>
+                            <span className="text-[11px] font-semibold text-[#0F0F0F] bg-[#98CC65] rounded px-2 py-0.5">File it for me</span>
                           </span>
                         )}
                         {r.action === 'details' && <span className="text-[11px] font-semibold text-[#98CC65]">Details →</span>}
@@ -741,7 +749,7 @@ function ReimbursementDashboardV2({ feature = 'Amazon reimbursements', showHeadi
                     <td className="px-3 py-2.5 text-right font-bold text-white">{data.ghost.value}</td>
                     <td className="px-3 py-2.5 whitespace-nowrap"><span className="inline-flex items-center gap-1.5 text-[#F87171]"><span className="w-1.5 h-1.5 rounded-full bg-[#F87171]" />Opportunity</span></td>
                     <td className="px-3 py-2.5 text-white/25">—</td>
-                    <td className="px-4 py-2.5 text-right"><span className="text-[11px] font-semibold text-white/80 border border-white/15 rounded px-2 py-0.5">Get SOP</span></td>
+                    <td className="px-4 py-2.5 text-right"><span className="text-[11px] font-semibold text-white/80 border border-white/15 rounded px-2 py-0.5">File it myself</span></td>
                   </tr>
                 </tbody>
               </table>
@@ -754,6 +762,22 @@ function ReimbursementDashboardV2({ feature = 'Amazon reimbursements', showHeadi
         )}
       </div>
     </div>
+  );
+}
+
+/* ─── Report turnaround badge (sandbox /refunds only) ───
+   Sits beside the refunds CTAs. Deliberately a delivery promise and NOT a
+   ticking countdown — see the note on REPORT_ETA_HOURS in
+   src/lib/refundsEstimate.js, which /get-report shares. ─── */
+function ReportEtaBadge({ compact = false, className = '' }) {
+  return (
+    <span className={`eta-badge inline-flex max-w-full items-center gap-2.5 rounded-full border px-4 py-2 text-center ${className}`}>
+      <Clock className="w-4 h-4 shrink-0" />
+      <span className={`${compact ? 'text-[12px]' : 'text-[12.5px]'} min-w-0 font-semibold leading-tight`}>
+        {compact ? 'Exact number' : 'Your exact, itemized report'} within{' '}
+        <strong className="eta-badge-strong font-extrabold">{REPORT_ETA_HOURS} hours</strong>
+      </span>
+    </span>
   );
 }
 
@@ -839,11 +863,14 @@ function ReimbursementAuditIntro() {
         ))}
       </div>
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
-        <a href="https://app.dragonrefunds.com/sign-up"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#2F7D4F] hover:bg-[#98CC65] hover:text-[#0F0F0F] text-white text-[14px] font-bold transition-colors">
-          See what Amazon owes you <ArrowRight className="w-4 h-4" />
-        </a>
+      <div className="flex flex-col items-center gap-3 mt-8">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a href={REFUNDS_CTA_URL}
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#2F7D4F] hover:bg-[#98CC65] hover:text-[#0F0F0F] text-white text-[14px] font-bold transition-colors">
+            See what Amazon owes you <ArrowRight className="w-4 h-4" />
+          </a>
+          <ReportEtaBadge />
+        </div>
         <span className="text-[12px] text-white/40">No card. No call. The audit is yours to keep either way.</span>
       </div>
     </div>
@@ -1593,11 +1620,12 @@ function ReimbursementComparePanel() {
         ))}
       </div>
 
-      <div className="flex justify-center mt-10">
-        <a href="https://app.dragonrefunds.com/sign-up"
+      <div className="flex flex-col items-center gap-4 mt-10">
+        <a href={REFUNDS_CTA_URL}
           className="px-10 py-5 text-lg bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-xl hover:shadow-[#2F7D4F]/25 hover:-translate-y-0.5 flex items-center gap-3">
           See what Amazon owes you <ArrowRight className="w-5 h-5" />
         </a>
+        <ReportEtaBadge />
       </div>
     </div>
   );
@@ -1607,18 +1635,20 @@ function ReimbursementComparePanel() {
 function ReimbursementCalculator() {
   const MIN = 100000, MAX = 10000000;
   const [revenue, setRevenue] = useState(1000000);
-  const RATE = 0.015; // ~1.5% of FBA revenue is typically recoverable
-  const recoverable = revenue * RATE;
+  const recoverable = revenue * FBA_RECOVERY_RATE;
   const fmt = n => '$' + Math.round(n).toLocaleString('en-US');
   const shortUsd = n => n >= 1000000 ? `$${n / 1000000}M` : `$${Math.round(n / 1000)}K`;
   const tiers = [
-    { label: 'DIY — file it yourself', fee: 'Free', keep: recoverable, highlight: false },
-    { label: 'Done-for-you', fee: '15% fee', keep: recoverable * 0.85, highlight: true },
-    { label: 'Typical service', fee: '25% fee', keep: recoverable * 0.75, highlight: false },
+    { label: 'DIY — file it yourself', fee: 'Free', keep: recoverable, tone: 'good' },
+    { label: 'Done-for-you', fee: '15% fee', keep: recoverable * 0.85, tone: 'best' },
+    { label: 'Typical service', fee: '25% fee', keep: recoverable * 0.75, tone: 'bad' },
   ];
+  const theirFee = recoverable * 0.25;             // what a 25% service takes
+  const extraVsDfy = recoverable * 0.10;           // 25% − 15%
+  const threeYear = theirFee * 3;                  // their take over three years
 
   return (
-    <div className="w-full max-w-3xl mx-auto">
+    <div className="reimb-calc w-full max-w-3xl mx-auto">
       <div className="text-center mb-8">
         <p className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
           Reimbursement calculator
@@ -1656,19 +1686,52 @@ function ReimbursementCalculator() {
 
         {/* what you keep, per option */}
         <div className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {tiers.map(t => (
-            <div key={t.label} className={`rounded-xl border px-4 py-4 text-center ${t.highlight ? 'border-[#2F7D4F]/40 bg-[#2F7D4F]/10' : 'border-white/10 bg-white/[0.02]'}`}>
-              <div className="text-[12px] font-semibold text-white/70">{t.label}</div>
-              <div className="text-[11px] text-white/40 mb-2">{t.fee}</div>
-              <div className={`text-xl font-extrabold tracking-[-0.02em] ${t.highlight ? 'text-[#98CC65]' : 'text-white'}`}>{fmt(t.keep)}</div>
-              <div className="text-[10px] text-white/35 mt-0.5">you keep</div>
-            </div>
-          ))}
+          {tiers.map(t => {
+            const lost = recoverable - t.keep;
+            const keptPct = (t.keep / recoverable) * 100;
+            const bad = t.tone === 'bad';
+            const best = t.tone === 'best';
+            return (
+              <div key={t.label} className={`rounded-xl border px-4 py-4 text-center ${
+                best ? 'border-[#2F7D4F]/40 bg-[#2F7D4F]/10'
+                  : bad ? 'calc-bad-card'
+                  : 'border-white/10 bg-white/[0.02]'}`}>
+                <div className="text-[12px] font-semibold text-white/70">{t.label}</div>
+                <div className={`text-[11px] mb-2 ${bad ? 'calc-lose font-semibold' : 'text-white/40'}`}>{t.fee}</div>
+                <div className={`text-xl font-extrabold tracking-[-0.02em] ${best ? 'calc-keep' : 'text-white'}`}>{fmt(t.keep)}</div>
+                <div className="text-[10px] text-white/35 mt-0.5">you keep</div>
+
+                {/* kept (solid) vs taken by fees (red track) */}
+                <div className={`mt-3 h-2 w-full rounded-full overflow-hidden flex ${bad ? 'calc-bar-track-strong' : 'calc-bar-track'}`}>
+                  <div className={`h-full ${bad ? 'calc-bar-neutral' : 'calc-bar-keep'}`} style={{ width: `${keptPct}%` }} />
+                </div>
+                <div className={`text-[11px] font-bold mt-2 ${lost > 0 ? 'calc-lose' : 'calc-keep'}`}>
+                  {lost > 0 ? `− ${fmt(lost)} to fees` : 'You lose nothing'}
+                </div>
+                {bad && (
+                  <div className="calc-bad-chip mt-2 inline-block rounded-md px-2 py-1 text-[10px] font-bold uppercase tracking-wide">
+                    {fmt(extraVsDfy)} worse than us
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* the punchline */}
+        <div className="calc-bad-card mt-4 rounded-xl border px-4 py-3 text-center">
+          <p className="text-[13px] leading-relaxed text-white/70">
+            A 25% service pockets <span className="calc-lose font-extrabold">{fmt(theirFee)}</span> of your money
+            every year — <span className="calc-lose font-extrabold">{fmt(threeYear)}</span> over three years.
+            With Dragon Refunds you keep <span className="calc-keep font-extrabold">{fmt(extraVsDfy)}</span> more
+            a year done-for-you, or <span className="calc-keep font-extrabold">{fmt(theirFee)}</span> more filing it yourself.
+          </p>
         </div>
 
         <p className="mt-5 text-center text-[11px] text-white/35 leading-relaxed">
           Estimate only, based on a typical ~1.5% FBA recovery rate. Your actual recoverable amount depends on your
-          shipments, fees, and claim history — run a free audit for the exact figure.
+          shipments, fees, and claim history — connect your account and the exact, itemized figure is yours
+          within {REPORT_ETA_HOURS} hours.
         </p>
       </div>
     </div>
@@ -2066,6 +2129,7 @@ export default function LandingV4({ page = null }) {
         links={page?.demo?.type === 'dashboard2' ? REIMB_NAV_LINKS : navLinks}
         showWorksWith={page?.demo?.type !== 'dashboard2'}
         ctaLabel={page?.demo?.type === 'dashboard2' ? 'Find my refunds' : 'Get it free'}
+        ctaHref={page?.demo?.type === 'dashboard2' ? REFUNDS_CTA_URL : SIGNUP_URL}
         brand={page?.demo?.type === 'dashboard2' ? (
           <span className="font-bold text-[22px] sm:text-[25px] text-white whitespace-nowrap" style={{ lineHeight: '1' }}>
             Dragon <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">Refunds</span>
@@ -2123,16 +2187,17 @@ export default function LandingV4({ page = null }) {
             {/* Hero CTA: feature pages get a single "Get it free" button;
                 the homepage keeps the 4 host connect buttons. */}
             {page ? (
-              <div className="flex justify-center mb-10">
-                <a href="https://app.dragonrefunds.com/sign-up"
+              <div className="flex flex-col items-center gap-4 mb-10">
+                <a href={page?.demo?.type === 'dashboard2' ? REFUNDS_CTA_URL : SIGNUP_URL}
                   className="px-10 py-5 text-lg bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-xl hover:shadow-[#2F7D4F]/25 hover:-translate-y-0.5 flex items-center gap-3">
                   {page?.demo?.type === 'dashboard2' ? 'See what Amazon owes you' : 'Get it free'} <ArrowRight className="w-5 h-5" />
                 </a>
+                {page?.demo?.type === 'dashboard2' && <ReportEtaBadge />}
               </div>
             ) : (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-3xl mx-auto mb-10">
                 {HOSTS.map(h => (
-                  <a key={h.id} href="https://app.dragonrefunds.com/sign-up"
+                  <a key={h.id} href={SIGNUP_URL}
                     className="flex items-center justify-center gap-2.5 px-4 py-3.5 bg-white/5 hover:bg-[#2F7D4F]/15 border border-white/15 hover:border-[#98CC65]/40 rounded-lg transition-all text-[13px] sm:text-sm font-semibold text-white/85 hover:text-white cursor-pointer">
                     <HostMark host={h} size={20} />
                     <span>Connect Amazon Seller Central to {h.id === 'other' ? 'any MCP client' : h.label}</span>
@@ -2450,7 +2515,7 @@ export default function LandingV4({ page = null }) {
                 </li>
               ))}
             </ul>
-            <a href="https://app.dragonrefunds.com/sign-up"
+            <a href={SIGNUP_URL}
               className="block text-center px-6 py-3 bg-white/10 hover:bg-white/15 text-white border border-white/15 hover:border-white/30 font-semibold uppercase tracking-wide rounded-lg transition-all">
               Get it free
             </a>
