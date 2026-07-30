@@ -250,17 +250,11 @@ export const lpPages = [
       ],
     },
   },
-  {
-    path: '/amazon-reimbursement',
-    template: 'feature',
-    metaTitle: 'Amazon FBA Reimbursements — Found by AI. Free Forever | DragonBot',
-    metaDescription: 'DragonBot tracks every shipment and fee across your regions and flags what Amazon owes you — lost inventory, damaged units, overcharges. File free with a step-by-step SOP and keep 100%, or let us file for 25%.',
-    hero: {
-      segments: [{ text: 'Amazon FBA reimbursements.', color: O }, { text: 'Every lost dollar, found.', color: W }, { text: 'Free forever.', color: G }],
-      paragraph: 'DragonBot watches every shipment, fee, and unit across your regions and programs — FBA and AWD, US, Canada, EU — and flags what Amazon owes you the moment it\'s recoverable: lost inventory, damaged units, short-received shipments, fee overcharges. File it yourself with a step-by-step SOP and keep 100%, or hand it off and we file for 25% of what we recover. Detection is free forever.',
-    },
-    demo: { type: 'dashboard', feature: 'Amazon reimbursements' },
-  },
+  // NOTE: '/amazon-reimbursement' (DragonBot's 25%-managed reimbursement page)
+  // was removed here — it is vestigial on this domain and contradicted the
+  // Dragon Refunds 15% pricing. It still lives in DragonBotLP (getdragonbot.com),
+  // where Google Ads points at it and 25% is the correct DragonBot price.
+  // On dragonrefunds.com the path now falls through to the '/refunds' catch-all.
   {
     path: '/amazon-product-research',
     template: 'feature',
