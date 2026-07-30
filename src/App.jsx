@@ -1,5 +1,6 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { lazy, Suspense, useEffect } from 'react';
+import { trackRouteChange } from './lib/track';
 // LandingV4 stays eagerly imported: it renders "/" (the primary ad
 // destination) plus every 'feature' LP route, so it's on the critical path.
 // Every other page is code-split so it no longer ships in the homepage bundle.
@@ -31,9 +32,22 @@ const LpPage = lazy(() => import('./pages/LpPage'));
 // nav/footer links keep resolving.
 const refundsPage = lpPages.find(p => p.path === '/refunds');
 
+// Reports every route to GA4 + the Meta Pixel. Renders nothing; must live
+// INSIDE <Router> so useLocation() has a router context. index.html only
+// fires a pageview on hard load, so without this every client-side
+// navigation goes uncounted — see trackRouteChange() in lib/track.js.
+function RouteAnalytics() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    trackRouteChange(pathname);
+  }, [pathname]);
+  return null;
+}
+
 function App() {
   return (
     <Router>
+      <RouteAnalytics />
       <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<LandingV4 page={refundsPage} />} />

@@ -37,8 +37,32 @@
       gtag('js', new Date());
       gtag('config', 'G-H3DKKWESYR');
     </script>
+    <!-- Meta Pixel. Own dataset for dragonrefunds.com — deliberately NOT
+         DragonBot's pixel, which this LP inherited and dropped in 535effd:
+         both brands run the same shared code firing identical event names,
+         so one dataset would make them separable only by URL filter.
+         Subsequent (client-side) route changes fire PageView from
+         src/lib/track.js — this only covers the initial hard load. -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1030872029657370');
+      fbq('track', 'PageView');
+    </script>
   </head>
   <body>
+    <!-- Meta Pixel no-JS fallback. Meta's copy-paste snippet puts this in
+         <head>, but <noscript> there may only hold <link>/<style>/<meta> —
+         an <img> is a parse error and Vite's HTML parser rejects the build.
+         It belongs in <body>. -->
+    <noscript><img height="1" width="1" style="display:none" alt=""
+      src="https://www.facebook.com/tr?id=1030872029657370&ev=PageView&noscript=1" /></noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
