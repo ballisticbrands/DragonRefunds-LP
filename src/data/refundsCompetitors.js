@@ -1050,6 +1050,774 @@ export const refundsCompetitors = {
       },
     ],
   },
+  'refund-hawk': {
+    name: 'Refund Hawk',
+    metaTitle: 'Dragon Refunds vs Refund Hawk: FBA Reimbursements Compared (2026)',
+    metaDescription:
+      'Honest comparison of Dragon Refunds and Refund Hawk for Amazon FBA reimbursements. Refund Hawk files your claims for an unpublished commission. Dragon Refunds shows you every recoverable dollar, lets you file free and keep 100%, or hands it off for a published 15%.',
+    eyebrow: 'Dragon Refunds vs Refund Hawk',
+    h1: {
+      plain: 'Refund Hawk files your claims for an unpublished commission.',
+      accent: 'Dragon Refunds publishes its price: file free yourself, or 15% managed.',
+    },
+    subhead:
+      'Refund Hawk is a full-service recovery agency — a US-based team that manually audits and files cases for Amazon 3P sellers and 1P vendors, plus TikTok Shop and retail deductions. It charges a commission only on what it recovers, but the rate is not published — you find out after the audit call. Dragon Refunds is a transparent reimbursement platform: it pinpoints the source of every claim, lets you file it yourself for free, or hands it off for a flat, published 15%. Here is an honest, side-by-side breakdown.',
+    tldr: {
+      them:
+        'Choose Refund Hawk if you also need 1P vendor recovery — chargebacks, shortages, retail deductions — or TikTok Shop, and you are comfortable with a commission rate that is quoted after a call rather than published on the site.',
+      us:
+        'Choose Dragon Refunds if FBA reimbursements are the point: see exactly where every dollar came from, keep the option to file yourself for free, and pay a flat, published 15% — no audit call required to learn the price.',
+    },
+    compare: [
+      {
+        label: 'Transparency',
+        rows: [
+          { feature: 'Flat, published pricing', values: ['yes', 'no'] },
+          { feature: 'Shows the cause of each claim', note: 'lost / damaged / dimension / COGS',
+            values: [{ t: 'Itemized per claim' }, 'partial'] },
+          { feature: 'Full claim ledger', note: 'found → filed → paid → denied',
+            values: ['yes', 'partial'] },
+        ],
+      },
+      {
+        label: 'What we recover',
+        rows: [
+          { feature: 'Lost / damaged shipments', values: ['yes', 'yes'] },
+          { feature: 'Warehouse-damaged & destroyed inventory', values: ['yes', 'partial'] },
+          { feature: 'FBA dimension / weight fee overcharges', values: ['yes', 'yes'] },
+          { feature: 'COGS & sourcing-cost errors', values: ['yes', 'no'] },
+          { feature: '1P vendor chargebacks & retail deductions', note: 'their specialty',
+            values: ['no', 'yes'] },
+        ],
+      },
+      {
+        label: 'How it works',
+        rows: [
+          { feature: 'Free tier — find and file yourself at no cost', note: 'DIY',
+            values: ['yes', 'no'] },
+          { feature: 'Managed commission', values: [{ t: 'Flat 15%' }, { t: '% (unpublished)' }] },
+          { feature: 'Free audit', values: [{ t: 'Self-serve, ~2 min' }, { t: 'Booked with their team' }] },
+          { feature: 'Who files', values: [{ t: 'You, or us' }, { t: 'They do' }] },
+        ],
+      },
+    ],
+    themWins: [
+      {
+        title: '1P vendor and retail recovery',
+        desc:
+          'Refund Hawk goes where most FBA tools do not: Amazon 1P vendor chargebacks and shortages, plus retail deductions at Walmart and Target and TikTok Shop recovery. If you sell 1P or across channels, that breadth is genuinely theirs.',
+      },
+      {
+        title: 'A real, US-based human team',
+        desc:
+          'Their pitch is a 100% U.S.-based team of analysts and account specialists who manually audit and submit every case inside Amazon\'s terms of service — a careful, human approach on messy claims that need documentation.',
+      },
+      {
+        title: 'Honest no-win, no-fee structure',
+        desc:
+          'No subscription, no upfront cost — "only pay if we win." You owe a commission only after the money is back in your account, which keeps their incentives aligned with yours.',
+      },
+      {
+        title: 'Fast turnaround on the audit',
+        desc:
+          'They advertise completing the initial account audit within 24 hours of connecting, backed by an agency pedigree (associated with the Pirawna Amazon agency and Caldicot Capital).',
+      },
+    ],
+    usWins: [
+      {
+        title: 'A published price, not a quote',
+        desc:
+          'Refund Hawk\'s commission is not on their website — you learn the rate after the audit call. Dragon Refunds\' price is public and flat: file it yourself free and keep 100%, or 15% managed. You can calculate your cost before you connect.',
+      },
+      {
+        title: 'File it yourself and keep 100%',
+        desc:
+          'Refund Hawk files everything and takes its cut of all of it. Dragon Refunds has a free tier: it finds the money and hands you a step-by-step SOP so you can file the easy claims through Seller Central yourself and keep every dollar.',
+      },
+      {
+        title: 'You see where every dollar came from',
+        desc:
+          'Refund Hawk gives you a reporting dashboard of recoveries. Dragon Refunds itemizes the cause of every claim — the exact lost shipment, damaged unit, dimension mismatch, or COGS error — and keeps the full found → filed → paid → denied ledger visible.',
+      },
+      {
+        title: 'Recovers COGS & sourcing-cost errors',
+        desc:
+          'Refund Hawk\'s 3P scope covers the standard categories — lost and damaged inventory, unreturned refunds, inbound errors, fee miscalculations. Dragon Refunds also catches COGS / sourcing-cost errors, where Amazon reimburses lost units below their true value.',
+      },
+      {
+        title: 'Audit in ~2 minutes, no call required',
+        desc:
+          'Refund Hawk\'s free audit starts with booking a call with their team. Dragon Refunds connects read-only through Amazon\'s official SP-API and shows your audit results in about two minutes — self-serve, no meeting on your calendar.',
+      },
+    ],
+    commission: {
+      us: '15%',
+      them: '% (unpublished)',
+      themAmount: '$10,000 − their cut',
+      line:
+        'Refund Hawk charges a percentage of successful recoveries, but the rate is not published — you find out after the audit call. Dragon Refunds is flat and public: file it yourself free and keep the full $10,000, or hand it off for 15% and keep $8,500. No call required.',
+    },
+    faq: [
+      {
+        q: 'How much does Refund Hawk charge compared to Dragon Refunds?',
+        a: 'Refund Hawk charges a commission on successful recoveries with no monthly fees, but the exact percentage is not published on their site — it is quoted after their free audit call. Dragon Refunds publishes its price: detection and self-file guides are free (you keep 100%), and managed filing is a flat 15% of what is recovered. On $10,000 recovered at 15%, you keep $8,500 — and you know that number before you connect.',
+      },
+      {
+        q: 'Can I really file claims myself for free?',
+        a: 'Yes. Dragon Refunds\' free tier finds every recoverable shipment, fee, and unit and gives you a step-by-step SOP to file it through Seller Central yourself. You keep 100%. Hand off only the claims you would rather not do — for 15%. Refund Hawk has no self-file option: their team files everything and takes the commission on all of it.',
+      },
+      {
+        q: 'Is Dragon Refunds Amazon-compliant?',
+        a: 'Yes. Dragon Refunds connects through Amazon\'s official Selling Partner API (SP-API), read-only by default. No scraping, no gray areas — 100% Amazon Terms of Service compliant. (Refund Hawk also emphasizes ToS-safe manual filing — that bar is shared.)',
+      },
+      {
+        q: 'What does Refund Hawk cover that Dragon Refunds doesn\'t?',
+        a: 'Honest answer: 1P vendor recovery. Refund Hawk handles Amazon Vendor chargebacks and shortages, TikTok Shop recovery, and retail deductions at Walmart and Target. Dragon Refunds is built for Amazon 3P FBA reimbursements. If you are a 1P vendor or need multi-channel deduction recovery, Refund Hawk\'s scope is genuinely broader; if you are an FBA seller, Dragon Refunds checks more FBA claim categories, including COGS / sourcing-cost errors.',
+      },
+      {
+        q: 'I already use Refund Hawk — is switching hard?',
+        a: 'No. Connect Dragon Refunds in about two minutes over the official API and it audits your entire reimbursement history — including categories like COGS / sourcing-cost errors that a standard four-category audit skips. You can run both side by side while you decide; the audit is free either way.',
+      },
+    ],
+  },
+  'refund-labs': {
+    name: 'RefundLabs',
+    metaTitle: 'Dragon Refunds vs RefundLabs: FBA Reimbursements Compared (2026)',
+    metaDescription:
+      'Honest comparison of Dragon Refunds and RefundLabs for Amazon FBA reimbursements. RefundLabs files your claims for an undisclosed commission. Dragon Refunds shows you every recoverable dollar, lets you file free and keep 100%, or hands it off for a published 15%.',
+    eyebrow: 'Dragon Refunds vs RefundLabs',
+    h1: {
+      plain: 'RefundLabs files your claims for an undisclosed commission.',
+      accent: 'Dragon Refunds publishes its price: free self-file, or 15% managed.',
+    },
+    subhead:
+      'RefundLabs is a small, fully managed reimbursement service: a Core Engine scans your account, a dedicated Recovery Specialist manually reviews and files every claim, and you pay a commission on each approved reimbursement — but the rate is not published on their site. Dragon Refunds takes the opposite approach: transparent detection, a free self-file tier where you keep 100%, and a flat, published 15% when you want it handled. Here is an honest, side-by-side breakdown.',
+    tldr: {
+      them:
+        'Choose RefundLabs if you want a hands-off boutique service where a human specialist manually reviews and files every claim, you never pay unless Amazon actually pays you, and you are comfortable learning the commission rate after you sign up.',
+      us:
+        'Choose Dragon Refunds if you want to know the price before you connect — free to self-file and keep 100%, or a published 15% managed — plus coverage of COGS / sourcing-cost errors most services skip.',
+    },
+    compare: [
+      {
+        label: 'Pricing and the model',
+        rows: [
+          { feature: 'Free tier — find and file yourself at no cost', note: 'DIY',
+            values: ['yes', 'no'] },
+          { feature: 'Managed commission', values: [{ t: '15%, published' }, { t: 'Undisclosed %' }] },
+          { feature: 'Price published before you connect', values: ['yes', 'no'] },
+          { feature: 'Who files', values: [{ t: 'You, or us' }, { t: 'They do' }] },
+        ],
+      },
+      {
+        label: 'What we recover',
+        rows: [
+          { feature: 'Lost / damaged shipments', values: ['yes', 'yes'] },
+          { feature: 'Fee overcharges', values: ['yes', 'yes'] },
+          { feature: 'Warehouse-damaged & destroyed inventory', values: ['yes', 'partial'] },
+          { feature: 'COGS & sourcing-cost errors', values: ['yes', 'no'] },
+        ],
+      },
+      {
+        label: 'Transparency',
+        rows: [
+          { feature: 'Shows the cause of each claim', note: 'lost / damaged / dimension / COGS',
+            values: [{ t: 'Itemized per claim' }, 'partial'] },
+          { feature: 'Full claim ledger', note: 'found → filed → paid → denied',
+            values: ['yes', 'partial'] },
+        ],
+      },
+    ],
+    themWins: [
+      {
+        title: 'A human reviews and files every claim',
+        desc:
+          'RefundLabs assigns a dedicated Recovery Specialist to each account, and every claim is individually reviewed and manually filed. If you want a boutique, done-for-you service with a named person on your account, that is exactly what they sell.',
+      },
+      {
+        title: 'Truly pay-on-success, with no monthly fees',
+        desc:
+          'It is free to open an account, there are no monthly fees, and you are only charged after Amazon approves a claim they filed. You can even sign up without billing information and see their analysis of your account before entering a payment method.',
+      },
+      {
+        title: 'Broad event detection with per-claim invoicing',
+        desc:
+          'Their Core Engine analyzes 18 months of account data across 27+ reimbursable event types — including unreturned customer returns — and their invoices itemize what they charged on each individual claim, which is more billing transparency than many managed services offer.',
+      },
+    ],
+    usWins: [
+      {
+        title: 'You know the price before you connect',
+        desc:
+          'RefundLabs charges a commission on each approved claim, but the percentage is not published on their site — you find out after signing up. Dragon Refunds publishes its pricing up front: self-file for free and keep 100%, or a flat 15% managed. No surprises after the audit.',
+      },
+      {
+        title: 'File it yourself and keep 100%',
+        desc:
+          'RefundLabs is managed-only: they file, they take a cut of everything. Dragon Refunds has a free tier — it finds every recoverable shipment, fee, and unit and hands you a step-by-step SOP to file through Seller Central yourself, keeping every dollar.',
+      },
+      {
+        title: 'Recovers categories RefundLabs skips',
+        desc:
+          'Beyond the shared lost-and-damaged and fee-overcharge claims, Dragon Refunds chases COGS / sourcing-cost errors — cases where Amazon reimburses lost units below their true value — and digs into warehouse-damaged and destroyed inventory. More categories checked means more dollars found.',
+      },
+      {
+        title: 'Full ledger, itemized causes',
+        desc:
+          'RefundLabs shows you the claims they chose to file. Dragon Refunds shows you everything it found — the exact lost shipment, damaged unit, fee mismatch, or COGS error behind each claim — and keeps the full found → filed → paid → denied ledger visible, including what you have not filed yet.',
+      },
+      {
+        title: 'Part of a broader Amazon operator',
+        desc:
+          'RefundLabs is a standalone recovery service run by a very small team. Dragon Refunds is built on the same platform as a full Amazon operator — reimbursements sit alongside the rest of your account, and Amazon pays recoveries directly to your seller account; we never touch your money.',
+      },
+    ],
+    commission: {
+      us: '15%',
+      them: 'Undisclosed',
+      themAmount: '$10,000 − ?',
+      line:
+        'RefundLabs charges a commission on each claim Amazon approves — no monthly fees, pay only on success — but the percentage is not published anywhere on their site, so we cannot tell you what you would keep of a $10,000 recovery. With Dragon Refunds the math is public: file it yourself free and keep the full $10,000, or hand it off at 15% and keep $8,500.',
+    },
+    faq: [
+      {
+        q: 'Is Dragon Refunds cheaper than RefundLabs?',
+        a: 'We honestly cannot compare exact numbers, because RefundLabs does not publish its commission rate — their FAQ confirms they charge a percentage of each approved reimbursement, but the percentage is only disclosed after you sign up. Dragon Refunds publishes its pricing: free self-file (keep 100%) or a flat 15% managed. At minimum, every claim you file yourself with us is cheaper than any commission.',
+      },
+      {
+        q: 'How does RefundLabs pricing actually work?',
+        a: 'RefundLabs is free to join with no monthly fees. Their Core Engine analyzes your account, a Recovery Specialist manually files claims, and when Amazon approves a claim they charge a commission on that reimbursement. You can see their analysis before adding billing details — but the commission rate itself is not stated on their public site.',
+      },
+      {
+        q: 'Can I really file claims myself for free with Dragon Refunds?',
+        a: 'Yes. The free tier finds every recoverable shipment, fee, and unit and gives you a step-by-step SOP to file through Seller Central yourself — you keep 100%. RefundLabs has no self-file option; every recovered dollar carries their commission. With us, hand off only what you would rather not do, for 15%.',
+      },
+      {
+        q: 'What can Dragon Refunds recover that RefundLabs doesn\'t?',
+        a: 'Both cover lost and damaged inventory, unresolved shipment discrepancies, and fee overcharges. Dragon Refunds additionally surfaces COGS / sourcing-cost errors — where Amazon reimburses lost units below their true sourcing value — and digs deeper into warehouse-damaged and destroyed inventory. RefundLabs advertises 27+ event types, but COGS-level auditing is not among them.',
+      },
+      {
+        q: 'Is Dragon Refunds Amazon-compliant?',
+        a: 'Yes. Dragon Refunds connects through Amazon\'s official Selling Partner API (SP-API), read-only by default. No scraping, no gray areas — 100% Amazon Terms of Service compliant. The free audit shows results in about two minutes.',
+      },
+      {
+        q: 'I am evaluating both — how do I decide?',
+        a: 'Run the Dragon Refunds free audit first — it costs nothing and shows every recoverable claim with its cause in about two minutes. Then, if you want a fully managed human service, ask RefundLabs what their commission rate is before connecting your account, and compare it to our published 15%. If their rate is higher — or you would rather file the easy claims yourself for free — the math decides for you.',
+      },
+    ],
+  },
+  'refundpros': {
+    name: 'RefundPros',
+    metaTitle: 'Dragon Refunds vs RefundPros: FBA Reimbursements Compared (2026)',
+    metaDescription:
+      'Honest comparison of Dragon Refunds and RefundPros for Amazon FBA reimbursements. RefundPros files your claims for up to 25% of recoveries. Dragon Refunds shows you every recoverable dollar, lets you file free and keep 100%, or hands it off for 15%.',
+    eyebrow: 'Dragon Refunds vs RefundPros',
+    h1: {
+      plain: 'RefundPros files your claims and takes up to 25%.',
+      accent: 'Dragon Refunds shows you every dollar — and charges 15%.',
+    },
+    subhead:
+      'RefundPros is a Canadian recovery agency that has audited refunds since 2016 — carrier shipping refunds, Walmart WFS, Amazon Vendor, and Amazon FBA — with an in-house team that files everything for you and keeps up to 25% of what comes back. Dragon Refunds is a transparent FBA reimbursement platform: it pinpoints the source of every claim, lets you file it yourself for free, or hands it off for 15%. Here is an honest, side-by-side breakdown.',
+    tldr: {
+      them:
+        'Choose RefundPros if you want a hands-off, human-reviewed agency with a 5.0 Trustpilot rating and years of history — especially if you also want UPS/FedEx shipping refunds and Walmart WFS audits handled by the same vendor, and you are fine paying up to 25% of recoveries.',
+      us:
+        'Choose Dragon Refunds if you want an instant free audit that itemizes every recoverable dollar, the option to file yourself and keep 100%, and a flat published 15% — not a negotiated up-to-25% — when you hand it off.',
+    },
+    compare: [
+      {
+        label: 'How it works',
+        rows: [
+          { feature: 'Free tier — find and file yourself at no cost', note: 'DIY',
+            values: ['yes', 'no'] },
+          { feature: 'Managed commission', values: [{ t: '15%' }, { t: 'Up to 25%' }] },
+          { feature: 'Who files', values: [{ t: 'You, or us' }, { t: 'They do' }] },
+          { feature: 'See results without a sales call', note: 'audit in ~2 minutes',
+            values: ['yes', 'no'] },
+        ],
+      },
+      {
+        label: 'What we recover',
+        rows: [
+          { feature: 'Lost / damaged shipments', values: ['yes', 'yes'] },
+          { feature: 'FBA fee overcharges', note: 'weight / dimension errors',
+            values: ['yes', 'yes'] },
+          { feature: 'Warehouse-damaged & destroyed inventory', values: ['yes', 'partial'] },
+          { feature: 'COGS & sourcing-cost errors', values: ['yes', 'no'] },
+        ],
+      },
+      {
+        label: 'Transparency',
+        rows: [
+          { feature: 'Shows the cause of each claim', note: 'lost / damaged / dimension / COGS',
+            values: [{ t: 'Itemized per claim' }, 'partial'] },
+          { feature: 'Full claim ledger', note: 'found → filed → paid → denied',
+            values: ['yes', 'partial'] },
+          { feature: 'Published, flat commission rate', values: ['yes', 'no'] },
+        ],
+      },
+    ],
+    themWins: [
+      {
+        title: 'Excellent reviews and a real track record',
+        desc:
+          'RefundPros has operated since 2016 and holds a 5.0 Trustpilot rating across roughly 150 reviews. Sellers consistently describe the process as effortless and nearly 100% hands-off. That depth of verified social proof is a genuine strength.',
+      },
+      {
+        title: 'One vendor for FBA, Walmart, and shipping refunds',
+        desc:
+          'Beyond Amazon FBA, RefundPros audits Amazon Vendor Central, Walmart WFS, and carrier invoices — UPS, FedEx, Canada Post, Purolator. If you ship parcels or sell on Walmart too, consolidating recovery with one agency has real appeal. Dragon Refunds is Amazon-only.',
+      },
+      {
+        title: 'Human review before every claim',
+        desc:
+          'Their in-house team (no offshore outsourcing) manually verifies each case before it is submitted, guarding against duplicate filings and policy conflicts. For sellers nervous about compliance, an expert reviewing every claim is reassuring.',
+      },
+      {
+        title: 'Negotiable rates for large accounts',
+        desc:
+          'RefundPros\' commission scales with your annual FBA sales volume. A very large seller may negotiate a rate below their standard cut — if you have the volume and the appetite to haggle, that flexibility can work in your favor.',
+      },
+    ],
+    usWins: [
+      {
+        title: 'File it yourself and keep 100%',
+        desc:
+          'RefundPros is managed-only: they file everything and take a cut of all of it. Dragon Refunds has a free tier: it finds the money and hands you a step-by-step SOP so you can file claims through Seller Central yourself and keep every dollar.',
+      },
+      {
+        title: 'A flat, published 15% — no negotiation required',
+        desc:
+          'RefundPros does not publish its rate; it says you keep "a minimum of 75%," which means up to 25% depending on what you negotiate. Dragon Refunds charges a flat 15% for managed filing, published up front. On $10,000 recovered at their standard cut, that is $1,000 more in your pocket — with no haggling.',
+      },
+      {
+        title: 'Instant audit, no discovery call',
+        desc:
+          'RefundPros\' flow starts with a contact form or a booked call with a specialist. Dragon Refunds connects over Amazon\'s official SP-API and shows your full recoverable amount in about two minutes — before you talk to anyone.',
+      },
+      {
+        title: 'You see where every dollar came from',
+        desc:
+          'A managed agency hands you a recovered total. Dragon Refunds itemizes the cause of every claim — the exact lost shipment, damaged unit, dimension mismatch, or COGS error — and keeps the full found → filed → paid → denied ledger visible at all times.',
+      },
+      {
+        title: 'Recovers claim types RefundPros skips',
+        desc:
+          'Dragon Refunds also chases COGS / sourcing-cost errors — cases where Amazon reimburses lost units below their true sourcing value — and digs into destroyed inventory. More categories checked means more dollars found from the same account.',
+      },
+    ],
+    commission: {
+      us: '15%',
+      them: 'Up to 25%',
+      themAmount: '$7,500',
+      line:
+        'RefundPros does not publish an exact commission — its site says you keep "a minimum of 75% of every reimbursement," with rates negotiable by annual FBA sales volume. At that standard cut, $10,000 recovered leaves you $7,500 with RefundPros versus $8,500 at Dragon Refunds\' flat 15% — or the full $10,000 if you file it yourself on the free tier.',
+    },
+    faq: [
+      {
+        q: 'How much cheaper is Dragon Refunds than RefundPros?',
+        a: 'RefundPros does not publish an exact rate — it commits only to leaving you "a minimum of 75% of every reimbursement," meaning up to 25% commission, negotiable by sales volume. Dragon Refunds charges a flat, published 15% for managed filing. On $10,000 recovered at RefundPros\' standard cut you keep $7,500; with Dragon Refunds you keep $8,500 — and any claim you file yourself through the free tier costs nothing at all.',
+      },
+      {
+        q: 'Can I really file claims myself for free?',
+        a: 'Yes. Dragon Refunds\' free tier finds every recoverable shipment, fee, and unit and gives you a step-by-step SOP to file it through Seller Central yourself. You keep 100%. RefundPros has no self-file option — every reimbursement they recover carries their commission.',
+      },
+      {
+        q: 'Doesn\'t RefundPros also handle Walmart and shipping refunds?',
+        a: 'Yes — that is their genuine edge. RefundPros audits Amazon Vendor Central, Walmart WFS, and carrier invoices (UPS, FedEx, Canada Post, Purolator) alongside FBA. Dragon Refunds focuses exclusively on Amazon, which is why it goes deeper there: COGS / sourcing-cost errors, destroyed inventory, and a fully itemized claim ledger.',
+      },
+      {
+        q: 'Is Dragon Refunds Amazon-compliant?',
+        a: 'Yes. Dragon Refunds connects through Amazon\'s official Selling Partner API (SP-API), read-only by default. No scraping, no gray areas — 100% Amazon Terms of Service compliant. RefundPros also uses Amazon\'s App Authorization system, so both are legitimate on this front.',
+      },
+      {
+        q: 'What can Dragon Refunds recover that RefundPros doesn\'t?',
+        a: 'Both cover lost inbound shipments, warehouse-damaged goods, return errors, and FBA fee overcharges. Dragon Refunds additionally surfaces COGS / sourcing-cost errors — where Amazon reimburses lost units below their true sourcing value — and digs into destroyed inventory, categories a standard discrepancy audit leaves on the table.',
+      },
+      {
+        q: 'I already use RefundPros — is switching hard?',
+        a: 'No. Connect Dragon Refunds in about two minutes over the official API and it audits your entire reimbursement history — including what your current process quietly missed. You can run the free audit alongside RefundPros with zero risk and let the results decide.',
+      },
+    ],
+  },
+  'hawkways': {
+    name: 'Hawkways',
+    metaTitle: 'Dragon Refunds vs Hawkways: FBA Reimbursements Compared (2026)',
+    metaDescription:
+      'Honest comparison of Dragon Refunds and Hawkways for Amazon FBA reimbursements. Hawkways is a full-service agency where reimbursement is one service among many, priced by quote. Dragon Refunds is a dedicated product: free self-file to keep 100%, or 15% managed.',
+    eyebrow: 'Dragon Refunds vs Hawkways',
+    h1: {
+      plain: 'Hawkways is a full-service agency — reimbursements are one service of twelve.',
+      accent: 'Dragon Refunds does one thing: get your money back — free DIY, or 15%.',
+    },
+    subhead:
+      'Hawkways is a US-based, full-service Amazon agency: PPC, listings, account management, and — somewhere on the menu — FBA reimbursements, filed manually by their team under quote-based "tailored plans." Dragon Refunds is a dedicated reimbursement product: it pinpoints the source of every claim, lets you file it yourself for free, or hands it off for a flat, published 15%. Here is an honest, side-by-side breakdown.',
+    tldr: {
+      them:
+        'Choose Hawkways if you want one agency running your whole Amazon account — PPC, listings, account management — with reimbursements handled by the same team as part of the relationship, and you are comfortable getting the reimbursement price on a call rather than a pricing page.',
+      us:
+        'Choose Dragon Refunds if reimbursements are the point: itemized detection you can act on free (keep 100%), broader claim coverage including COGS errors, and a flat published 15% when you want it handled — no retainer, no sales call.',
+    },
+    compare: [
+      {
+        label: 'Transparency',
+        rows: [
+          { feature: 'Shows the cause of each claim', note: 'lost / damaged / dimension / COGS',
+            values: [{ t: 'Itemized per claim' }, 'partial'] },
+          { feature: 'Full claim ledger', note: 'found → filed → paid → denied',
+            values: ['yes', { t: 'Monthly reports' }] },
+          { feature: 'Flat, published pricing', values: ['yes', 'no'] },
+        ],
+      },
+      {
+        label: 'What we recover',
+        rows: [
+          { feature: 'Lost / damaged shipments', values: ['yes', 'yes'] },
+          { feature: 'Warehouse-damaged & destroyed inventory', values: ['yes', 'yes'] },
+          { feature: 'FBA dimension / weight fee overcharges', values: ['yes', 'yes'] },
+          { feature: 'COGS & sourcing-cost errors', values: ['yes', 'no'] },
+        ],
+      },
+      {
+        label: 'How it works',
+        rows: [
+          { feature: 'Free tier — find and file yourself at no cost', note: 'DIY',
+            values: ['yes', 'no'] },
+          { feature: 'Managed commission', values: [{ t: 'Flat 15%' }, { t: 'Quote-based' }] },
+          { feature: 'Who files', values: [{ t: 'You, or us' }, { t: 'They do' }] },
+          { feature: 'Dedicated reimbursement product', values: ['yes', { t: 'Agency side-service' }] },
+        ],
+      },
+    ],
+    themWins: [
+      {
+        title: 'One partner for the whole account',
+        desc:
+          'Hawkways runs PPC, listings, SEO, account management, and reimbursements under one roof. If you want a single agency accountable for everything on Amazon — not just claims — that bundle is genuinely their pitch.',
+      },
+      {
+        title: 'Human, manual filing',
+        desc:
+          'Their team files claims manually through Seller Support with documentation — they explicitly state they never use prohibited automation or bots. On messy, non-standard cases, experienced human filers are a real asset.',
+      },
+      {
+        title: 'An established agency track record',
+        desc:
+          'Hawkways reports serving 250+ FBA brands with a 4.9/5 average client rating and a Top Rated Upwork agency profile. If you weigh agency credentials and social proof, they have a real base of it.',
+      },
+    ],
+    usWins: [
+      {
+        title: 'A dedicated product, not a menu item',
+        desc:
+          'For Hawkways, reimbursement is one of a dozen services. Dragon Refunds is built for exactly this: it itemizes the cause of every claim — the exact lost shipment, damaged unit, dimension mismatch, or COGS error — and keeps the full found → filed → paid → denied ledger visible, not a monthly summary.',
+      },
+      {
+        title: 'File it yourself and keep 100%',
+        desc:
+          'Hawkways audits for free, but the filing is theirs — on a plan. Dragon Refunds has a free tier: it finds the money and hands you a step-by-step SOP so you can file the easy claims yourself through Seller Central and keep every dollar.',
+      },
+      {
+        title: 'Flat, published 15% — no sales call',
+        desc:
+          'Hawkways prices reimbursements through "tailored plans based on your catalog and recovery volume" — you find out the cost after the audit. Dragon Refunds\' price is on the website: free self-file, or 15% managed. You know your cost before you connect.',
+      },
+      {
+        title: 'Recovers COGS & sourcing-cost errors',
+        desc:
+          'Hawkways covers the standard categories — lost, damaged, fee errors, unreturned refunds. Dragon Refunds also catches COGS / sourcing-cost errors — where Amazon reimburses lost units below their true value — a category their published scope does not include.',
+      },
+      {
+        title: 'Results in minutes, over the official API',
+        desc:
+          'Dragon Refunds connects through Amazon\'s official SP-API, read-only by default, and the free audit shows what is recoverable in about two minutes — no onboarding an agency, no waiting on an audit deliverable. And Amazon pays reimbursements straight to your seller account; nobody sits between you and the money.',
+      },
+    ],
+    commission: {
+      us: '15%',
+      them: 'Quote-based',
+      themAmount: '$10,000 − ?',
+      line:
+        'Hawkways does not publish a reimbursement commission — pricing is a "tailored plan" you learn after the audit. Dragon Refunds is published and flat: file it yourself free and keep the full $10,000, or hand it off for 15% and keep $8,500. No call required.',
+    },
+    faq: [
+      {
+        q: 'How much does Hawkways charge for reimbursements, and how does Dragon Refunds compare?',
+        a: 'Hawkways does not publish a price for its reimbursement service — the site says plans are "tailored based on your catalog and recovery volume," so you learn the cost after the free audit. Dragon Refunds publishes its pricing: detection and self-file guides are free (you keep 100%), and managed filing is a flat 15% of what is recovered.',
+      },
+      {
+        q: 'Isn\'t it better to have one agency handle everything?',
+        a: 'Sometimes — if you also want PPC, listings, and account management handled, an agency retainer bundles it all. But if reimbursements are what you came for, a dedicated product goes deeper: itemized claim causes, a full claim ledger, COGS-error coverage, and a free self-file path no agency offers. The two can also coexist — many Hawkways-style agency clients run their own reimbursement tool.',
+      },
+      {
+        q: 'Can I really file claims myself for free?',
+        a: 'Yes. Dragon Refunds\' free tier finds every recoverable shipment, fee, and unit and gives you a step-by-step SOP to file it through Seller Central yourself. You keep 100%. Hand off only the claims you would rather not do — for 15%.',
+      },
+      {
+        q: 'Is Dragon Refunds Amazon-compliant?',
+        a: 'Yes. Dragon Refunds connects through Amazon\'s official Selling Partner API (SP-API), read-only by default. No scraping, no gray areas — 100% Amazon Terms of Service compliant. (Hawkways likewise emphasizes manual, bot-free filing — both approaches stay inside Amazon\'s rules.)',
+      },
+      {
+        q: 'What can Dragon Refunds recover that Hawkways doesn\'t?',
+        a: 'Hawkways\' published scope covers lost inventory, warehouse damage, dimension and referral fee errors, unrestocked returns, and refunds issued without a return. Dragon Refunds covers those and adds COGS / sourcing-cost errors — cases where Amazon reimburses lost or damaged units below their true sourcing value.',
+      },
+      {
+        q: 'I already work with Hawkways — can I still use Dragon Refunds?',
+        a: 'Yes. Connect Dragon Refunds in about two minutes over the official API and the free audit shows every recoverable claim — including anything an agency workflow quietly missed. Keep the agency for PPC and listings if it is working; let the free audit tell you whether the reimbursement side is leaving money on the table.',
+      },
+    ],
+  },
+  'refundpad': {
+    name: 'RefundPad',
+    metaTitle: 'Dragon Refunds vs RefundPad: FBA Reimbursements Compared (2026)',
+    metaDescription:
+      'RefundPad sold DIY FBA reimbursement reports for $19/mo — but its site now shows only an "under construction" page. Dragon Refunds is the live alternative: free self-file, or 15% managed filing.',
+    eyebrow: 'Dragon Refunds vs RefundPad',
+    h1: {
+      plain: 'RefundPad\'s site now says "under construction."',
+      accent: 'Dragon Refunds is the live alternative — free DIY, or 15% managed.',
+    },
+    subhead:
+      'RefundPad was the budget DIY option: upload your Seller Central reports, pay a flat $19/month (or $89/year), get reimbursement reports, and file the claims yourself. As of mid-2026, refundpad.com shows only an "under construction" placeholder on every page — the app, pricing, and blog are all gone. If you used it or were evaluating it, Dragon Refunds covers the same self-file ground for free — no subscription at all — with optional managed filing at 15%. Here is the honest comparison.',
+    tldr: {
+      them:
+        'RefundPad\'s flat $19/mo with no commission was the cheapest math in the industry for DIY sellers, and it never even asked for account access. But its entire site is now a placeholder page — no app, no pricing, no sign-up.',
+      us:
+        'Choose Dragon Refunds for the same self-file philosophy without the subscription: free detection with step-by-step filing SOPs (keep 100%), automatic SP-API syncing instead of manual report uploads, and optional 15% managed filing — from a product that is live and maintained.',
+    },
+    compare: [
+      {
+        label: 'The basics',
+        rows: [
+          { feature: 'Service currently online & maintained', values: ['yes', 'no'] },
+          { feature: 'Connects automatically via Amazon\'s official API', note: 'vs manual report uploads',
+            values: [{ t: 'SP-API, read-only' }, { t: 'Manual uploads' }] },
+          { feature: 'Full claim ledger', note: 'found → filed → paid → denied',
+            values: ['yes', 'no'] },
+        ],
+      },
+      {
+        label: 'What we recover',
+        rows: [
+          { feature: 'Lost / damaged inventory', values: ['yes', 'yes'] },
+          { feature: 'Warehouse-damaged & destroyed inventory', values: ['yes', 'partial'] },
+          { feature: 'FBA fee overcharges', values: ['yes', 'no'] },
+          { feature: 'COGS & sourcing-cost errors', values: ['yes', 'no'] },
+        ],
+      },
+      {
+        label: 'How it works',
+        rows: [
+          { feature: 'Free tier — find and file yourself at no cost', note: 'DIY',
+            values: ['yes', { t: '7-day trial' }] },
+          { feature: 'Ongoing cost to detect claims', values: [{ t: 'Free' }, { t: '$19/mo (offline)' }] },
+          { feature: 'Optional managed filing', values: [{ t: 'Yes — 15%' }, 'no'] },
+        ],
+      },
+    ],
+    themWins: [
+      {
+        title: 'The cheapest math in the industry — while it worked',
+        desc:
+          'A flat $19/month with zero commission meant a seller recovering serious money kept essentially all of it. For high-recovery DIY sellers, no percentage-based service could beat that arithmetic.',
+      },
+      {
+        title: 'Never touched your account',
+        desc:
+          'RefundPad required no API connection and no Seller Central access at all — you downloaded your own reports and uploaded them. For privacy-conscious sellers, that zero-access stance was a genuine comfort.',
+      },
+      {
+        title: 'Self-file, ToS-first philosophy',
+        desc:
+          'RefundPad deliberately never filed claims on your behalf, keeping the seller in control and squarely inside Amazon\'s Terms of Service. That DIY-first instinct was right — it is the same philosophy behind Dragon Refunds\' free tier.',
+      },
+    ],
+    usWins: [
+      {
+        title: 'It exists — RefundPad is a placeholder page',
+        desc:
+          'As of mid-2026, every page on refundpad.com — the app, pricing, even the blog — shows only "We\'re under construction." Meanwhile FBA claim windows keep expiring at 18 months. Dragon Refunds is live and maintained, and the free audit shows results in about two minutes.',
+      },
+      {
+        title: 'Free beats $19/month',
+        desc:
+          'RefundPad charged the subscription every month — including months where it found nothing. Dragon Refunds\' detection and self-file SOPs are simply free: you keep 100% of every dollar and pay nothing unless you choose managed filing.',
+      },
+      {
+        title: 'Automatic syncing, not CSV homework',
+        desc:
+          'RefundPad\'s workflow was manual: pull the right reports from Seller Central, upload them, repeat up to four times a month. Dragon Refunds connects once through Amazon\'s official SP-API — read-only by default — and audits your account automatically.',
+      },
+      {
+        title: 'Broader claim coverage',
+        desc:
+          'RefundPad\'s reports covered lost inventory, damaged inventory, and customer-return discrepancies. Dragon Refunds also chases FBA fee overcharges, destroyed inventory, and COGS / sourcing-cost errors — categories its four reports never scanned.',
+      },
+      {
+        title: 'A managed option when you want it',
+        desc:
+          'RefundPad was DIY or nothing. Dragon Refunds lets you file the easy claims yourself free and hand off only the messy ones at 15% — with a full found → filed → paid → denied ledger either way.',
+      },
+    ],
+    commission: {
+      us: '15%',
+      them: '$19/mo flat (offline)',
+      themAmount: '$0',
+      line:
+        'RefundPad charged no commission at all — just $19/month whether it found $10,000 or nothing. While it ran, that flat fee was unbeatable math for DIY sellers. But an offline service recovers $0. Dragon Refunds: file it yourself free and keep the full $10,000 — no subscription — or hand it off at 15% and keep $8,500.',
+    },
+    faq: [
+      {
+        q: 'How much did RefundPad cost, and how does Dragon Refunds compare?',
+        a: 'RefundPad charged a flat subscription — $19/month or $89/year, with a 7-day free trial limited to its Lost Inventory report — and never took a commission, because you filed everything yourself. Dragon Refunds\' equivalent DIY path costs nothing at all: free detection, free step-by-step filing SOPs, keep 100%. You only ever pay the 15% commission if you opt into managed filing.',
+      },
+      {
+        q: 'Is RefundPad shut down?',
+        a: 'It appears so. As of mid-2026, every page on refundpad.com — including the app login, pricing page, and blog — returns only a "We\'re under construction" placeholder, and there is no public notice about what happened. The last archived version of the working product dates to early 2025. We\'d be glad to update this page if it relaunches.',
+      },
+      {
+        q: 'I was a RefundPad subscriber — what should I do now?',
+        a: 'First, check whether you are still being billed for the subscription and cancel if so. Then re-audit your account: anything RefundPad\'s reports missed, plus everything that has accrued since it went quiet, expires 18 months after the event. Dragon Refunds\' free audit re-scans your full claim window and shows results in about two minutes.',
+      },
+      {
+        q: 'RefundPad never needed access to my Amazon account — does Dragon Refunds?',
+        a: 'Dragon Refunds connects through Amazon\'s official Selling Partner API (SP-API), read-only by default, which is what makes the two-minute automatic audit possible — no downloading and uploading reports by hand. The connection is 100% ToS-compliant and revocable from Seller Central at any time, and Dragon Refunds never touches your money: Amazon pays reimbursements directly into your seller account.',
+      },
+      {
+        q: 'Wasn\'t a flat subscription cheaper than a 15% commission?',
+        a: 'For DIY filing, yes — RefundPad\'s $19/mo with no commission beat every percentage-based managed service, and we\'ll say so plainly. But Dragon Refunds\' DIY path is cheaper still: $0. Free detection, free self-file SOPs, keep 100%. The 15% only applies if you choose to hand claims off — an option RefundPad never offered at any price.',
+      },
+    ],
+  },
+  'amalyzer': {
+    name: 'Amalyzer',
+    metaTitle: 'Dragon Refunds vs Amalyzer: FBA Reimbursements Compared (2026)',
+    metaDescription:
+      'Honest comparison of Dragon Refunds and Amalyzer (Amalyzer Pro). Amalyzer is a done-for-you reimbursement service at 25% commission; Dragon Refunds lets you self-file free or hand off at 15%. Side-by-side breakdown.',
+    eyebrow: 'Dragon Refunds vs Amalyzer',
+    h1: {
+      plain: 'Amalyzer files your claims for you — and keeps 25%.',
+      accent: 'Dragon Refunds finds the same money free, and files it for 15% if you want.',
+    },
+    subhead:
+      'Amalyzer (Amalyzer Pro) is a hands-off reimbursement service: you sync your Amazon account, their software flags discrepancies, and their team manually files and chases every claim for a 25% cut of what Amazon pays back. No monthly fee, no commitment — but also no self-file option and no published dashboard. Here is how that stacks up against a free audit you control.',
+    tldr: {
+      them:
+        'Choose Amalyzer if you want a fully done-for-you service where a human team files and personally follows up every claim, you never open Seller Central for reimbursements, and you are fine paying 25% of every recovery for that.',
+      us:
+        'Choose Dragon Refunds if you want to see every recoverable dollar free in about two minutes, file the easy claims yourself and keep 100%, and hand off only the messy ones at 15% — with an itemized ledger of where each dollar came from.',
+    },
+    compare: [
+      {
+        label: 'Price & model',
+        rows: [
+          { feature: 'Free tier — find and file yourself at no cost', note: 'DIY',
+            values: ['yes', 'no'] },
+          { feature: 'Managed commission', values: [{ t: '15%' }, { t: '25%' }] },
+          { feature: 'Monthly fee', values: [{ t: 'None' }, { t: 'None' }] },
+          { feature: 'Who files', values: [{ t: 'You, or us' }, { t: 'Their team only' }] },
+        ],
+      },
+      {
+        label: 'What gets recovered',
+        rows: [
+          { feature: 'Lost / damaged shipments', values: ['yes', 'yes'] },
+          { feature: 'Fee overcharges', note: 'weight, dimensional, commission fees',
+            values: ['yes', 'yes'] },
+          { feature: 'Warehouse-damaged & destroyed inventory', values: ['yes', 'partial'] },
+          { feature: 'COGS & sourcing-cost errors', values: ['yes', 'no'] },
+        ],
+      },
+      {
+        label: 'Experience & transparency',
+        rows: [
+          { feature: 'How you connect', note: 'and how fast you see results',
+            values: [{ t: 'SP-API, results in ~2 min' }, { t: 'Contact form, then sync' }] },
+          { feature: 'Shows the cause of each claim', note: 'lost / damaged / dimension / COGS',
+            values: [{ t: 'Itemized per claim' }, { t: 'Not published' }] },
+          { feature: 'Full claim ledger', note: 'found → filed → paid → denied',
+            values: ['yes', { t: 'Not published' }] },
+        ],
+      },
+    ],
+    themWins: [
+      {
+        title: 'Every claim gets a human',
+        desc:
+          'Amalyzer runs a two-part process: software flags discrepancies, then a team member manually reviews, files, and personally follows up each claim with Amazon — they state outright that they never automate claims. If you want a person chasing every dollar for you, that is exactly what they sell.',
+      },
+      {
+        title: 'Truly zero-effort, zero-risk pricing',
+        desc:
+          'No monthly fee, no commitment, no upfront cost — Amalyzer only gets paid when you do. You sync your account once and never think about reimbursements again. For a seller who wants reimbursements fully off their plate, the hands-off model is genuinely simple.',
+      },
+      {
+        title: 'Ongoing fee and returns monitoring',
+        desc:
+          'Beyond one-off claims, Amalyzer audits your account weekly for fee errors — weight, dimensional, and commission overcharges — and tracks customer returns against Amazon\'s 30-day deadline to secure restocking-fee refunds. That returns-tracking angle is a real part of their pitch.',
+      },
+    ],
+    usWins: [
+      {
+        title: 'Keep 100% — or pay 15 instead of 25',
+        desc:
+          'Amalyzer\'s only mode is managed filing at 25%. Dragon Refunds finds every claim free and hands you a step-by-step SOP to file through Seller Central yourself, keeping 100%. Prefer to hand it off? Managed filing costs 15% — ten points less on every dollar recovered.',
+      },
+      {
+        title: 'See your money in minutes, not after a sales call',
+        desc:
+          'Amalyzer\'s onboarding runs through a contact form and a personal follow-up. Dragon Refunds connects through Amazon\'s official SP-API — read-only by default — and shows your full recoverable total in about two minutes, before you commit to anything.',
+      },
+      {
+        title: 'Chases categories Amalyzer doesn\'t list',
+        desc:
+          'Amalyzer\'s published scope covers lost/damaged inbound inventory, overlooked reimbursements, returns, and fee overcharges. Dragon Refunds also digs into warehouse-damaged and destroyed inventory and COGS / sourcing-cost errors — cases where Amazon reimburses lost units below their true value — a category most services skip entirely.',
+      },
+      {
+        title: 'An itemized ledger, not a black box',
+        desc:
+          'Amalyzer publishes no dashboard or claim-level reporting. Dragon Refunds itemizes the cause of every claim — the exact lost shipment, damaged unit, fee mismatch, or COGS error — and keeps the full found → filed → paid → denied ledger visible, so you always know what is outstanding, paid, or denied.',
+      },
+      {
+        title: 'Never touches your money',
+        desc:
+          'With Dragon Refunds, Amazon pays reimbursements directly into your seller account — we never sit in the money flow, and the SP-API connection is read-only and revocable from Seller Central in one click. Plus reimbursements sit inside a broader Amazon operator platform, not a standalone silo.',
+      },
+    ],
+    commission: {
+      us: '15%',
+      them: '25%',
+      themAmount: '$7,500',
+      line:
+        'On a $10,000 recovery, Amalyzer\'s 25% leaves you $7,500. Dragon Refunds\' managed filing at 15% leaves you $8,500 — and if you file yourself with our free SOPs, you keep the full $10,000. Same money found, up to $2,500 more kept.',
+    },
+    faq: [
+      {
+        q: 'How much does Amalyzer cost compared to Dragon Refunds?',
+        a: 'Amalyzer\'s official site lists one price: 25% of every reimbursement, with no monthly fee and no commitment. (Some third-party directories show old $19–29/month subscription plans, but the live site says 25% commission.) Dragon Refunds is free to audit and self-file — you keep 100% — with optional managed filing at 15%. On a $10,000 recovery that is $7,500 kept with Amalyzer vs $8,500 managed or $10,000 self-filed with Dragon Refunds.',
+      },
+      {
+        q: 'Does Amalyzer have a free or self-file option?',
+        a: 'No. Amalyzer is managed-only: their team files and follows up every claim on your behalf, and 25% comes out of every recovery. Dragon Refunds runs the audit free, shows every recoverable claim with a step-by-step SOP to file it yourself via Seller Central, and only charges (15%) if you choose to hand a claim off.',
+      },
+      {
+        q: 'Is Amalyzer still active?',
+        a: 'As of 2026 amalyzerpro.com is online and its contact form works, but the public site is sparse and dated — the footer still reads 2018, some pages are broken, and onboarding runs through a contact form rather than self-serve signup. It appears to operate as a high-touch service. If you want to see results before talking to anyone, Dragon Refunds\' free audit shows your recoverable total in about two minutes.',
+      },
+      {
+        q: 'Is Amalyzer the same as AMALYZE?',
+        a: 'No — easy to confuse. AMALYZE is a German Amazon keyword-research and analytics tool. Amalyzer (Amalyzer Pro, amalyzerpro.com) is the FBA reimbursement service compared on this page. If you searched for the keyword tool, this comparison is not about that product.',
+      },
+      {
+        q: 'What does Dragon Refunds recover that Amalyzer doesn\'t list?',
+        a: 'Amalyzer\'s published scope is inbound lost/damaged inventory, overlooked transaction reimbursements, customer-return tracking, and fee overcharges. Dragon Refunds also covers warehouse-damaged and destroyed inventory and COGS / sourcing-cost errors — where Amazon reimburses lost units below their true sourcing value — a category most reimbursement services skip.',
+      },
+      {
+        q: 'Is Dragon Refunds Amazon-compliant?',
+        a: 'Yes. Dragon Refunds connects through Amazon\'s official Selling Partner API (SP-API), read-only by default — no scraping, no gray areas, 100% Amazon Terms of Service compliant. (Amalyzer also states it never automates claim filing; both approaches respect Amazon\'s rules on claims.)',
+      },
+    ],
+  },
 };
 
 export function getRefundsCompetitor(slug) {
