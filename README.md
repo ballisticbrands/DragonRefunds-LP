@@ -24,5 +24,5 @@ Landing page for **DragonRefunds** — automated Amazon FBA reimbursement recove
 Snippets live in [`index.html`](index.html) `<head>`. Event mirroring (GA4 + Clarity + Meta)
 and SPA route pageviews live in [`src/lib/track.js`](src/lib/track.js).
 
-Campaign + tracking plan: `DragonBot-marketing/META_ADS_DRAGONREFUNDS.md` and
+Campaign + tracking plan: `Dragon-marketing/META_ADS_DRAGONREFUNDS.md` and
 `META_TRACKING_SETUP.md`.

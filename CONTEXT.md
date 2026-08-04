@@ -5,7 +5,7 @@ https://github.com/ballisticbrands/DragonBot
 
 ## Branding
 For all style and branding decisions (tone of voice, colors, fonts, button styles, component patterns, writing rules), refer to and update:
-**`/Users/gershonballas/work/DragonBot/DragonBot-marketing/BRANDING.md`**
+**`/Users/gershonballas/work/DragonBot/Dragon-marketing/BRANDING.md`**
 This file is the single source of truth for DragonBot branding across all repos and assets. Any branding changes must be reflected there.
 
 ## Structure

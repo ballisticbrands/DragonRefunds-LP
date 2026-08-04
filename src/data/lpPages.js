@@ -14,7 +14,7 @@
    scripts/postbuild-spa-routes.mjs under plain Node.
 
    Paths must match the ad-group Final URLs in
-   DragonBot-marketing/landing_page_map_v2.csv.
+   Dragon-marketing/landing_page_map_v2.csv.
    ═══════════════════════════════════════════════════════════════ */
 
 
