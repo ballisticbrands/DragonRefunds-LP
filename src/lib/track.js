@@ -45,7 +45,11 @@ export function track(event, params = {}) {
 
 /** High-intent pages → Meta `ViewContent`. Pricing + every /vs/ comparison. */
 function isHighIntentPath(pathname) {
-  return pathname === '/pricing' || pathname.startsWith('/vs/');
+  // GitHub Pages serves prerendered routes at /pricing/ (trailing slash), so
+  // an exact match on '/pricing' silently misses every direct ad/organic load
+  // of the page. Normalize before comparing.
+  const p = pathname.replace(/\/+$/, '') || '/';
+  return p === '/pricing' || p.startsWith('/vs/');
 }
 
 let isFirstRoute = true;
