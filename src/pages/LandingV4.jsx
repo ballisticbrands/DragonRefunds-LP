@@ -7,6 +7,7 @@ import {
   AlertTriangle, Table2, RotateCcw, Truck, Ruler,
 } from 'lucide-react';
 import { sellerVideos } from '../data/sellerVideos';
+import { AUDIT_POINTS_COPY, CLAIM_TYPES_COPY } from '../data/refundsCopy';
 import RefundsFooter from '../components/landing/RefundsFooter';
 import { FBA_RECOVERY_RATE, REPORT_ETA_HOURS, REFUNDS_CTA_URL } from '../lib/refundsEstimate';
 
@@ -823,16 +824,9 @@ function SellerCredBand() {
 /* ─── Free-audit intro (sandbox /refunds only). Sits directly above the
    V2 dashboard, which acts as the reveal — so the dashboard's own heading is
    suppressed via showHeading={false}. ─── */
-const AUDIT_POINTS = [
-  { icon: <Package className="w-4 h-4" />, title: 'Every claim type',
-    desc: 'Lost, damaged, short-received, fee overcharges, customer returns — across FBA, AWD, and every region you sell in.' },
-  { icon: <Clock className="w-4 h-4" />, title: 'What expires first',
-    desc: 'Amazon\'s filing windows are short and unforgiving. We rank by deadline, not by dollar value, so nothing ages out unclaimed.' },
-  { icon: <BarChart3 className="w-4 h-4" />, title: 'What you already recovered',
-    desc: 'Your whole reimbursement history, reconciled — including what your current process quietly missed.' },
-  { icon: <DollarSign className="w-4 h-4" />, title: 'A real number',
-    desc: 'Not a range and not a teaser. The exact figure Amazon owes you right now, itemized down to the shipment.' },
-];
+const AUDIT_ICONS = [<Package className="w-4 h-4" />, <Clock className="w-4 h-4" />, <BarChart3 className="w-4 h-4" />, <DollarSign className="w-4 h-4" />];
+/* text from ../data/refundsCopy so the prerender emits the same words — see that file */
+const AUDIT_POINTS = AUDIT_POINTS_COPY.map((p, i) => ({ ...p, icon: AUDIT_ICONS[i] }));
 
 function ReimbursementAuditIntro() {
   return (

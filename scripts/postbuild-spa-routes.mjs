@@ -29,6 +29,7 @@ import { fileURLToPath } from 'node:url';
 import { lpPages } from '../src/data/lpPages.js';
 import { competitors } from '../src/data/competitors.js';
 import { refundsCompetitors } from '../src/data/refundsCompetitors.js';
+import { AUDIT_POINTS_COPY, CLAIM_TYPES_COPY } from '../src/data/refundsCopy.js';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
@@ -46,8 +47,16 @@ const esc = (s = '') =>
   String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const flat = (s = '') => String(s).replace(/\s+/g, ' ').trim();
 
-/* ── Route → { title, description, eyebrow, h1, intro, bullets[] } ────── */
+/* ── Route → { title, description, eyebrow, h1, intro, bullets[], sections[] } ── */
 const meta = {};
+
+/* The product copy the main LP renders, from ../src/data/refundsCopy.js — the
+ * SAME module LandingV4.jsx reads, so this stays prerendering, not cloaking.
+ * Without it the homepage prerendered at 46 crawler-visible words. */
+const PRODUCT_SECTIONS = [
+  { h: 'What the free audit finds', items: AUDIT_POINTS_COPY.map(p => `${p.title}. ${p.desc}`) },
+  { h: 'Reimbursement types we recover', items: CLAIM_TYPES_COPY.map(c => `${c.headline} ${c.blurb}`) },
+];
 
 const STATIC = {
   '/':        { title: 'Dragon Refunds — Get Back What Amazon Owes You',
@@ -61,6 +70,9 @@ const STATIC = {
 for (const [path, m] of Object.entries(STATIC)) {
   meta[path] = { ...m, h1: m.title.split(/[—|]/)[0].trim(), intro: m.description };
 }
+/* '/' and '/pricing' are the main ad destinations — give them the product copy. */
+meta['/'].sections = PRODUCT_SECTIONS;
+meta['/pricing'].sections = PRODUCT_SECTIONS;
 
 /* Data-driven LP pages (feature / alt templates). */
 for (const p of lpPages) {
@@ -71,11 +83,22 @@ for (const p of lpPages) {
     eyebrow: p.hero?.eyebrow,
     h1,
     intro: flat(p.hero?.paragraph),
+    sections: PRODUCT_SECTIONS,
   };
 }
 
-/* Dragon Refunds /vs/ comparison pages. */
+/* Dragon Refunds /vs/ comparison pages.
+ *
+ * ⚠️ Emit the FULL comparison copy, not just the TL;DR (changed 2026-08-10).
+ * These entries already hold ~650 words each — where-they-win, where-we-win,
+ * the pricing line, the feature matrix and 5-6 FAQs — and the prerender was
+ * emitting ~40 of them. A 46-word page cannot earn a decent landing-page
+ * experience score no matter how correct its <title> is; Quality Score sat at
+ * 1-3/10 six days after the routes were de-duplicated. Everything below is
+ * rendered by VsRefundsCompetitor.jsx from this same object, so it stays
+ * prerendering rather than cloaking. */
 for (const [slug, c] of Object.entries(refundsCompetitors)) {
+  const cell = v => (v === 'yes' ? 'Yes' : v === 'no' ? 'No' : v === 'partial' ? 'Partial' : v?.t || '');
   meta[`/vs/${slug}`] = {
     title: c.metaTitle || `Dragon Refunds vs ${c.name}`,
     description: c.metaDescription || flat(c.subhead),
@@ -83,6 +106,17 @@ for (const [slug, c] of Object.entries(refundsCompetitors)) {
     h1: [c.h1?.plain, c.h1?.accent].filter(Boolean).join(' '),
     intro: flat(c.subhead),
     bullets: [c.tldr?.us, c.tldr?.them].filter(Boolean).map(flat),
+    sections: [
+      ...(c.compare || []).map(s => ({
+        h: s.label,
+        items: (s.rows || []).map(r =>
+          `${r.feature}${r.note ? ` (${r.note})` : ''} — Dragon Refunds: ${cell(r.values?.[0])}; ${c.name}: ${cell(r.values?.[1])}`),
+      })),
+      { h: `Where ${c.name} wins`, items: (c.themWins || []).map(w => `${w.title}. ${w.desc}`) },
+      { h: 'Where Dragon Refunds wins', items: (c.usWins || []).map(w => `${w.title}. ${w.desc}`) },
+      { h: 'Pricing', items: [c.commission?.line].filter(Boolean) },
+      { h: 'Frequently asked questions', items: (c.faq || []).map(f => `${f.q} ${f.a}`) },
+    ].filter(s => s.items.length),
   };
 }
 
@@ -95,6 +129,17 @@ for (const [slug, c] of Object.entries(competitors)) {
     description: c.metaDescription || '',
     h1: c.h1 ? [c.h1.plain, c.h1.accent].filter(Boolean).join(' ') : `DragonBot vs ${name}`,
     intro: flat(c.subhead || c.metaDescription || ''),
+    bullets: [c.tldr?.us, c.tldr?.them].filter(Boolean).map(flat),
+    /* same full-copy treatment as the refunds /vs/ pages — these entries carry
+     * themWins / usWins / faq / comparisonTable too, and emitting only the h1
+     * left them at ~65 words. */
+    sections: [
+      { h: `Where ${name} wins`, items: (c.themWins || []).map(w => flat(`${w.title || ''}. ${w.desc || ''}`)) },
+      { h: 'Where DragonBot wins', items: (c.usWins || []).map(w => flat(`${w.title || ''}. ${w.desc || ''}`)) },
+      { h: 'Comparison', items: (c.comparisonTable || []).map(r =>
+          flat(`${r.feature || r.label || ''} — DragonBot: ${r.us ?? ''}; ${name}: ${r.them ?? ''}`)) },
+      { h: 'Frequently asked questions', items: (c.faq || []).map(f => flat(`${f.q || ''} ${f.a || ''}`)) },
+    ].filter(s => s.items.filter(i => i.replace(/[—;:.\s]/g, '')).length),
   };
 }
 
@@ -124,13 +169,16 @@ function buildHtml(route, m) {
     `<meta name="twitter:card" content="summary_large_image" />`,
   ].join('\n    ');
 
-  /* Mirrors the copy React renders. Replaced on mount. */
+  /* Mirrors the copy React renders. Replaced on mount.
+   * Keep this SUBSTANTIVE — see the word-count guard at the bottom of this file. */
   const body = [
     m.eyebrow ? `<p>${esc(m.eyebrow)}</p>` : '',
     `<h1>${esc(m.h1 || title)}</h1>`,
     m.intro ? `<p>${esc(m.intro)}</p>` : '',
     Array.isArray(m.bullets) && m.bullets.length
       ? `<ul>${m.bullets.map(b => `<li>${esc(b)}</li>`).join('')}</ul>` : '',
+    ...(m.sections || []).map(s =>
+      `<h2>${esc(s.h)}</h2>\n        <ul>${s.items.map(i => `<li>${esc(flat(i))}</li>`).join('')}</ul>`),
     `<p><a href="${SIGNUP}">Start free — no card required</a></p>`,
   ].filter(Boolean).join('\n        ');
 
@@ -154,4 +202,28 @@ for (const route of routes) {
   writeFileSync(join(dir, 'index.html'), buildHtml(route, m));
   n++;
 }
-console.log(`postbuild: prerendered ${n} routes (title + description + canonical + OG + content)`);
+/* ── Guard: a thin page cannot earn a decent Ads landing-page score ──────
+ * 2026-08-10: per-route titles alone left the homepage at 46 crawler-visible
+ * words and Quality Score stuck at 2/10. Fail the build rather than ship thin
+ * pages again. Raise MIN_WORDS, never lower it to make a build pass. */
+const MIN_WORDS = 120;
+/* Only ad/SEO destinations are guarded. Support docs, legal pages and the legacy
+ * /v1-/v3 mocks are never ad landing pages, so thin copy there costs nothing. */
+const EXEMPT = r =>
+  r.startsWith('/support') || ['/privacy', '/tos', '/v1', '/v2', '/v3', '/chats'].includes(r);
+const thin = [];
+for (const route of routes) {
+  if (!meta[route] || EXEMPT(route)) continue;
+  const dir = route === '/' ? dist : join(dist, ...route.split('/').filter(Boolean));
+  const text = readFileSync(join(dir, 'index.html'), 'utf8')
+    .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<!--[\s\S]*?-->/g, '')
+    .replace(/<[^>]+>/g, ' ');
+  const words = text.split(/\s+/).filter(Boolean).length;
+  if (words < MIN_WORDS) thin.push(`${route} (${words}w)`);
+}
+if (thin.length) {
+  console.error(`postbuild: ${thin.length} route(s) under ${MIN_WORDS} crawler-visible words:\n  ${thin.join('\n  ')}`);
+  console.error('Add real copy to a JSX-free data module and emit it here — see src/data/refundsCopy.js');
+  process.exit(1);
+}
+console.log(`postbuild: prerendered ${n} routes (title + description + canonical + OG + content), all >= ${MIN_WORDS} words`);
