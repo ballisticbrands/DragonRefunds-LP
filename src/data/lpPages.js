@@ -495,6 +495,48 @@ export const lpPages = [
     },
     demo: { type: 'dashboard2', feature: 'Amazon reimbursements' },
   },
+  /* ── Ad-group landing pages (added 2026-08-10) ───────────────────────────
+     Built because 74 of 138 keywords all pointed at the homepage: a query like
+     "amazon fba lost inventory reimbursement" landed on a generic page that never
+     addresses it, which Google Ads scores as poor landing-page experience. One
+     page per non-Core ad group, each mirroring that ad group's intent.
+     template:'feature' => rendered by LandingV4, so the CTA is the SAME
+     app.dragonrefunds.com/sign-up used everywhere else. Routes, prerendering and
+     the 120-word build guard all follow automatically from this entry. */
+  {
+    path: '/lost-inventory-reimbursement',
+    template: 'feature',
+    metaTitle: 'Lost & Damaged FBA Inventory Reimbursement | Dragon Refunds',
+    metaDescription:
+      'Amazon loses, damages and destroys FBA inventory every week and rarely reimburses it automatically. Dragon Refunds finds every lost shipment, warehouse-damaged unit and destroyed item Amazon owes you — file it yourself free and keep 100%, or hand it off for 15%.',
+    hero: {
+      eyebrow: 'Lost & damaged FBA inventory',
+      segments: [
+        { text: 'Amazon lost your inventory.', color: 'orange' },
+        { text: 'It owes you for every unit.', color: 'green' },
+      ],
+      paragraph:
+        'Units go missing in transit to the fulfilment centre, get damaged in the warehouse, or are destroyed without your say-so — and Amazon reimburses only a fraction of it automatically. Dragon Refunds reconciles what you shipped against what Amazon actually received, stored and returned, then shows you every unit you are owed for and the exact claim to file.\n\nFiling windows are short and unforgiving, so we rank claims by what expires first, not by what pays most. Do it yourself in minutes and keep 100%, or hand it off for 15% — not the 25% competitors charge.',
+    },
+    demo: { type: 'dashboard2', feature: 'lost and damaged inventory' },
+  },
+  {
+    path: '/fba-reimbursement-audit',
+    template: 'feature',
+    metaTitle: 'Free Amazon FBA Reimbursement Audit — See What You Are Owed | Dragon Refunds',
+    metaDescription:
+      'A free, read-only audit of 18 months of your FBA account. See every reimbursement Amazon owes you — lost shipments, damaged stock, fee overcharges, unreturned customer refunds — itemised down to the shipment. File yourself free, or hand it off for 15%.',
+    hero: {
+      eyebrow: 'Free FBA reimbursement audit',
+      segments: [
+        { text: 'Audit 18 months of your FBA account.', color: 'orange' },
+        { text: 'Free, read-only, in about two minutes.', color: 'green' },
+      ],
+      paragraph:
+        'Connect through Amazon\'s official Selling Partner API — read-only by default, revocable in one click — and Dragon Refunds reconciles your entire reimbursement history: lost and damaged shipments, warehouse-damaged and destroyed units, fee and dimension overcharges, customer returns that never came back, and COGS errors most services skip.\n\nYou get a real number, itemised down to the shipment, not a range and not a teaser. The audit costs nothing and there is no card required. Then file the claims yourself and keep 100%, or hand them off for 15%.',
+    },
+    demo: { type: 'dashboard2', feature: 'your reimbursement audit' },
+  },
   {
     path: '/discontinued',
     template: 'feature',
