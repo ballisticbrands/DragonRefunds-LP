@@ -865,7 +865,7 @@ function ReimbursementAuditIntro() {
           </a>
           <ReportEtaBadge />
         </div>
-        <span className="text-[12px] text-white/40">No card. No call. The audit is yours to keep either way.</span>
+        <span className="text-[12px] text-white/40">No card. No call. The audit is yours to keep.</span>
       </div>
     </div>
   );

@@ -329,7 +329,7 @@ export default function VsRefundsCompetitor({ slug: slugProp }) {
             See what Amazon owes you.
           </h2>
           <p className="text-white/70 max-w-xl mx-auto mb-8">
-            Connect in two minutes over Amazon's official API — read-only. The audit is free, and it's yours to keep either way.
+            Connect in two minutes over Amazon's official API — read-only. The audit is free, and it's yours to keep.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <a href={REFUNDS_CTA_HREF}
