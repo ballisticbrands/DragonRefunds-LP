@@ -62,7 +62,7 @@ const EXCLUDE = [
   /* Inherited from DragonBotLP — irrelevant on this domain and near-duplicates of the same
    * paths on getdragonbot.com. Also noindexed in postbuild-spa-routes.mjs. Keep the two
    * lists in sync. Refunds-relevant pages are deliberately NOT excluded. */
-  /^\/(amazon-|ai-amazon-agent|analytics|inventory|listing-tools|ppc-tools|research-tools)/,
+  /^\/(amazon-|ai-amazon-agent|analytics|inventory|listing-tools|ppc-tools|research-tools|repricer|discontinued)/,
   /^\/vs\/(helium-10|jungle-scout|sellerise|sellerapp|sellerboard|datadive|threecolts|keepa|chatgpt|claude|viktor|openclaw|jarvio|datadoe|profasee|geenie|agentcentral|aakaar|ai-operators|mcp-tools|amalyzer|hawkways)(\/|$)/,
 ];
 

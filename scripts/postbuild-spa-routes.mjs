@@ -162,7 +162,7 @@ for (const r of ['/v1', '/v2', '/v3', '/chats']) {
  * Refunds-relevant pages (/refunds, /fba-reimbursement-audit, /lost-inventory-reimbursement,
  * and refundsCompetitors /vs/ pages) are deliberately NOT in this list. */
 const INHERITED_FROM_DRAGONBOT = [
-  /^\/(amazon-|ai-amazon-agent|analytics|inventory|listing-tools|ppc-tools|research-tools)/,
+  /^\/(amazon-|ai-amazon-agent|analytics|inventory|listing-tools|ppc-tools|research-tools|repricer|discontinued)/,
   /^\/vs\/(helium-10|jungle-scout|sellerise|sellerapp|sellerboard|datadive|threecolts|keepa|chatgpt|claude|viktor|openclaw|jarvio|datadoe|profasee|geenie|agentcentral|aakaar|ai-operators|mcp-tools|amalyzer|hawkways)(\/|$)/,
 ];
 const isInherited = r => INHERITED_FROM_DRAGONBOT.some(re => re.test(r));
