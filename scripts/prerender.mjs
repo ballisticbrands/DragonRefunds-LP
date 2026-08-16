@@ -24,13 +24,17 @@
  * • puppeteer-core + the system Chrome, deliberately: plain `puppeteer` would
  *   pull a ~170MB Chromium on every CI run (setup-node's npm cache does not
  *   cover ~/.cache/puppeteer). ubuntu-latest ships Chrome already.
- * • main.jsx still uses createRoot, NOT hydrateRoot. Hydration would be the
- *   textbook pairing, but this app drives GSAP and framer-motion from mount
- *   effects that mutate the DOM straight after render — the snapshot contains
- *   those mutations, React's expected tree does not, and every one is a
- *   hydration mismatch. createRoot re-renders identical markup into an
- *   already-correct-looking page, so the swap is visually seamless anyway.
- *   Revisit only if the animation layer stops touching the DOM directly.
+ * • main.jsx uses hydrateRoot, NOT createRoot. createRoot CLEARS #root before
+ *   re-rendering, so the prerendered page collapses and re-expands — that was
+ *   measured as CLS 0.377 and cost ~30 performance points.
+ * • The snapshot is taken AFTER animations settle, and any residual entry state
+ *   is stripped (opacity 0 → 1, translateY → none). Snapshotting React's first
+ *   commit instead would make hydration match exactly, but framer-motion starts
+ *   at opacity:0, so the prerendered tree would ship invisible — that measured
+ *   FCP 5.0s / LCP 7.5s on mobile with nothing render-blocking. Visible content
+ *   wins: FCP+LCP are 35 of the 100 performance points, TBT is 30. The residual
+ *   hydration mismatch (React #418/#423) is the accepted cost; the real fix is
+ *   to stop animating above-the-fold content on entry.
  */
 import { createServer } from 'node:http';
 import { readFileSync, writeFileSync, existsSync, statSync, readdirSync } from 'node:fs';
