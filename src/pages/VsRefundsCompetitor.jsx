@@ -114,7 +114,7 @@ export default function VsRefundsCompetitor({ slug: slugProp }) {
         <div className="absolute top-40 right-1/4 w-[400px] h-[400px] bg-[#2F7D4F]/8 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <Eyebrow>{c.eyebrow}</Eyebrow>
 
             {/* Versus lockup */}

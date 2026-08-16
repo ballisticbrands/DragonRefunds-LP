@@ -118,7 +118,7 @@ export default function HeroAnimation() {
               <path id={pathId} d={`M${centerX},${dragonTop} L${centerX},${aboveBusY} L${tx},${aboveBusY} L${tx},${aboveBoxBottom}`} fill="none" stroke="none" />
               <motion.circle
                 r="5" fill="#D63C3C" filter="url(#glow)"
-                initial={{ opacity: 0 }}
+                initial={false}
                 animate={{ opacity: [0, 1, 1, 0] }}
                 transition={{ duration: 2.4, delay: i * 0.45, repeat: Infinity, ease: 'linear' }}
               >
@@ -134,7 +134,7 @@ export default function HeroAnimation() {
         <path id="pc" d={`M${centerX},${dragonBottom} L${centerX},${svgHeight}`} fill="none" stroke="none" />
         <motion.circle
           r="5" fill="#D63C3C" filter="url(#glow)"
-          initial={{ opacity: 0 }}
+          initial={false}
           animate={{ opacity: [0, 1, 1, 0] }}
           transition={{ duration: 1.6, delay: 0.3, repeat: Infinity, ease: 'linear' }}
         >

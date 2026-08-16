@@ -76,7 +76,7 @@ export default function IntegrationOrbit() {
                 stroke="#2F7D4F"
                 strokeWidth="0.3"
                 strokeDasharray="2 2"
-                initial={{ opacity: 0.1 }}
+                initial={false}
                 animate={{ opacity: [0.1, 0.4, 0.1] }}
                 transition={{ duration: 2, repeat: Infinity, delay: i * 0.25 }}
               />

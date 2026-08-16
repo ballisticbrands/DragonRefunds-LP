@@ -1,0 +1,36 @@
+# dragonrefunds.com — default: allow all crawlers.
+User-agent: *
+Allow: /
+Disallow: /api/
+
+# AI / answer engines — explicit allow. The wildcard above already permits
+# them; this block exists so the intent is deliberate and nobody "tidies up"
+# by blocking them later. Being cited by these is the point (see
+# Dragon-marketing/skills/seo-aeo-listings/SKILL.md).
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Google-Extended governs Gemini / AI Overviews training only — it is separate
+# from Googlebot and has no effect on blue-link rankings either way.
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://dragonrefunds.com/sitemap.xml

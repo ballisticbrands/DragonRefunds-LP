@@ -38,7 +38,7 @@ function NavbarV2() {
   return (
     <>
       <motion.nav
-        initial={{ y: -20, opacity: 0 }}
+        initial={false}
         animate={{ y: 0, opacity: 1 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? 'bg-[#0F0F0F]/90 backdrop-blur-xl shadow-sm' : 'bg-transparent'
@@ -804,7 +804,7 @@ function BuiltForAmazonDiagram() {
                     r="4"
                     fill="#98CC65"
                     filter="url(#bfa-glow)"
-                    initial={{ opacity: 0 }}
+                    initial={false}
                     animate={{ opacity: [0, 1, 1, 0] }}
                     transition={{ duration: dur, delay, repeat: Infinity, ease: 'linear' }}
                   >
@@ -1016,12 +1016,12 @@ function ApprovalDemo() {
     <div ref={containerRef} className="relative w-full h-full flex flex-col justify-end gap-1 py-2" style={{ backgroundColor: '#1A1D21', borderRadius: '0 0 16px 16px' }}>
       <AnimatePresence mode="popLayout">
         {step >= 0 && (
-          <motion.div key="action-0" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+          <motion.div key="action-0" initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
             {renderAction(0, APPROVAL_ACTIONS[0], step >= 2, true)}
           </motion.div>
         )}
         {step >= 3 && (
-          <motion.div key="action-1" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+          <motion.div key="action-1" initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
             {renderAction(1, APPROVAL_ACTIONS[1], step >= 5, false)}
           </motion.div>
         )}
@@ -1212,7 +1212,7 @@ export default function LandingV3() {
         <div className="absolute top-40 right-1/4 w-[400px] h-[400px] bg-[#2F7D4F]/8 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <Eyebrow>Connects to <span style={{ fontWeight: 700, textDecoration: 'underline' }}>Amazon Seller Central</span> and 3000+ other tools</Eyebrow>
 
             <h1 className="font-extrabold text-[48px] sm:text-[64px] lg:text-[88px] text-[#1A1A1A] leading-[1.05] tracking-[-0.035em] mb-6">
@@ -1249,14 +1249,14 @@ export default function LandingV3() {
           </motion.div>
 
           {/* Built by sellers strip */}
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
+          <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-8 text-center">
             <p className="text-[15px] font-semibold text-white/60 mb-2">We sell on Amazon too</p>
             <p className="text-[11px] font-medium text-white/70 uppercase tracking-[0.15em]">10 years on Amazon · 8 figures sold · DragonBot is the employee we always wanted</p>
           </motion.div>
 
           {/* Slack demos */}
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
+          <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }}
             className="mt-14 flex justify-center">
             <div className="w-full max-w-[800px] px-4 md:px-0">
               <SlackDemo activeChannel={slackChannel} setActiveChannel={setSlackChannel} onPinChange={setSlackPinned} pinned={slackPinned} />

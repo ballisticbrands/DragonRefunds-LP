@@ -14,7 +14,7 @@ export default function HeroSection() {
           {/* Left - Copy */}
           <div className="max-w-xl">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
@@ -63,7 +63,7 @@ export default function HeroSection() {
 
           {/* Right - Integration Animation (relative container so content doesn't affect grid row height) */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={false}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"

@@ -36,7 +36,7 @@ function NavbarV2() {
   return (
     <>
       <motion.nav
-        initial={{ y: -20, opacity: 0 }}
+        initial={false}
         animate={{ y: 0, opacity: 1 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? 'bg-white/90 backdrop-blur-xl shadow-sm' : 'bg-transparent'
@@ -301,7 +301,7 @@ export default function LandingV2() {
         <div className="absolute top-40 right-1/4 w-[400px] h-[400px] bg-[#2F7D4F]/8 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <Eyebrow>Trusted by Amazon &amp; eCommerce brands</Eyebrow>
 
             <h1 className="font-extrabold text-[48px] sm:text-[64px] lg:text-[88px] text-[#1A1A1A] leading-[1.05] tracking-[-0.035em] mb-6">
@@ -338,14 +338,14 @@ export default function LandingV2() {
           </motion.div>
 
           {/* Built by sellers strip */}
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
+          <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-8 text-center">
             <p className="text-[15px] font-semibold text-[#1A1A1A]/50 mb-2">We sell on Amazon too</p>
             <p className="text-[11px] font-medium text-[#1A1A1A]/35 uppercase tracking-[0.15em]">10 years on Amazon · 8 figures sold · DragonBot is the employee we always wanted</p>
           </motion.div>
 
           {/* Hero video */}
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }}
+          <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }}
             className="mt-14">
             <HeroVideo />
           </motion.div>

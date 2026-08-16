@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/postbuild-spa-routes.mjs && node scripts/prerender.mjs",
+    "build": "vite build && node scripts/postbuild-spa-routes.mjs && node scripts/prerender.mjs && node scripts/generate-sitemap.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

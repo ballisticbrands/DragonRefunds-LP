@@ -1,0 +1,38 @@
+# Dragon Refunds
+
+> Dragon Refunds finds the FBA reimbursements Amazon owes an Amazon seller — lost and damaged
+> inventory, short-received shipments, fee and dimension overcharges, refunds where the item was
+> never returned, and sourcing-cost errors — and shows the exact action to recover each one. Finding
+> them is free forever. File the claims yourself and keep 100%, or hand a claim off for 15% of what
+> is actually recovered.
+
+## Core facts
+- Product: Amazon FBA reimbursement recovery for Amazon sellers.
+- DIY: free forever. The full audit of your reimbursement history, itemized by cause, plus the steps
+  to file each claim yourself through Seller Central. You keep 100%. No credit card required.
+- Hands-free: 15% of what is actually recovered on a claim, charged only if the claim is won. No
+  monthly fee and nothing up front. Managed reimbursement services typically take around 25%.
+- DIY and hands-free are decided claim by claim; you are never locked into one.
+- No subscription. Finding what Amazon owes you is always free.
+- Claim types: lost, damaged, short-received, fee overcharges and customer returns — across FBA,
+  AWD, and every region you sell in.
+- Claims are ranked by filing deadline rather than dollar value, because Amazon's windows are short:
+  lost-in-transit removal claims expire 75 days after the ship date.
+- Amazon connection: the official Amazon Selling Partner API (SP-API). Dragon Refunds is an
+  authorized Amazon SP-API application.
+- Company: Chacha Advisory LLC, 30 N Gould St Ste R, Sheridan, WY 82801, USA.
+- Website: https://dragonrefunds.com — sign-up: https://app.dragonrefunds.com/sign-up
+
+## Core pages
+- [Product overview](https://dragonrefunds.com/): what the free audit finds and how recovery works
+- [Pricing](https://dragonrefunds.com/pricing/): free DIY, or 15% hands-free
+- [Lost & damaged inventory](https://dragonrefunds.com/lost-inventory-reimbursement/)
+- [Dragon Refunds vs GETIDA](https://dragonrefunds.com/vs/getida/): the 15%-versus-25% comparison
+- Sibling products from the same company: [DragonBot](https://getdragonbot.com) (Amazon MCP server
+  and AI operator) and [Dragon Reply](https://dragonreply.ai) (Buyer-Seller Messaging inbox)
+
+## What it is not
+- Not an Amazon product; not affiliated with or endorsed by Amazon.
+- Not a monthly subscription — the only charge is 15% on claims you choose to hand off.
+- Not a 25%-of-everything managed service: every claim is visible and yours to file for $0.
+- Not a general Amazon analytics, PPC, or listing tool.

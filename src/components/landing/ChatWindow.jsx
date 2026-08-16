@@ -144,7 +144,7 @@ export default function ChatWindow({ messages, className = "", title = "DragonBo
           {visibleMessages.map((msg, i) => (
             <motion.div
               key={`${cycleRef.current}-${i}`}
-              initial={{ opacity: 0, y: 10 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.25 }}
               className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}

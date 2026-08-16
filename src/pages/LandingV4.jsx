@@ -173,7 +173,7 @@ function Navbar({ light, onToggle, links = navLinks, showWorksWith = true, ctaLa
   return (
     <>
       <motion.nav
-        initial={{ y: -20, opacity: 0 }}
+        initial={false}
         animate={{ y: 0, opacity: 1 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? 'bg-[#0F0F0F]/90 backdrop-blur-xl shadow-sm' : 'bg-transparent'
@@ -381,7 +381,7 @@ function ChatDemo({ script = CHAT_SCRIPT, feature = null }) {
         <ChatHeader />
         <div ref={scrollRef} className="flex flex-col py-3 min-h-[420px] sm:min-h-[460px] max-h-[460px] overflow-y-auto" style={{ scrollbarWidth: 'none' }}>
           {script.slice(0, visible).map((msg, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+            <motion.div key={i} initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
               <ChatBubble msg={msg} />
             </motion.div>
           ))}
@@ -1328,7 +1328,7 @@ function ReimbursementFeatures() {
         })}
       </div>
 
-      <motion.div key={f.key} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }}>
+      <motion.div key={f.key} initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }}>
         <div className="text-center mb-6 max-w-2xl mx-auto">
           <h5 className="font-extrabold text-xl sm:text-2xl tracking-[-0.02em]">{renderSegs(f.headline)}</h5>
           <p className="mt-2.5 text-[14px] text-white/70 leading-relaxed">{f.blurb}</p>
@@ -1993,12 +1993,12 @@ function ApprovalDemo({ light }) {
     <div ref={containerRef} className="relative w-full h-full flex flex-col justify-end gap-1 py-2" style={{ backgroundColor: light ? '#F1F2F4' : '#1A1D21', borderRadius: '0 0 16px 16px' }}>
       <AnimatePresence mode="popLayout">
         {step >= 0 && (
-          <motion.div key="action-0" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+          <motion.div key="action-0" initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
             {renderAction(0, APPROVAL_ACTIONS[0], step >= 2, true)}
           </motion.div>
         )}
         {step >= 3 && (
-          <motion.div key="action-1" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+          <motion.div key="action-1" initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
             {renderAction(1, APPROVAL_ACTIONS[1], step >= 5, false)}
           </motion.div>
         )}
@@ -2137,7 +2137,7 @@ export default function LandingV4({ page = null }) {
         <div className="absolute top-40 right-1/4 w-[400px] h-[400px] bg-[#2F7D4F]/8 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             {/* The AI-hosts eyebrow is the MCP pitch — irrelevant on the
                 reimbursements page, which sells a recovery service. */}
             {page?.demo?.type !== 'dashboard2' && (
@@ -2224,7 +2224,7 @@ export default function LandingV4({ page = null }) {
             </div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
+          <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
             className={page?.demo?.type === 'dashboard2' ? '' : 'mt-10 text-center'}>
             {page?.demo?.type === 'dashboard2' ? <SellerCredBand /> : (
               <>
@@ -2253,7 +2253,7 @@ export default function LandingV4({ page = null }) {
             <ReimbursementAuditIntro />
           </motion.div>
         )}
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
+        <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
           className="flex justify-center">
           {page?.demo?.type === 'dashboard'
             ? <ReimbursementDashboard feature={page.demo.feature} />

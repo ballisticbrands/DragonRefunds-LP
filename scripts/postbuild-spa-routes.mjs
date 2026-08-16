@@ -153,6 +153,20 @@ for (const r of ['/v1', '/v2', '/v3', '/chats']) {
   if (!meta[r]) meta[r] = { ...STATIC['/'], h1: 'Dragon Refunds', intro: STATIC['/'].description };
 }
 
+/* ── Routes inherited from DragonBotLP ────────────────────────────────
+ * This repo shares LandingV4 + lpPages/competitors with DragonBotLP, so it builds a set
+ * of DragonBot feature pages and DragonBot-competitor /vs/ pages that are irrelevant on
+ * dragonrefunds.com AND near-duplicates of the same paths on getdragonbot.com. Nothing on
+ * this site links to them. They are noindexed here and excluded from the sitemap, so the
+ * getdragonbot.com originals are the only indexed copy.
+ * Refunds-relevant pages (/refunds, /fba-reimbursement-audit, /lost-inventory-reimbursement,
+ * and refundsCompetitors /vs/ pages) are deliberately NOT in this list. */
+const INHERITED_FROM_DRAGONBOT = [
+  /^\/(amazon-|ai-amazon-agent|analytics|inventory|listing-tools|ppc-tools|research-tools)/,
+  /^\/vs\/(helium-10|jungle-scout|sellerise|sellerapp|sellerboard|datadive|threecolts|keepa|chatgpt|claude|viktor|openclaw|jarvio|datadoe|profasee|geenie|agentcentral|aakaar|ai-operators|mcp-tools|amalyzer|hawkways)(\/|$)/,
+];
+const isInherited = r => INHERITED_FROM_DRAGONBOT.some(re => re.test(r));
+
 /* ── Build one route's HTML from the shell ───────────────────────────── */
 function buildHtml(route, m) {
   const url = SITE + (route === '/' ? '/' : route + '/');
@@ -161,13 +175,14 @@ function buildHtml(route, m) {
 
   const head = [
     `<meta name="description" content="${esc(desc)}" />`,
+    isInherited(route) ? `<meta name="robots" content="noindex, follow" />` : '',
     `<link rel="canonical" href="${esc(url)}" />`,
     `<meta property="og:type" content="website" />`,
     `<meta property="og:url" content="${esc(url)}" />`,
     `<meta property="og:title" content="${esc(title)}" />`,
     `<meta property="og:description" content="${esc(desc)}" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
-  ].join('\n    ');
+  ].filter(Boolean).join('\n    ');
 
   /* Mirrors the copy React renders. Replaced on mount.
    * Keep this SUBSTANTIVE — see the word-count guard at the bottom of this file. */

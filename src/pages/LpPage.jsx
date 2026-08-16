@@ -32,7 +32,7 @@ function Navbar() {
   ];
   return (
     <>
-      <motion.nav initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
+      <motion.nav initial={false} animate={{ y: 0, opacity: 1 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#0F0F0F]/90 backdrop-blur-xl shadow-sm' : 'bg-transparent'}`}>
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <a href="/" className="flex items-center gap-3">
@@ -135,7 +135,7 @@ export default function LpPage({ page }) {
         <div className="absolute top-20 left-1/4 w-[500px] h-[500px] bg-[#98CC65]/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute top-40 right-1/4 w-[400px] h-[400px] bg-[#2F7D4F]/8 rounded-full blur-3xl pointer-events-none" />
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#2F7D4F]/15 rounded-full text-sm font-medium text-white mb-6">
               <span className="w-2 h-2 rounded-full bg-[#98CC65] animate-pulse shrink-0" />
               {page.eyebrow}
@@ -160,7 +160,7 @@ export default function LpPage({ page }) {
               <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[#2F7D4F]" />Amazon TOS compliant</span>
             </div>
           </motion.div>
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="mt-10 text-center">
+          <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="mt-10 text-center">
             <p className="text-[15px] font-semibold text-white/60 mb-2">We sell on Amazon too</p>
             <p className="text-[11px] font-medium text-white/70 uppercase tracking-[0.15em]">10 years on Amazon · 8 figures sold · DragonBot is the employee we always wanted</p>
           </motion.div>

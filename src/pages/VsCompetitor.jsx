@@ -39,7 +39,7 @@ function Navbar({ activeSlug }) {
   return (
     <>
       <motion.nav
-        initial={{ y: -20, opacity: 0 }}
+        initial={false}
         animate={{ y: 0, opacity: 1 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? 'bg-[#0F0F0F]/90 backdrop-blur-xl shadow-sm' : 'bg-transparent'
@@ -226,7 +226,7 @@ export default function VsCompetitor() {
         <div className="absolute top-40 right-1/4 w-[400px] h-[400px] bg-[#2F7D4F]/8 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+          <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <Eyebrow>{c.eyebrow}</Eyebrow>
 
             {/* Versus logos */}
@@ -266,7 +266,7 @@ export default function VsCompetitor() {
           </motion.div>
 
           {/* Built by sellers strip */}
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
+          <motion.div initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-10 text-center">
             <p className="text-[15px] font-semibold text-white/60 mb-2">We sell on Amazon too</p>
             <p className="text-[11px] font-medium text-white/70 uppercase tracking-[0.15em]">10 years on Amazon · 8 figures sold · DragonBot is the employee we always wanted</p>

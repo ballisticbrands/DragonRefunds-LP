@@ -42,7 +42,7 @@ export default function RefundsNavbar({ light, onToggle }) {
   return (
     <>
       <motion.nav
-        initial={{ y: -20, opacity: 0 }}
+        initial={false}
         animate={{ y: 0, opacity: 1 }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled ? 'bg-[#0F0F0F]/90 backdrop-blur-xl shadow-sm' : 'bg-transparent'

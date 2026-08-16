@@ -7,6 +7,71 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dragon Refunds — Get Back What Amazon Owes You</title>
+    <!-- Structured data (JSON-LD). Lives in the shell so every prerendered
+         route inherits it — postbuild-spa-routes.mjs rewrites <title> and the
+         meta block only, and prerender.mjs touches #root only.
+
+         ⚠️ Keep the `description` below in sync with public/llms.txt and the
+         per-route meta descriptions in scripts/postbuild-spa-routes.mjs: models
+         cross-check the three, and a contradiction costs trust.
+         ⚠️ NEVER add aggregateRating or review here. We have no published
+         reviews; fabricated rating markup is a structured-data violation and
+         can earn a manual action. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://dragonrefunds.com/#organization",
+          "name": "Chacha Advisory LLC",
+          "alternateName": "Dragon Refunds",
+          "url": "https://dragonrefunds.com",
+          "logo": "https://dragonrefunds.com/DragonBot-logo.png",
+          "email": "info@dragonrefunds.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "30 N Gould St Ste R",
+            "addressLocality": "Sheridan",
+            "addressRegion": "WY",
+            "postalCode": "82801",
+            "addressCountry": "US"
+          }
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://dragonrefunds.com/#software",
+          "name": "Dragon Refunds",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web",
+          "url": "https://dragonrefunds.com",
+          "description": "Dragon Refunds finds the FBA reimbursements Amazon owes a seller — lost and damaged inventory, short-received shipments, fee and dimension overcharges, refunds where the item was never returned, and sourcing-cost errors — and shows the exact action to recover each one. Finding them is free forever: file the claims yourself and keep 100%, or hand a claim off and pay 15% of what is actually recovered.",
+          "featureList": [
+            "Free audit of your full Amazon reimbursement history, itemized by cause",
+            "Claims ranked by filing deadline, not dollar value",
+            "Lost, damaged, short-received, fee overcharge and customer-return claims across FBA and AWD",
+            "File it yourself and keep 100%, or hand it off for 15% of what is recovered"
+          ],
+          "publisher": { "@id": "https://dragonrefunds.com/#organization" },
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "DIY",
+              "price": "0",
+              "priceCurrency": "USD",
+              "description": "Free forever. The full reimbursement audit plus the steps to file each claim yourself through Seller Central. You keep 100% of what you recover. No credit card required."
+            },
+            {
+              "@type": "Offer",
+              "name": "Hands-free",
+              "priceCurrency": "USD",
+              "description": "No subscription and nothing up front. Dragon Refunds files the claim and follows it to close for 15% of what is actually recovered, charged only if the claim is won."
+            }
+          ]
+        }
+      ]
+    }
+    </script>
     <!-- Fonts: preconnect + <link> in <head> (discovered early, non-blocking)
          instead of a chained CSS @import. display=swap avoids invisible text. -->
     <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
