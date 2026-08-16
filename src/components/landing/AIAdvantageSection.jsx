@@ -105,14 +105,14 @@ export default function AIAdvantageSection() {
                   <img src={item.image} alt={item.name} className="w-10 h-10 rounded-full object-cover" />
                   <div className="text-left">
                     {item.name && <div className="text-white/80 font-satoshi text-sm font-medium">{item.name}</div>}
-                    {item.role && <div className="text-white/40 font-satoshi text-xs">{item.role}</div>}
+                    {item.role && <div className="text-white/65 font-satoshi text-xs">{item.role}</div>}
                   </div>
                 </div>
                 <a
                   href={item.source}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block text-xs text-white/30 font-satoshi mt-3 hover:text-white/50 transition-colors underline"
+                  className="inline-block text-xs text-white/60 font-satoshi mt-3 hover:text-white/70 transition-colors underline"
                 >
                   Link to source
                 </a>

@@ -22,12 +22,12 @@ function FAQItem({ q, a }) {
     <div className="border-b border-white/10">
       <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between py-5 text-left gap-4">
         <span className="font-medium">{q}</span>
-        <ChevronDown className={`w-5 h-5 text-white/40 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`w-5 h-5 text-white/65 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
       <AnimatePresence>
         {open && (
           <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} className="overflow-hidden">
-            <p className="pb-5 text-white/55 leading-relaxed">{a}</p>
+            <p className="pb-5 text-white/70 leading-relaxed">{a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -97,7 +97,7 @@ export default function Pricing() {
             No subscription. See exactly where Amazon owes you at no cost, and file it yourself to keep 100% —
             or let us do it for 15% of what we recover, not the 25% competitors charge.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[13px] font-medium text-white/50">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[13px] font-medium text-white/70">
             <a href="https://sellercentral.amazon.com/selling-partner-appstore/dp/amzn1.sp.solution.d78b7343-017b-4e68-92e4-a1defb51aa6f"
               target="_blank" rel="noopener noreferrer"
               className="flex items-center gap-2 text-[#98CC65] hover:text-white transition-colors">
@@ -126,9 +126,9 @@ export default function Pricing() {
                 <h3 className="font-bold text-2xl mb-3">{plan.name}</h3>
                 <div className="flex items-baseline gap-2 mb-2">
                   <span className="text-5xl font-extrabold bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">{plan.price}</span>
-                  <span className="text-white/50 text-sm">{plan.unit}</span>
+                  <span className="text-white/70 text-sm">{plan.unit}</span>
                 </div>
-                <p className="text-white/55 text-sm mb-6 leading-relaxed">{plan.tagline}</p>
+                <p className="text-white/70 text-sm mb-6 leading-relaxed">{plan.tagline}</p>
                 <ul className="space-y-3 mb-8 flex-1">
                   {plan.features.map((f, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm text-white/75">
@@ -146,7 +146,7 @@ export default function Pricing() {
               </div>
             ))}
           </div>
-          <p className="text-center text-sm text-white/50 mt-8 max-w-xl mx-auto leading-relaxed">
+          <p className="text-center text-sm text-white/70 mt-8 max-w-xl mx-auto leading-relaxed">
             Either way, the audit is free and yours to keep. You only pay when you choose to have us file — and only on what we recover.
           </p>
         </div>

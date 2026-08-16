@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom/client'
+import { hydrateRoot } from 'react-dom/client'
 import App from './App.jsx'
 import { initAttribution } from './lib/attribution.js'
 import { initCtaTracking } from './lib/track.js'
@@ -14,6 +14,4 @@ initAttribution()
 // app.dragonrefunds.com) is clicked. See src/lib/track.js.
 initCtaTracking()
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <App />
-)
+hydrateRoot(document.getElementById('root'), <App />)

@@ -53,7 +53,7 @@ function NavbarV2() {
           </a>
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map(l => (
-              <a key={l.label} href={l.href} {...(l.newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className={`text-[13px] font-medium transition-colors ${l.active ? 'text-white bg-white/10 px-3 py-1.5 rounded-md' : 'text-white/50 hover:text-[#98CC65]'}`} style={{ fontFamily: monoFont }}>{l.label}</a>
+              <a key={l.label} href={l.href} {...(l.newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className={`text-[13px] font-medium transition-colors ${l.active ? 'text-white bg-white/10 px-3 py-1.5 rounded-md' : 'text-white/70 hover:text-[#98CC65]'}`} style={{ fontFamily: monoFont }}>{l.label}</a>
             ))}
             <CompareDropdown />
           </div>
@@ -272,11 +272,11 @@ function SlackDemo({ activeChannel, setActiveChannel, onPinChange, pinned }) {
 
   return (
     <div ref={pinRef}>
-    <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em] text-center mb-4 mt-8">
+    <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em] text-center mb-4 mt-8">
       This is your company's <span className="bg-gradient-to-r from-[#9B59B6] to-[#B794F4] bg-clip-text text-transparent">Slack</span> with{' '}
       <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">DragonBot</span>
-    </h4>
-    <p className="text-center text-xs font-bold uppercase tracking-widest text-white/40 mb-4" style={{ fontFamily: monoFont }}>
+    </h2>
+    <p className="text-center text-xs font-bold uppercase tracking-widest text-white/65 mb-4" style={{ fontFamily: monoFont }}>
       Based on real customer conversations with <span className="text-[#2F7D4F]">DragonBot</span>
     </p>
     <div className="flex flex-wrap justify-center gap-2 mb-4">
@@ -748,7 +748,7 @@ function BuiltForAmazonDiagram() {
               style={{ transformOrigin: 'center' }}
             />
           </div>
-          <p className="mt-3 text-xs font-bold text-white/40 uppercase tracking-widest" style={{ fontFamily: monoFont }}>
+          <p className="mt-3 text-xs font-bold text-white/65 uppercase tracking-widest" style={{ fontFamily: monoFont }}>
             Pulls data from ↓
           </p>
         </div>
@@ -770,7 +770,7 @@ function BuiltForAmazonDiagram() {
               )}
               <div className="min-w-0 flex-1">
                 <div className="text-sm font-semibold text-white leading-tight">{s.label}</div>
-                <div className="text-[11px] font-medium text-white/40 uppercase tracking-wider mt-0.5" style={{ fontFamily: monoFont }}>{s.source}</div>
+                <div className="text-[11px] font-medium text-white/65 uppercase tracking-wider mt-0.5" style={{ fontFamily: monoFont }}>{s.source}</div>
               </div>
             </div>
           ))}
@@ -860,7 +860,7 @@ function BuiltForAmazonDiagram() {
                 )}
                 <div className={`${isLeft ? 'text-left' : 'text-right'} min-w-0`} style={{ width: '160px' }}>
                   <div className="text-sm font-semibold text-white leading-tight">{s.label}</div>
-                  <div className="text-[11px] font-medium text-white/40 uppercase tracking-wider mt-0.5" style={{ fontFamily: monoFont }}>{s.source}</div>
+                  <div className="text-[11px] font-medium text-white/65 uppercase tracking-wider mt-0.5" style={{ fontFamily: monoFont }}>{s.source}</div>
                 </div>
               </div>
             </div>
@@ -913,7 +913,7 @@ function PermissionsDemo() {
             className={`flex-1 py-1.5 text-[10px] font-semibold transition-all ${
               selected === m.id
                 ? 'bg-[#2F7D4F] text-white'
-                : 'bg-white/5 text-white/40 hover:text-white/60'
+                : 'bg-white/5 text-white/65 hover:text-white/60'
             }`}
           >
             {m.label}
@@ -927,7 +927,7 @@ function PermissionsDemo() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -4 }}
           transition={{ duration: 0.2 }}
-          className="text-[11px] leading-relaxed text-white/50"
+          className="text-[11px] leading-relaxed text-white/70"
         >
           {mode.desc}
         </motion.p>
@@ -1252,7 +1252,7 @@ export default function LandingV3() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-8 text-center">
             <p className="text-[15px] font-semibold text-white/60 mb-2">We sell on Amazon too</p>
-            <p className="text-[11px] font-medium text-white/50 uppercase tracking-[0.15em]">10 years on Amazon · 8 figures sold · DragonBot is the employee we always wanted</p>
+            <p className="text-[11px] font-medium text-white/70 uppercase tracking-[0.15em]">10 years on Amazon · 8 figures sold · DragonBot is the employee we always wanted</p>
           </motion.div>
 
           {/* Slack demos */}
@@ -1270,10 +1270,10 @@ export default function LandingV3() {
       {/*
       <Section id="seller-videos">
         <div className="text-center mb-10">
-          <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
+          <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
             See what <span className="bg-gradient-to-r from-[#FF9900] to-[#FFC266] bg-clip-text text-transparent">Amazon Sellers</span> have been building with{' '}
             <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">DragonBot</span>
-          </h4>
+          </h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {sellerVideos.map(v => (
@@ -1305,23 +1305,23 @@ export default function LandingV3() {
       {/* ─── BUILT FOR AMAZON ─── */}
       <Section id="built-for-amazon">
         <div className="text-center mb-2">
-          <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
+          <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
             AI that's <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">BUILT</span> for <span className="bg-gradient-to-r from-[#FF9900] to-[#FFC266] bg-clip-text text-transparent">Amazon</span>
-          </h4>
-          <p className="mt-4 text-lg text-white/55 max-w-2xl mx-auto leading-relaxed">
+          </h2>
+          <p className="mt-4 text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
             DragonBot doesn't just <em>talk</em> about Amazon. It's plugged into the same data the pros pay thousands a month for — and your own seller account.
           </p>
         </div>
 
         <BuiltForAmazonDiagram />
 
-        <p className="text-center text-xs font-medium text-white/30 uppercase tracking-[0.15em] mt-2" style={{ fontFamily: monoFont }}>
+        <p className="text-center text-xs font-medium text-white/60 uppercase tracking-[0.15em] mt-2" style={{ fontFamily: monoFont }}>
           And 3,000+ more integrations
         </p>
 
         {/* vs the alternative callout */}
         <div className="max-w-3xl mx-auto mt-12 bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-          <p className="text-sm font-semibold text-white/40 uppercase tracking-widest mb-2" style={{ fontFamily: monoFont }}>vs. the alternative</p>
+          <p className="text-sm font-semibold text-white/65 uppercase tracking-widest mb-2" style={{ fontFamily: monoFont }}>vs. the alternative</p>
           <p className="text-lg text-white/80 leading-relaxed">
             Multiple Amazon tools + manual spreadsheet work = <span className="text-[#F87171] font-bold">hours every week</span>.
             <br />
@@ -1331,11 +1331,11 @@ export default function LandingV3() {
 
         {/* Concrete example */}
         <div className="max-w-3xl mx-auto mt-6 bg-[#1A1D21] border border-white/10 rounded-2xl p-6 text-center">
-          <p className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-3" style={{ fontFamily: monoFont }}>For example</p>
+          <p className="text-xs font-semibold text-white/65 uppercase tracking-widest mb-3" style={{ fontFamily: monoFont }}>For example</p>
           <p className="text-base text-white/80 leading-relaxed mb-4">
             Ask DragonBot: <em className="text-white">"Why did our BSR drop on B0CK5LRQX7 last week?"</em>
           </p>
-          <p className="text-sm text-white/55 leading-relaxed">
+          <p className="text-sm text-white/70 leading-relaxed">
             DragonBot pulls your order history, ad performance, buyer messages, and recent reviews. <span className="text-[#98CC65] font-semibold">Answers in 30 seconds.</span>
           </p>
         </div>
@@ -1345,9 +1345,9 @@ export default function LandingV3() {
       {/*
       <Section id="the-shift">
         <div className="text-center mb-14">
-          <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
+          <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
             You&rsquo;ve tried the other tools. <span className="bg-gradient-to-r from-[#DC2626] to-[#F87171] bg-clip-text text-transparent">The work is still there.</span>
-          </h4>
+          </h2>
           <p className="mt-4 text-lg text-[#1A1A1A]/50 max-w-2xl mx-auto">
             ChatGPT. Claude. Zapier. Notion AI. You&rsquo;re already using AI.<br />You&rsquo;re also still doing the work.
           </p>
@@ -1403,10 +1403,10 @@ export default function LandingV3() {
       {/* ─── SECURITY ─── */}
       <Section id="security">
         <div className="text-center mb-14">
-          <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
+          <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
             Let's talk <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">security</span> and <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">accountability</span>
-          </h4>
-          <p className="mt-4 text-lg text-white/50 max-w-2xl mx-auto">
+          </h2>
+          <p className="mt-4 text-lg text-white/70 max-w-2xl mx-auto">
             Your Amazon account is your business. We treat it that way.
           </p>
         </div>
@@ -1422,7 +1422,7 @@ export default function LandingV3() {
               <div className="p-6 pb-4">
                 <h3 className="font-bold text-xl mb-1">{f.title}</h3>
                 {f.subtitle && <p className="text-[#98CC65] text-sm font-semibold mb-1">{f.subtitle}</p>}
-                <p className="text-white/50 text-sm leading-relaxed">{f.desc}</p>
+                <p className="text-white/70 text-sm leading-relaxed">{f.desc}</p>
               </div>
               <div className="mt-auto">
                 {f.title === 'Supervised mode' ? (
@@ -1436,7 +1436,7 @@ export default function LandingV3() {
                   <div className="w-full h-36"><SPAPIConnectionDemo /></div>
                 ) : (
                   <div className="w-full h-36 bg-gradient-to-b from-white/5 to-white/10 flex items-end justify-center">
-                    <span className="text-xs text-white/20 mb-4">Illustration</span>
+                    <span className="text-xs text-white/60 mb-4">Illustration</span>
                   </div>
                 )}
               </div>
@@ -1448,13 +1448,13 @@ export default function LandingV3() {
       {/* ─── SOCIAL PROOF ─── */}
       <Section>
         <div className="text-center mb-8">
-          <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em] flex items-center justify-center gap-3 mb-6">
+          <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em] flex items-center justify-center gap-3 mb-6">
             Brands love
             <motion.img src="/DragonBot-logo.png" alt="" className="h-10 inline"
               animate={{ y: [0, -4, 0] }}
               transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }} />
             <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">DragonBot</span>
-          </h4>
+          </h2>
           <a href="https://app.dragonrefunds.com/sign-up"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-[#F5F3F1] to-[#F5F3F1] hover:from-[#2F7D4F] hover:to-[#98CC65] text-[#0F0F0F] font-semibold uppercase tracking-wide rounded-lg transition-all hover:shadow-xl">
             Request Access <ArrowRight className="w-4 h-4" />
@@ -1465,7 +1465,7 @@ export default function LandingV3() {
           {testimonials.map((t, i) => (
             <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm flex flex-col">
               <div className="mb-4">
-                <div className="text-[11px] font-bold text-white/40 uppercase tracking-widest mb-1" style={{ fontFamily: monoFont }}>Saved</div>
+                <div className="text-[11px] font-bold text-white/65 uppercase tracking-widest mb-1" style={{ fontFamily: monoFont }}>Saved</div>
                 <div className="text-2xl font-extrabold bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">{t.saved}</div>
               </div>
               <p className="text-white/70 text-sm leading-relaxed mb-6 flex-1">&ldquo;{t.text}&rdquo;</p>
@@ -1473,11 +1473,11 @@ export default function LandingV3() {
                 <img src={t.avatar} alt={t.name} className="w-9 h-9 rounded-full object-cover shrink-0" />
                 <div className="flex-1 min-w-0">
                   <p className="font-semibold text-white text-sm">{t.name}</p>
-                  <p className="text-white/40 text-xs">{t.role}</p>
+                  <p className="text-white/65 text-xs">{t.role}</p>
                 </div>
                 {/* LinkedIn links — uncomment when ready
                 {t.linkedin && (
-                  <a href={t.linkedin} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#0A66C2] transition-colors shrink-0">
+                  <a href={t.linkedin} target="_blank" rel="noopener noreferrer" className="text-white/65 hover:text-[#0A66C2] transition-colors shrink-0">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                     </svg>
@@ -1494,9 +1494,9 @@ export default function LandingV3() {
       {/* ─── FAQ ─── */}
       <Section id="faq">
         <div className="text-center mb-14">
-          <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
+          <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
             Frequently asked questions
-          </h4>
+          </h2>
         </div>
 
         <div className="max-w-3xl mx-auto">
@@ -1518,7 +1518,7 @@ export default function LandingV3() {
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center justify-center">
           {/* Left: copy + CTAs */}
           <div className="max-w-md">
-            <p className="text-lg text-white/55 mb-8 leading-relaxed">
+            <p className="text-lg text-white/70 mb-8 leading-relaxed">
               Every feature. Every integration. $100 in credits on the house.
               No credit card, no sales call, no catch. When you need more, it starts at $50/month.
             </p>
@@ -1569,16 +1569,16 @@ export default function LandingV3() {
               <span className="font-bold text-lg text-white">DragonBot</span>
             </div>
             <div className="flex flex-wrap justify-center gap-8">
-              <a href="/" className="text-sm text-white/50 hover:text-white transition-colors">Product</a>
-              <a href="/pricing" className="text-sm text-white/50 hover:text-white transition-colors">Pricing</a>
-              <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Privacy</a>
-              <a href="/tos" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Terms</a>
-              <a href="/support" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Support</a>
-              <a href="mailto:info@dragonrefunds.com" className="text-sm text-white/50 hover:text-white transition-colors">info@dragonrefunds.com</a>
+              <a href="/" className="text-sm text-white/70 hover:text-white transition-colors">Product</a>
+              <a href="/pricing" className="text-sm text-white/70 hover:text-white transition-colors">Pricing</a>
+              <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white transition-colors">Privacy</a>
+              <a href="/tos" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white transition-colors">Terms</a>
+              <a href="/support" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white transition-colors">Support</a>
+              <a href="mailto:info@dragonrefunds.com" className="text-sm text-white/70 hover:text-white transition-colors">info@dragonrefunds.com</a>
             </div>
             <div className="text-center md:text-right">
-              <p className="text-sm text-white/30">&copy; {new Date().getFullYear()} Chacha Advisory LLC. All rights reserved.</p>
-              <p className="text-xs text-white/20 mt-1">30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
+              <p className="text-sm text-white/60">&copy; {new Date().getFullYear()} Chacha Advisory LLC. All rights reserved.</p>
+              <p className="text-xs text-white/60 mt-1">30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
             </div>
           </div>
         </div>

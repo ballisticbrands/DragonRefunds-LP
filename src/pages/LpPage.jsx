@@ -44,7 +44,7 @@ function Navbar() {
           </a>
           <div className="hidden md:flex items-center gap-8">
             {links.map(l => (
-              <a key={l.label} href={l.href} className="text-[13px] font-medium text-white/50 hover:text-[#98CC65] transition-colors">{l.label}</a>
+              <a key={l.label} href={l.href} className="text-[13px] font-medium text-white/70 hover:text-[#98CC65] transition-colors">{l.label}</a>
             ))}
             <a href={SIGNUP} className="px-5 py-2.5 bg-white/10 hover:bg-gradient-to-r hover:from-[#2F7D4F] hover:to-[#98CC65] text-white text-[13px] font-semibold uppercase tracking-wide rounded-lg transition-all">
               Get it free
@@ -79,7 +79,7 @@ function FAQItem({ q, a }) {
     <div className="border-b border-white/10">
       <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between py-5 text-left gap-4">
         <span className="font-medium text-white">{q}</span>
-        <ChevronDown className={`w-5 h-5 text-white/40 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`w-5 h-5 text-white/65 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
       <AnimatePresence>
         {open && (
@@ -154,7 +154,7 @@ export default function LpPage({ page }) {
             </h1>
             <p className="text-[17px] sm:text-[19px] text-white/60 max-w-2xl mx-auto mb-10 leading-[1.6]">{page.subhead}</p>
             <CtaButtons big />
-            <div className="flex flex-wrap items-center justify-center gap-5 text-[13px] font-medium text-white/40 mt-8">
+            <div className="flex flex-wrap items-center justify-center gap-5 text-[13px] font-medium text-white/65 mt-8">
               <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[#2F7D4F]" />Free forever plan</span>
               <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[#2F7D4F]" />No credit card required</span>
               <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[#2F7D4F]" />Amazon TOS compliant</span>
@@ -162,7 +162,7 @@ export default function LpPage({ page }) {
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="mt-10 text-center">
             <p className="text-[15px] font-semibold text-white/60 mb-2">We sell on Amazon too</p>
-            <p className="text-[11px] font-medium text-white/50 uppercase tracking-[0.15em]">10 years on Amazon · 8 figures sold · DragonBot is the employee we always wanted</p>
+            <p className="text-[11px] font-medium text-white/70 uppercase tracking-[0.15em]">10 years on Amazon · 8 figures sold · DragonBot is the employee we always wanted</p>
           </motion.div>
         </div>
       </section>
@@ -178,7 +178,7 @@ export default function LpPage({ page }) {
                   <Zap className="w-5 h-5 text-[#98CC65]" />
                 </div>
                 <h3 className="font-bold text-white mb-2">{b.t}</h3>
-                <p className="text-sm text-white/55 leading-relaxed">{b.d}</p>
+                <p className="text-sm text-white/70 leading-relaxed">{b.d}</p>
               </motion.div>
             ))}
           </div>
@@ -226,7 +226,7 @@ export default function LpPage({ page }) {
               <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-7 text-center">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] text-[#0F0F0F] font-extrabold flex items-center justify-center mx-auto mb-4" style={{ fontFamily: monoFont }}>{s.n}</div>
                 <h3 className="font-bold text-white mb-2">{s.t}</h3>
-                <p className="text-sm text-white/55 leading-relaxed">{s.d}</p>
+                <p className="text-sm text-white/70 leading-relaxed">{s.d}</p>
               </div>
             ))}
           </div>
@@ -271,16 +271,16 @@ export default function LpPage({ page }) {
               <span className="font-bold text-lg text-white">DragonBot</span>
             </div>
             <div className="flex flex-wrap justify-center gap-8">
-              <a href="/" className="text-sm text-white/50 hover:text-white transition-colors">Product</a>
-              <a href="/pricing" className="text-sm text-white/50 hover:text-white transition-colors">Pricing</a>
-              <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Privacy</a>
-              <a href="/tos" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Terms</a>
-              <a href="/support" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Support</a>
-              <a href="mailto:info@dragonrefunds.com" className="text-sm text-white/50 hover:text-white transition-colors">info@dragonrefunds.com</a>
+              <a href="/" className="text-sm text-white/70 hover:text-white transition-colors">Product</a>
+              <a href="/pricing" className="text-sm text-white/70 hover:text-white transition-colors">Pricing</a>
+              <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white transition-colors">Privacy</a>
+              <a href="/tos" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white transition-colors">Terms</a>
+              <a href="/support" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white transition-colors">Support</a>
+              <a href="mailto:info@dragonrefunds.com" className="text-sm text-white/70 hover:text-white transition-colors">info@dragonrefunds.com</a>
             </div>
             <div className="text-center md:text-right">
-              <p className="text-sm text-white/30">&copy; {new Date().getFullYear()} Chacha Advisory LLC. All rights reserved.</p>
-              <p className="text-xs text-white/20 mt-1">30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
+              <p className="text-sm text-white/60">&copy; {new Date().getFullYear()} Chacha Advisory LLC. All rights reserved.</p>
+              <p className="text-xs text-white/60 mt-1">30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
             </div>
           </div>
         </div>

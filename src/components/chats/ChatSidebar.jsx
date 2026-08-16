@@ -56,14 +56,14 @@ function ConnectionItem({ connection, dark }) {
         <span className="truncate flex-1 text-left">{connection.name}</span>
         {hasBrands && (
           expanded
-            ? <ChevronDown size={14} className={`shrink-0 ${dark ? 'text-white/30' : 'text-[#1A1A1A]/40'}`} />
-            : <ChevronRight size={14} className={`shrink-0 ${dark ? 'text-white/30' : 'text-[#1A1A1A]/40'}`} />
+            ? <ChevronDown size={14} className={`shrink-0 ${dark ? 'text-white/60' : 'text-[#1A1A1A]/40'}`} />
+            : <ChevronRight size={14} className={`shrink-0 ${dark ? 'text-white/60' : 'text-[#1A1A1A]/40'}`} />
         )}
       </button>
       {hasBrands && expanded && (
         <div className="pl-12 pr-5 pb-1">
           {connection.brands.map((brand) => (
-            <div key={brand} className={`py-1 text-xs font-satoshi ${dark ? 'text-white/40' : 'text-[#1A1A1A]/50'}`}>
+            <div key={brand} className={`py-1 text-xs font-satoshi ${dark ? 'text-white/65' : 'text-[#1A1A1A]/50'}`}>
               {brand}
             </div>
           ))}
@@ -87,10 +87,10 @@ export default function ChatSidebar({ channels, chats, activeSlug, onSelect, dar
         {/* Channels */}
         <div className="py-2">
           <div className="flex items-center px-5 py-2">
-            <h3 className={`text-xs font-satoshi font-semibold uppercase tracking-wider ${dark ? 'text-white/30' : 'text-[#1A1A1A]/40'}`}>
+            <h3 className={`text-xs font-satoshi font-semibold uppercase tracking-wider ${dark ? 'text-white/60' : 'text-[#1A1A1A]/40'}`}>
               Channels
             </h3>
-            <button className={`ml-auto p-0.5 rounded transition-colors ${dark ? 'text-white/30 hover:text-white/60 hover:bg-white/5' : 'text-[#1A1A1A]/30 hover:text-[#1A1A1A]/60 hover:bg-gray-100'}`}>
+            <button className={`ml-auto p-0.5 rounded transition-colors ${dark ? 'text-white/60 hover:text-white/60 hover:bg-white/5' : 'text-[#1A1A1A]/30 hover:text-[#1A1A1A]/60 hover:bg-gray-100'}`}>
               <Plus size={14} />
             </button>
           </div>
@@ -118,10 +118,10 @@ export default function ChatSidebar({ channels, chats, activeSlug, onSelect, dar
         {/* Your chats */}
         <div className="py-2">
           <div className="flex items-center px-5 py-2">
-            <h3 className={`text-xs font-satoshi font-semibold uppercase tracking-wider ${dark ? 'text-white/30' : 'text-[#1A1A1A]/40'}`}>
+            <h3 className={`text-xs font-satoshi font-semibold uppercase tracking-wider ${dark ? 'text-white/60' : 'text-[#1A1A1A]/40'}`}>
               Your chats
             </h3>
-            <button className={`ml-auto p-0.5 rounded transition-colors ${dark ? 'text-white/30 hover:text-white/60 hover:bg-white/5' : 'text-[#1A1A1A]/30 hover:text-[#1A1A1A]/60 hover:bg-gray-100'}`}>
+            <button className={`ml-auto p-0.5 rounded transition-colors ${dark ? 'text-white/60 hover:text-white/60 hover:bg-white/5' : 'text-[#1A1A1A]/30 hover:text-[#1A1A1A]/60 hover:bg-gray-100'}`}>
               <Plus size={14} />
             </button>
           </div>
@@ -148,7 +148,7 @@ export default function ChatSidebar({ channels, chats, activeSlug, onSelect, dar
 
         {/* Your connections */}
         <div className="py-2">
-          <h3 className={`px-5 py-2 text-xs font-satoshi font-semibold uppercase tracking-wider ${dark ? 'text-white/30' : 'text-[#1A1A1A]/40'}`}>
+          <h3 className={`px-5 py-2 text-xs font-satoshi font-semibold uppercase tracking-wider ${dark ? 'text-white/60' : 'text-[#1A1A1A]/40'}`}>
             Your connections
           </h3>
           <div>
@@ -163,7 +163,7 @@ export default function ChatSidebar({ channels, chats, activeSlug, onSelect, dar
 
         {/* Team members */}
         <div className="py-2">
-          <h3 className={`px-5 py-2 text-xs font-satoshi font-semibold uppercase tracking-wider ${dark ? 'text-white/30' : 'text-[#1A1A1A]/40'}`}>
+          <h3 className={`px-5 py-2 text-xs font-satoshi font-semibold uppercase tracking-wider ${dark ? 'text-white/60' : 'text-[#1A1A1A]/40'}`}>
             Team members
           </h3>
           <div>

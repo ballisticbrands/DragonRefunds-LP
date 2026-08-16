@@ -506,7 +506,7 @@ export default function LandingV2() {
                 </div>
                 <div>
                   <p className="font-medium text-white text-sm">{t.name}</p>
-                  <p className="text-white/40 text-xs">{t.role}</p>
+                  <p className="text-white/65 text-xs">{t.role}</p>
                 </div>
               </div>
             </div>
@@ -548,11 +548,11 @@ export default function LandingV2() {
             <div className="flex flex-wrap justify-center gap-8">
               {['The Shift', 'Solution', 'How It Works', 'Use Cases', 'FAQ'].map(label => (
                 <a key={label} href={`#${label.toLowerCase().replace(/\s/g, '-')}`}
-                  className="text-sm text-white/50 hover:text-white transition-colors">{label}</a>
+                  className="text-sm text-white/70 hover:text-white transition-colors">{label}</a>
               ))}
-              <a href="/privacy" className="text-sm text-white/50 hover:text-white transition-colors">Privacy</a>
+              <a href="/privacy" className="text-sm text-white/70 hover:text-white transition-colors">Privacy</a>
             </div>
-            <p className="text-sm text-white/30">&copy; 2026 DragonBot. All rights reserved.</p>
+            <p className="text-sm text-white/60">&copy; 2026 DragonBot. All rights reserved.</p>
           </div>
         </div>
       </footer>

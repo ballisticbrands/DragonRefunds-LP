@@ -42,7 +42,7 @@ function CompareCell({ value, isUs }) {
     return <Check className={`w-[18px] h-[18px] mx-auto ${isUs ? 'text-[#98CC65]' : 'text-white/60'}`} />;
   }
   if (value === 'no') {
-    return <span className="block text-center text-white/25 text-lg leading-none">–</span>;
+    return <span className="block text-center text-white/60 text-lg leading-none">–</span>;
   }
   if (value === 'partial') {
     return <span className="block text-center text-[11px] font-semibold text-[#F5C451]">Partial</span>;
@@ -61,7 +61,7 @@ function FAQItem({ q, a }) {
     <div className="border-b border-white/10">
       <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between py-5 text-left gap-4">
         <span className="font-medium text-white">{q}</span>
-        <ChevronDown className={`w-5 h-5 text-white/40 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`w-5 h-5 text-white/65 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
       <AnimatePresence>
         {open && (
@@ -125,7 +125,7 @@ export default function VsRefundsCompetitor({ slug: slugProp }) {
                   transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }} />
                 <DragonRefundsBrand />
               </div>
-              <span className="text-xl font-bold text-white/30" style={{ fontFamily: monoFont }}>vs</span>
+              <span className="text-xl font-bold text-white/60" style={{ fontFamily: monoFont }}>vs</span>
               <span className="text-[22px] sm:text-[25px] font-bold text-white/70 whitespace-nowrap">{c.name}</span>
             </div>
 
@@ -149,7 +149,7 @@ export default function VsRefundsCompetitor({ slug: slugProp }) {
               </a>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[13px] font-medium text-white/50">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[13px] font-medium text-white/70">
               <a href="https://sellercentral.amazon.com/selling-partner-appstore/dp/amzn1.sp.solution.d78b7343-017b-4e68-92e4-a1defb51aa6f"
                 target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-2 text-[#98CC65] hover:text-white transition-colors">
@@ -167,7 +167,7 @@ export default function VsRefundsCompetitor({ slug: slugProp }) {
       {/* ─── TL;DR ─── */}
       <Section className="!pt-6">
         <div className="max-w-4xl mx-auto">
-          <p className="text-center text-xs font-semibold text-white/40 uppercase tracking-widest mb-6" style={{ fontFamily: monoFont }}>The TL;DR</p>
+          <p className="text-center text-xs font-semibold text-white/65 uppercase tracking-widest mb-6" style={{ fontFamily: monoFont }}>The TL;DR</p>
           <div className="grid md:grid-cols-2 gap-5">
             <div className="bg-white/5 border border-white/10 rounded-2xl p-7">
               <p className="text-sm font-semibold text-white/70 mb-3">Choose {c.name} if</p>
@@ -187,7 +187,7 @@ export default function VsRefundsCompetitor({ slug: slugProp }) {
           <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
             Side-by-side
           </h2>
-          <p className="mt-3 text-white/55 max-w-xl mx-auto">The same feature, both services.</p>
+          <p className="mt-3 text-white/70 max-w-xl mx-auto">The same feature, both services.</p>
         </div>
 
         <div className="max-w-3xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-[#141618]">
@@ -205,7 +205,7 @@ export default function VsRefundsCompetitor({ slug: slugProp }) {
           {c.compare.map(group => (
             <div key={group.label}>
               <div className="grid grid-cols-[1.6fr_1fr_1fr] bg-white/[0.02] border-b border-white/[0.06]">
-                <div className="px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/35" style={{ fontFamily: monoFont }}>
+                <div className="px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/62" style={{ fontFamily: monoFont }}>
                   {group.label}
                 </div>
                 <div className="bg-[#2F7D4F]/[0.06] border-x border-[#2F7D4F]/20" />
@@ -215,7 +215,7 @@ export default function VsRefundsCompetitor({ slug: slugProp }) {
                 <div key={row.feature} className="grid grid-cols-[1.6fr_1fr_1fr] items-center border-b border-white/[0.06] last:border-b-0">
                   <div className="px-4 py-3.5">
                     <div className="text-[13px] font-medium text-white/85 leading-snug">{row.feature}</div>
-                    {row.note && <div className="text-[11px] text-white/35 mt-0.5">{row.note}</div>}
+                    {row.note && <div className="text-[11px] text-white/62 mt-0.5">{row.note}</div>}
                   </div>
                   {row.values.map((v, i) => (
                     <div key={i} className={`px-3 py-3.5 self-stretch flex items-center justify-center ${i === 0 ? 'bg-[#2F7D4F]/[0.06] border-x border-[#2F7D4F]/20' : ''}`}>
@@ -232,26 +232,26 @@ export default function VsRefundsCompetitor({ slug: slugProp }) {
       {/* ─── FEE / SAVINGS CALLOUT ─── */}
       <Section className="!py-10">
         <div className="max-w-3xl mx-auto rounded-2xl border border-[#2F7D4F]/30 bg-[#2F7D4F]/10 p-8 text-center">
-          <p className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mb-4" style={{ fontFamily: monoFont }}>
+          <p className="text-[11px] font-bold text-white/65 uppercase tracking-[0.2em] mb-4" style={{ fontFamily: monoFont }}>
             On $10,000 recovered
           </p>
           <div className="flex items-start justify-center gap-3 sm:gap-6">
             <div className="flex-1 max-w-[200px] flex flex-col items-center">
               <span className="inline-block h-[19px] mb-2 text-[9px] font-bold uppercase tracking-[0.12em] text-[#0F0F0F] bg-[#98CC65] border border-transparent rounded-full px-2 py-0.5" style={{ fontFamily: monoFont }}>Keep 100%</span>
               <div className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">$10,000</div>
-              <div className="text-[12px] text-white/55 mt-1.5">you keep with <span className="text-white/80 font-semibold">Dragon Refunds DIY</span> (free)</div>
+              <div className="text-[12px] text-white/70 mt-1.5">you keep with <span className="text-white/80 font-semibold">Dragon Refunds DIY</span> (free)</div>
             </div>
             <div className="self-stretch w-px bg-white/10" />
             <div className="flex-1 max-w-[200px] flex flex-col items-center">
-              <span className="inline-block h-[19px] mb-2 text-[9px] font-bold uppercase tracking-[0.12em] text-white/45 border border-white/20 rounded-full px-2 py-0.5" style={{ fontFamily: monoFont }}>Hands-off</span>
+              <span className="inline-block h-[19px] mb-2 text-[9px] font-bold uppercase tracking-[0.12em] text-white/67 border border-white/20 rounded-full px-2 py-0.5" style={{ fontFamily: monoFont }}>Hands-off</span>
               <div className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">$8,500</div>
-              <div className="text-[12px] text-white/55 mt-1.5">with <span className="text-white/80 font-semibold">Dragon Refunds</span> done-for-you ({c.commission.us})</div>
+              <div className="text-[12px] text-white/70 mt-1.5">with <span className="text-white/80 font-semibold">Dragon Refunds</span> done-for-you ({c.commission.us})</div>
             </div>
             <div className="self-stretch w-px bg-white/10" />
             <div className="flex-1 max-w-[200px] flex flex-col items-center">
-              <span className="inline-block h-[19px] mb-2 text-[9px] font-bold uppercase tracking-[0.12em] text-white/45 border border-white/20 rounded-full px-2 py-0.5" style={{ fontFamily: monoFont }}>Hands-off</span>
-              <div className="text-3xl sm:text-4xl font-extrabold text-white/50">{c.commission.themAmount || '$7,500'}</div>
-              <div className="text-[12px] text-white/45 mt-1.5">with {c.name} ({c.commission.them})</div>
+              <span className="inline-block h-[19px] mb-2 text-[9px] font-bold uppercase tracking-[0.12em] text-white/67 border border-white/20 rounded-full px-2 py-0.5" style={{ fontFamily: monoFont }}>Hands-off</span>
+              <div className="text-3xl sm:text-4xl font-extrabold text-white/70">{c.commission.themAmount || '$7,500'}</div>
+              <div className="text-[12px] text-white/67 mt-1.5">with {c.name} ({c.commission.them})</div>
             </div>
           </div>
           <p className="mt-6 text-[14px] text-white/60 leading-relaxed max-w-xl mx-auto">
@@ -268,7 +268,7 @@ export default function VsRefundsCompetitor({ slug: slugProp }) {
           <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
             Where <span className="text-white">{c.name}</span> wins
           </h2>
-          <p className="mt-3 text-white/55 max-w-2xl mx-auto">
+          <p className="mt-3 text-white/70 max-w-2xl mx-auto">
             We're not pretending {c.name} is a bad service. Here's where it's genuinely a fit.
           </p>
         </div>
@@ -288,7 +288,7 @@ export default function VsRefundsCompetitor({ slug: slugProp }) {
           <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
             Where <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">Dragon Refunds</span> wins
           </h2>
-          <p className="mt-3 text-white/55 max-w-2xl mx-auto">
+          <p className="mt-3 text-white/70 max-w-2xl mx-auto">
             The reasons sellers switch.
           </p>
         </div>

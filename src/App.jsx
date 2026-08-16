@@ -48,6 +48,9 @@ function App() {
   return (
     <Router>
       <RouteAnalytics />
+      {/* <main> gives the document its one required landmark (a11y
+          landmark-one-main); it wraps the routed page, not the chrome. */}
+      <main>
       <Suspense fallback={null}>
         <Routes>
           <Route path="/" element={<LandingV4 page={refundsPage} />} />
@@ -85,6 +88,7 @@ function App() {
           <Route path="*" element={<LandingV4 page={refundsPage} />} />
         </Routes>
       </Suspense>
+      </main>
     </Router>
   )
 }

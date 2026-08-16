@@ -57,7 +57,7 @@ function Navbar({ activeSlug }) {
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map(l => (
               <a key={l.label} href={l.href} {...(l.newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                className="text-[13px] font-medium text-white/50 hover:text-[#98CC65] transition-colors"
+                className="text-[13px] font-medium text-white/70 hover:text-[#98CC65] transition-colors"
                 style={{ fontFamily: monoFont }}>{l.label}</a>
             ))}
             <CompareDropdown activeSlug={activeSlug} />
@@ -139,7 +139,7 @@ function FeatureCell({ value, theirs }) {
 function WorkflowRow({ task, them, us, themLabel, themLogo }) {
   return (
     <div className="mb-8 last:mb-0">
-      <p className="text-sm font-semibold text-white/40 uppercase tracking-widest mb-4" style={{ fontFamily: monoFont }}>{task}</p>
+      <p className="text-sm font-semibold text-white/65 uppercase tracking-widest mb-4" style={{ fontFamily: monoFont }}>{task}</p>
       <div className="grid md:grid-cols-2 gap-5">
         {/* Them */}
         <div className="bg-red-950/20 rounded-2xl p-6 border border-red-900/30">
@@ -179,7 +179,7 @@ function FAQItem({ q, a }) {
     <div className="border-b border-white/10">
       <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between py-5 text-left gap-4">
         <span className="font-medium text-white">{q}</span>
-        <ChevronDown className={`w-5 h-5 text-white/40 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`w-5 h-5 text-white/65 shrink-0 transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
       <AnimatePresence>
         {open && (
@@ -234,7 +234,7 @@ export default function VsCompetitor() {
               <motion.img src="/DragonBot-logo.png" alt="DragonBot" className="h-14"
                 animate={{ y: [0, -4, 0] }}
                 transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }} />
-              <span className="text-2xl font-bold text-white/30" style={{ fontFamily: monoFont }}>vs</span>
+              <span className="text-2xl font-bold text-white/60" style={{ fontFamily: monoFont }}>vs</span>
               <img src={c.logo} alt={c.name} className="h-12 object-contain" />
             </div>
 
@@ -258,7 +258,7 @@ export default function VsCompetitor() {
               </a>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-5 text-[13px] font-medium text-white/40">
+            <div className="flex flex-wrap items-center justify-center gap-5 text-[13px] font-medium text-white/65">
               <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[#2F7D4F]" />Free Forever Plan</span>
               <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[#2F7D4F]" />No Credit Card Required</span>
               <span className="flex items-center gap-2"><Check className="w-4 h-4 text-[#2F7D4F]" />Amazon TOS Compliant</span>
@@ -269,7 +269,7 @@ export default function VsCompetitor() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-10 text-center">
             <p className="text-[15px] font-semibold text-white/60 mb-2">We sell on Amazon too</p>
-            <p className="text-[11px] font-medium text-white/50 uppercase tracking-[0.15em]">10 years on Amazon · 8 figures sold · DragonBot is the employee we always wanted</p>
+            <p className="text-[11px] font-medium text-white/70 uppercase tracking-[0.15em]">10 years on Amazon · 8 figures sold · DragonBot is the employee we always wanted</p>
           </motion.div>
         </div>
       </section>
@@ -277,7 +277,7 @@ export default function VsCompetitor() {
       {/* ─── TL;DR VERDICT ─── */}
       <Section>
         <div className="max-w-4xl mx-auto">
-          <p className="text-center text-xs font-semibold text-white/40 uppercase tracking-widest mb-6" style={{ fontFamily: monoFont }}>The TL;DR</p>
+          <p className="text-center text-xs font-semibold text-white/65 uppercase tracking-widest mb-6" style={{ fontFamily: monoFont }}>The TL;DR</p>
           <div className="grid md:grid-cols-2 gap-5">
             <div className="bg-white/5 border border-white/10 rounded-2xl p-7">
               <div className="flex items-center gap-2.5 mb-3">
@@ -305,13 +305,13 @@ export default function VsCompetitor() {
           <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
             Side-by-side
           </h2>
-          <p className="mt-3 text-white/55 max-w-xl mx-auto">A feature-by-feature comparison.</p>
+          <p className="mt-3 text-white/70 max-w-xl mx-auto">A feature-by-feature comparison.</p>
         </div>
 
         <div className="max-w-4xl mx-auto bg-white/5 border border-white/10 rounded-2xl overflow-hidden">
           <div className="grid grid-cols-[1fr_120px_120px] sm:grid-cols-[1fr_180px_180px]">
             {/* Header */}
-            <div className="p-4 border-b border-white/10 text-xs font-semibold text-white/40 uppercase tracking-widest" style={{ fontFamily: monoFont }}>Feature</div>
+            <div className="p-4 border-b border-white/10 text-xs font-semibold text-white/65 uppercase tracking-widest" style={{ fontFamily: monoFont }}>Feature</div>
             <div className="p-4 border-b border-l border-white/10 text-center">
               <img src={c.logo} alt={c.name} className="h-6 object-contain mx-auto" />
             </div>
@@ -343,7 +343,7 @@ export default function VsCompetitor() {
           <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
             How the work actually gets done
           </h2>
-          <p className="mt-3 text-white/55 max-w-2xl mx-auto">
+          <p className="mt-3 text-white/70 max-w-2xl mx-auto">
             The same task, both tools. Pay attention to who is doing the work.
           </p>
         </div>
@@ -361,7 +361,7 @@ export default function VsCompetitor() {
           <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
             Where <span className="text-white">{c.name}</span> wins
           </h2>
-          <p className="mt-3 text-white/55 max-w-2xl mx-auto">
+          <p className="mt-3 text-white/70 max-w-2xl mx-auto">
             We're not pretending {c.name} is a bad product. Here's where it's genuinely better.
           </p>
         </div>
@@ -381,7 +381,7 @@ export default function VsCompetitor() {
           <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
             Where <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">DragonBot</span> wins
           </h2>
-          <p className="mt-3 text-white/55 max-w-2xl mx-auto">
+          <p className="mt-3 text-white/70 max-w-2xl mx-auto">
             The reasons sellers switch.
           </p>
         </div>
@@ -441,7 +441,7 @@ export default function VsCompetitor() {
         </div>
         <div className="max-w-3xl mx-auto grid md:grid-cols-2 gap-5">
           <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
-            <p className="text-xs font-semibold text-white/40 uppercase tracking-widest mb-4" style={{ fontFamily: monoFont }}>{c.name}</p>
+            <p className="text-xs font-semibold text-white/65 uppercase tracking-widest mb-4" style={{ fontFamily: monoFont }}>{c.name}</p>
             <ul className="space-y-3">
               {c.pricingComparison.themItems.map((item, i) => (
                 <li key={i} className="flex items-center justify-between text-sm">
@@ -458,12 +458,12 @@ export default function VsCompetitor() {
             </div>
             <p className="text-sm text-white/70 mb-4">{c.pricingComparison.usItem.label}</p>
             {c.pricingComparison.usItem.note && (
-              <p className="text-xs text-white/50">{c.pricingComparison.usItem.note}</p>
+              <p className="text-xs text-white/70">{c.pricingComparison.usItem.note}</p>
             )}
           </div>
         </div>
         {c.pricingComparison.footnote && (
-          <p className="text-center text-sm text-white/55 mt-8 max-w-2xl mx-auto leading-relaxed">{c.pricingComparison.footnote}</p>
+          <p className="text-center text-sm text-white/70 mt-8 max-w-2xl mx-auto leading-relaxed">{c.pricingComparison.footnote}</p>
         )}
       </Section>
 
@@ -515,16 +515,16 @@ export default function VsCompetitor() {
               <span className="font-bold text-lg text-white">DragonBot</span>
             </div>
             <div className="flex flex-wrap justify-center gap-8">
-              <a href="/" className="text-sm text-white/50 hover:text-white transition-colors">Product</a>
-              <a href="/pricing" className="text-sm text-white/50 hover:text-white transition-colors">Pricing</a>
-              <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Privacy</a>
-              <a href="/tos" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Terms</a>
-              <a href="/support" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Support</a>
-              <a href="mailto:info@dragonrefunds.com" className="text-sm text-white/50 hover:text-white transition-colors">info@dragonrefunds.com</a>
+              <a href="/" className="text-sm text-white/70 hover:text-white transition-colors">Product</a>
+              <a href="/pricing" className="text-sm text-white/70 hover:text-white transition-colors">Pricing</a>
+              <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white transition-colors">Privacy</a>
+              <a href="/tos" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white transition-colors">Terms</a>
+              <a href="/support" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white transition-colors">Support</a>
+              <a href="mailto:info@dragonrefunds.com" className="text-sm text-white/70 hover:text-white transition-colors">info@dragonrefunds.com</a>
             </div>
             <div className="text-center md:text-right">
-              <p className="text-sm text-white/30">&copy; {new Date().getFullYear()} Chacha Advisory LLC. All rights reserved.</p>
-              <p className="text-xs text-white/20 mt-1">30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
+              <p className="text-sm text-white/60">&copy; {new Date().getFullYear()} Chacha Advisory LLC. All rights reserved.</p>
+              <p className="text-xs text-white/60 mt-1">30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
             </div>
           </div>
         </div>

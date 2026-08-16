@@ -33,7 +33,7 @@ function FooterColumn({ title, links }) {
         {links.map(l => (
           <li key={l.label}>
             <a href={l.href} {...(l.newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-              className="text-sm text-white/50 hover:text-white transition-colors">
+              className="text-sm text-white/70 hover:text-white transition-colors">
               {l.label}
             </a>
           </li>
@@ -54,7 +54,7 @@ export default function RefundsFooter() {
               <img src="/DragonBot-logo.png" alt="Dragon Refunds" className="h-8" />
               <span className="font-bold text-lg text-white">Dragon Refunds</span>
             </div>
-            <p className="text-sm text-white/50 leading-relaxed max-w-[230px]">
+            <p className="text-sm text-white/70 leading-relaxed max-w-[230px]">
               See exactly where Amazon owes you — and recover it. DIY for free, or done-for-you for 15%.
             </p>
           </div>
@@ -65,12 +65,12 @@ export default function RefundsFooter() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <a href="mailto:info@dragonrefunds.com" className="text-sm text-white/50 hover:text-white transition-colors">
+          <a href="mailto:info@dragonrefunds.com" className="text-sm text-white/70 hover:text-white transition-colors">
             info@dragonrefunds.com
           </a>
           <div className="text-center md:text-right">
-            <p className="text-sm text-white/30">&copy; {new Date().getFullYear()} Chacha Advisory LLC. All rights reserved.</p>
-            <p className="text-xs text-white/20 mt-1">30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
+            <p className="text-sm text-white/60">&copy; {new Date().getFullYear()} Chacha Advisory LLC. All rights reserved.</p>
+            <p className="text-xs text-white/60 mt-1">30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
           </div>
         </div>
       </div>

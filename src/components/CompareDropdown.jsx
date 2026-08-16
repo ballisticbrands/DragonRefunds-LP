@@ -21,7 +21,7 @@ function buildItems() {
 function Column({ title, items, activeSlug }) {
   return (
     <div>
-      <p className="px-3 pt-3 pb-1.5 text-[10px] font-semibold text-white/35 uppercase tracking-[0.15em]" style={{ fontFamily: monoFont }}>{title}</p>
+      <p className="px-3 pt-3 pb-1.5 text-[10px] font-semibold text-white/62 uppercase tracking-[0.15em]" style={{ fontFamily: monoFont }}>{title}</p>
       <div className="flex flex-col">
         {items.map(item => (
           <a
@@ -53,7 +53,7 @@ export default function CompareDropdown({ activeSlug }) {
       onMouseLeave={() => setOpen(false)}
     >
       <button
-        className="flex items-center gap-1 text-[13px] font-medium text-white/50 hover:text-[#98CC65] transition-colors"
+        className="flex items-center gap-1 text-[13px] font-medium text-white/70 hover:text-[#98CC65] transition-colors"
         style={{ fontFamily: monoFont }}
         onClick={() => setOpen(o => !o)}
       >
@@ -105,7 +105,7 @@ export function CompareDropdownMobile({ activeSlug, onItemClick }) {
                 { title: 'AI Tools', items: ai },
               ].filter(s => s.items.length > 0).map(section => (
                 <div key={section.title}>
-                  <p className="text-[10px] font-semibold text-white/35 uppercase tracking-[0.15em] mb-2" style={{ fontFamily: monoFont }}>{section.title}</p>
+                  <p className="text-[10px] font-semibold text-white/62 uppercase tracking-[0.15em] mb-2" style={{ fontFamily: monoFont }}>{section.title}</p>
                   <div className="flex flex-col gap-3">
                     {section.items.map(item => (
                       <a

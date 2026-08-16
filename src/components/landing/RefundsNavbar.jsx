@@ -58,7 +58,7 @@ export default function RefundsNavbar({ light, onToggle }) {
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map(l => (
               <a key={l.label} href={l.href}
-                className="text-[13px] font-medium text-white/50 hover:text-[#98CC65] transition-colors"
+                className="text-[13px] font-medium text-white/70 hover:text-[#98CC65] transition-colors"
                 style={{ fontFamily: monoFont }}>{l.label}</a>
             ))}
           </div>

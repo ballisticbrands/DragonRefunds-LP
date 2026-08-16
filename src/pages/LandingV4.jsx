@@ -48,7 +48,7 @@ function WorksWithDropdown() {
       onMouseLeave={() => setOpen(false)}
     >
       <button
-        className="flex items-center gap-1 text-[13px] font-medium text-white/50 hover:text-[#98CC65] transition-colors"
+        className="flex items-center gap-1 text-[13px] font-medium text-white/70 hover:text-[#98CC65] transition-colors"
         style={{ fontFamily: monoFont }}
         onClick={() => setOpen(o => !o)}
       >
@@ -190,7 +190,7 @@ function Navbar({ light, onToggle, links = navLinks, showWorksWith = true, ctaLa
           </a>
           <div className="hidden md:flex items-center gap-8">
             {links.map(l => (
-              <a key={l.label} href={l.href} {...(l.newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className={`text-[13px] font-medium transition-colors ${l.active ? 'text-white bg-white/10 px-3 py-1.5 rounded-md' : 'text-white/50 hover:text-[#98CC65]'}`} style={{ fontFamily: monoFont }}>{l.label}</a>
+              <a key={l.label} href={l.href} {...(l.newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className={`text-[13px] font-medium transition-colors ${l.active ? 'text-white bg-white/10 px-3 py-1.5 rounded-md' : 'text-white/70 hover:text-[#98CC65]'}`} style={{ fontFamily: monoFont }}>{l.label}</a>
             ))}
             {showWorksWith && <WorksWithDropdown />}
           </div>
@@ -208,7 +208,8 @@ function Navbar({ light, onToggle, links = navLinks, showWorksWith = true, ctaLa
             <button type="button" onClick={onToggle} aria-label="Toggle light and dark theme" className="p-2 text-white/60">
               {light ? <Moon size={20} /> : <Sun size={20} />}
             </button>
-            <button className="p-2" onClick={() => setMobileOpen(!mobileOpen)}>
+            <button className="p-2" onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label={mobileOpen ? "Close menu" : "Open menu"} aria-expanded={mobileOpen}>
               {mobileOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
@@ -261,7 +262,7 @@ function Eyebrow({ children }) {
 const CHAT_SCRIPT = [
   { who: 'user', text: 'Audit my Amazon PPC for the last 30 days.' },
   { who: 'tool', text: 'Running the `PPC audit` skill for the last `30 days`' },
-  { who: 'host', text: <>Done — pulled spend across 47 campaigns. <strong>Top finding:</strong> 23 keywords burning $1,840/mo with 0 conversions (paused, projected ACoS ↓ from 38% → 26%). Full breakdown:<div className="mt-2 grid grid-cols-2 gap-2 text-[12px]"><div className="px-2.5 py-1.5 bg-white/5 rounded border border-white/10"><div className="font-bold text-[#98CC65]">$1,840</div><div className="text-white/50">wasted/mo</div></div><div className="px-2.5 py-1.5 bg-white/5 rounded border border-white/10"><div className="font-bold text-[#98CC65]">−12pt</div><div className="text-white/50">projected ACoS</div></div><div className="px-2.5 py-1.5 bg-white/5 rounded border border-white/10"><div className="font-bold text-[#98CC65]">23</div><div className="text-white/50">keywords paused</div></div><div className="px-2.5 py-1.5 bg-white/5 rounded border border-white/10"><div className="font-bold text-[#98CC65]">$60/d</div><div className="text-white/50">reallocated</div></div></div></> },
+  { who: 'host', text: <>Done — pulled spend across 47 campaigns. <strong>Top finding:</strong> 23 keywords burning $1,840/mo with 0 conversions (paused, projected ACoS ↓ from 38% → 26%). Full breakdown:<div className="mt-2 grid grid-cols-2 gap-2 text-[12px]"><div className="px-2.5 py-1.5 bg-white/5 rounded border border-white/10"><div className="font-bold text-[#98CC65]">$1,840</div><div className="text-white/70">wasted/mo</div></div><div className="px-2.5 py-1.5 bg-white/5 rounded border border-white/10"><div className="font-bold text-[#98CC65]">−12pt</div><div className="text-white/70">projected ACoS</div></div><div className="px-2.5 py-1.5 bg-white/5 rounded border border-white/10"><div className="font-bold text-[#98CC65]">23</div><div className="text-white/70">keywords paused</div></div><div className="px-2.5 py-1.5 bg-white/5 rounded border border-white/10"><div className="font-bold text-[#98CC65]">$60/d</div><div className="text-white/70">reallocated</div></div></div></> },
   { who: 'user', text: 'Now check listing health — anything suppressed?' },
   { who: 'tool', text: 'Running the `account health` check' },
   { who: 'host', text: <>1 listing suppressed: <code className="px-1.5 py-0.5 rounded bg-white/10 text-[#98CC65] text-[11px]">B0CK5LRQX7</code> — backend image URL returned 404. Re-uploaded the image and submitted reinstatement. Should be back within 2 hours. Want me to schedule hourly health checks?</> },
@@ -274,7 +275,7 @@ function ChatHeader() {
         <img src="/DragonBot-avatar.png" alt="DragonBot" className="w-[18px] h-[18px] object-contain" />
         <span className="text-[13px] font-semibold text-white/80">DragonBot</span>
       </div>
-      <span className="flex items-center gap-1.5 text-[10px] font-bold text-white/30 uppercase tracking-widest" style={{ fontFamily: monoFont }}>
+      <span className="flex items-center gap-1.5 text-[10px] font-bold text-white/60 uppercase tracking-widest" style={{ fontFamily: monoFont }}>
         <span className="w-1.5 h-1.5 rounded-full bg-[#98CC65]" /> Amazon connected
       </span>
     </div>
@@ -316,8 +317,8 @@ function ChatBubble({ msg }) {
           {typeof msg.text === 'string' ? msg.text : <div>{msg.text}</div>}
           {msg.quote && (
             <div className="mt-2 border-l-2 border-white/20 pl-3 text-[12px] text-white/60 leading-relaxed">
-              {msg.quote.order && <div><span className="text-white/40">Order:</span> <span className="text-[#7BA9E0]">{msg.quote.order}</span></div>}
-              {msg.quote.product && <div><span className="text-white/40">Product:</span> {msg.quote.product}</div>}
+              {msg.quote.order && <div><span className="text-white/65">Order:</span> <span className="text-[#7BA9E0]">{msg.quote.order}</span></div>}
+              {msg.quote.product && <div><span className="text-white/65">Product:</span> {msg.quote.product}</div>}
               {msg.quote.body && <div className="mt-1 italic">“{msg.quote.body}”</div>}
             </div>
           )}
@@ -339,7 +340,7 @@ function ChatBubble({ msg }) {
               {msg.stats.map((s, i) => (
                 <div key={i} className="px-2.5 py-1.5 bg-white/5 rounded border border-white/10">
                   <div className="font-bold text-[#98CC65]">{s.v}</div>
-                  <div className="text-white/50">{s.l}</div>
+                  <div className="text-white/70">{s.l}</div>
                 </div>
               ))}
             </div>
@@ -367,7 +368,7 @@ function ChatDemo({ script = CHAT_SCRIPT, feature = null }) {
 
   return (
     <div className="w-full max-w-3xl mx-auto">
-      <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em] text-center mb-6">
+      <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em] text-center mb-6">
         {feature ? (
           <>Your <span className="bg-gradient-to-r from-[#FF9900] to-[#FFC266] bg-clip-text text-transparent">{feature}</span> with{' '}
             <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">DragonBot</span></>
@@ -375,7 +376,7 @@ function ChatDemo({ script = CHAT_SCRIPT, feature = null }) {
           <>Your <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">AI</span> with{' '}
             <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">DragonBot</span></>
         )}
-      </h4>
+      </h2>
       <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-[#141618]" style={{ fontFamily: sysFont }}>
         <ChatHeader />
         <div ref={scrollRef} className="flex flex-col py-3 min-h-[420px] sm:min-h-[460px] max-h-[460px] overflow-y-auto" style={{ scrollbarWidth: 'none' }}>
@@ -386,7 +387,7 @@ function ChatDemo({ script = CHAT_SCRIPT, feature = null }) {
           ))}
         </div>
         <div className="px-4 pb-3 pt-1 border-t border-white/10">
-          <div className="rounded-lg px-3 py-2 text-xs text-white/30 border border-white/10 bg-white/5">
+          <div className="rounded-lg px-3 py-2 text-xs text-white/60 border border-white/10 bg-white/5">
             Message DragonBot…
           </div>
         </div>
@@ -429,10 +430,10 @@ const REIMB_ROWS = [
 function ReimbursementDashboard({ feature = 'Amazon reimbursements' }) {
   return (
     <div className="w-full max-w-5xl mx-auto">
-      <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em] text-center mb-6">
+      <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em] text-center mb-6">
         Your <span className="bg-gradient-to-r from-[#FF9900] to-[#FFC266] bg-clip-text text-transparent">{feature}</span> with{' '}
         <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">DragonBot</span>
-      </h4>
+      </h2>
       <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-[#141618]" style={{ fontFamily: sysFont }}>
         {/* header + region/program tabs */}
         <div className="flex items-center justify-between px-4 py-3 border-b border-white/10">
@@ -442,7 +443,7 @@ function ReimbursementDashboard({ feature = 'Amazon reimbursements' }) {
           </div>
           <div className="flex items-center gap-1">
             {REIMB_TABS.map((t, i) => (
-              <span key={t} className={`text-[10px] font-semibold px-2 py-1 rounded ${i === 0 ? 'bg-[#2F7D4F] text-white' : 'text-white/40'}`} style={{ fontFamily: monoFont }}>{t}</span>
+              <span key={t} className={`text-[10px] font-semibold px-2 py-1 rounded ${i === 0 ? 'bg-[#2F7D4F] text-white' : 'text-white/65'}`} style={{ fontFamily: monoFont }}>{t}</span>
             ))}
           </div>
         </div>
@@ -451,7 +452,7 @@ function ReimbursementDashboard({ feature = 'Amazon reimbursements' }) {
           {REIMB_KPIS.map(k => (
             <div key={k.label} className="bg-[#141618] px-4 py-3">
               <div className={`text-lg sm:text-xl font-extrabold ${k.accent ? 'text-[#98CC65]' : k.warn ? 'text-[#F5C451]' : 'text-white'}`}>{k.value}</div>
-              <div className="text-[11px] text-white/45 mt-0.5">{k.label}</div>
+              <div className="text-[11px] text-white/67 mt-0.5">{k.label}</div>
             </div>
           ))}
         </div>
@@ -469,7 +470,7 @@ function ReimbursementDashboard({ feature = 'Amazon reimbursements' }) {
         <div className="overflow-x-auto">
           <table className="w-full text-left text-[12px] min-w-[560px]">
             <thead>
-              <tr className="text-[10px] uppercase tracking-wider text-white/35" style={{ fontFamily: monoFont }}>
+              <tr className="text-[10px] uppercase tracking-wider text-white/62" style={{ fontFamily: monoFont }}>
                 <th className="font-semibold px-4 py-2">Shipment</th>
                 <th className="font-semibold px-3 py-2">Issue</th>
                 <th className="font-semibold px-3 py-2 text-right">Units</th>
@@ -504,8 +505,8 @@ function ReimbursementDashboard({ feature = 'Amazon reimbursements' }) {
         </div>
         {/* free vs managed footer */}
         <div className="flex flex-col sm:flex-row gap-2 sm:gap-6 px-4 py-3 border-t border-white/10 text-[11px]">
-          <span className="flex items-start gap-1.5 text-white/55"><span className="w-1.5 h-1.5 rounded-full bg-[#98CC65] mt-1 shrink-0" /><span><strong className="text-white/80">Free</strong> — opportunity report + step-by-step SOP to file it yourself. Keep 100%.</span></span>
-          <span className="flex items-start gap-1.5 text-white/55"><span className="w-1.5 h-1.5 rounded-full bg-white/40 mt-1 shrink-0" /><span><strong className="text-white/80">Optional</strong> — we file for you. 25% of what we recover, only if we win.</span></span>
+          <span className="flex items-start gap-1.5 text-white/70"><span className="w-1.5 h-1.5 rounded-full bg-[#98CC65] mt-1 shrink-0" /><span><strong className="text-white/80">Free</strong> — opportunity report + step-by-step SOP to file it yourself. Keep 100%.</span></span>
+          <span className="flex items-start gap-1.5 text-white/70"><span className="w-1.5 h-1.5 rounded-full bg-white/40 mt-1 shrink-0" /><span><strong className="text-white/80">Optional</strong> — we file for you. 25% of what we recover, only if we win.</span></span>
         </div>
       </div>
     </div>
@@ -646,10 +647,10 @@ function ReimbursementDashboardV2({ feature = 'Amazon reimbursements', showHeadi
   return (
     <div className="w-full max-w-5xl mx-auto">
       {showHeading && (
-        <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em] text-center mb-6">
+        <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em] text-center mb-6">
           Your <span className="bg-gradient-to-r from-[#FF9900] to-[#FFC266] bg-clip-text text-transparent">{feature}</span> with{' '}
           <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">Dragon Refunds</span>
-        </h4>
+        </h2>
       )}
       <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-[#141618]" style={{ fontFamily: sysFont }}>
         {/* header + region/program tabs (toggleable) */}
@@ -661,7 +662,7 @@ function ReimbursementDashboardV2({ feature = 'Amazon reimbursements', showHeadi
           <div className="flex items-center gap-1">
             {REIMB2_TABS.map(t => (
               <button key={t} type="button" onClick={() => setTab(t)}
-                className={`text-[10px] font-semibold px-2 py-1 rounded transition-colors ${t === tab ? 'bg-[#2F7D4F] text-white' : 'text-white/40 hover:text-white/70'}`}
+                className={`text-[10px] font-semibold px-2 py-1 rounded transition-colors ${t === tab ? 'bg-[#2F7D4F] text-white' : 'text-white/65 hover:text-white/70'}`}
                 style={{ fontFamily: monoFont }}>{t}</button>
             ))}
           </div>
@@ -673,18 +674,18 @@ function ReimbursementDashboardV2({ feature = 'Amazon reimbursements', showHeadi
             <div className="grid grid-cols-2 sm:flex sm:items-stretch gap-px bg-white/5">
               <div className="bg-[#141618] px-4 py-3 sm:flex-1">
                 <div className="text-lg sm:text-xl font-extrabold text-[#98CC65]">{data.kpis.recoveredYTD}</div>
-                <div className="text-[11px] text-white/45 mt-0.5">Recovered YTD</div>
+                <div className="text-[11px] text-white/67 mt-0.5">Recovered YTD</div>
               </div>
               <div className="bg-[#141618] px-4 py-3 sm:flex-1">
                 <div className="text-2xl sm:text-3xl font-extrabold text-white">{data.kpis.recoverableFound}</div>
-                <div className="text-[11px] text-white/45 mt-0.5">Recoverable found</div>
+                <div className="text-[11px] text-white/67 mt-0.5">Recoverable found</div>
               </div>
-              <div className="hidden sm:flex items-center justify-center px-1.5 bg-[#141618] text-white/25 text-xl font-bold">=</div>
+              <div className="hidden sm:flex items-center justify-center px-1.5 bg-[#141618] text-white/60 text-xl font-bold">=</div>
               <div className="bg-[#F87171]/[0.06] px-4 py-3 sm:flex-1">
                 <div className="text-lg sm:text-xl font-extrabold text-[#F87171]">{data.kpis.needsAction}</div>
                 <div className="text-[11px] text-[#F87171]/70 mt-0.5">Needs action</div>
               </div>
-              <div className="hidden sm:flex items-center justify-center px-1.5 bg-[#141618] text-white/25 text-xl font-bold">+</div>
+              <div className="hidden sm:flex items-center justify-center px-1.5 bg-[#141618] text-white/60 text-xl font-bold">+</div>
               <div className="bg-[#F59E0B]/[0.06] px-4 py-3 sm:flex-1">
                 <div className="text-lg sm:text-xl font-extrabold text-[#F59E0B]">{data.kpis.underCase}</div>
                 <div className="text-[11px] text-[#F59E0B]/70 mt-0.5">Under case</div>
@@ -704,7 +705,7 @@ function ReimbursementDashboardV2({ feature = 'Amazon reimbursements', showHeadi
             <div className="overflow-x-auto">
               <table className="w-full text-left text-[12px] min-w-[680px]">
                 <thead>
-                  <tr className="text-[10px] uppercase tracking-wider text-white/35" style={{ fontFamily: monoFont }}>
+                  <tr className="text-[10px] uppercase tracking-wider text-white/62" style={{ fontFamily: monoFont }}>
                     <th className="font-semibold px-4 py-2">Shipment</th>
                     <th className="font-semibold px-3 py-2 text-right">{data.unit} expected</th>
                     <th className="font-semibold px-3 py-2 text-right">{data.unit} located</th>
@@ -725,7 +726,7 @@ function ReimbursementDashboardV2({ feature = 'Amazon reimbursements', showHeadi
                       <td className="px-3 py-2.5 whitespace-nowrap">
                         {r.caseId
                           ? <span className="inline-flex items-center gap-1 text-[#7BA9E0] font-medium">{r.caseId}<ExternalLink className="w-3 h-3 opacity-60" /></span>
-                          : <span className="text-white/25">—</span>}
+                          : <span className="text-white/60">—</span>}
                       </td>
                       <td className="px-4 py-2.5 text-right whitespace-nowrap">
                         {r.action === 'sop' && (
@@ -737,7 +738,7 @@ function ReimbursementDashboardV2({ feature = 'Amazon reimbursements', showHeadi
                         {r.action === 'details' && <span className="text-[11px] font-semibold text-[#98CC65]">Details →</span>}
                         {r.action === 'upload' && <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#0F0F0F] bg-[#F5C451] rounded px-2 py-0.5"><FileText className="w-3 h-3" />Upload POD</span>}
                         {r.action === 'recovered' && <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#98CC65]"><Check className="w-3.5 h-3.5" />{r.value}</span>}
-                        {r.action === 'none' && <span className="text-white/25">—</span>}
+                        {r.action === 'none' && <span className="text-white/60">—</span>}
                       </td>
                     </tr>
                   ))}
@@ -749,7 +750,7 @@ function ReimbursementDashboardV2({ feature = 'Amazon reimbursements', showHeadi
                     <td className="px-3 py-2.5 text-right text-white/60">{data.ghost.located}</td>
                     <td className="px-3 py-2.5 text-right font-bold text-white">{data.ghost.value}</td>
                     <td className="px-3 py-2.5 whitespace-nowrap"><span className="inline-flex items-center gap-1.5 text-[#F87171]"><span className="w-1.5 h-1.5 rounded-full bg-[#F87171]" />Opportunity</span></td>
-                    <td className="px-3 py-2.5 text-white/25">—</td>
+                    <td className="px-3 py-2.5 text-white/60">—</td>
                     <td className="px-4 py-2.5 text-right"><span className="text-[11px] font-semibold text-white/80 border border-white/15 rounded px-2 py-0.5">File it myself</span></td>
                   </tr>
                 </tbody>
@@ -757,7 +758,7 @@ function ReimbursementDashboardV2({ feature = 'Amazon reimbursements', showHeadi
             </div>
           </>
         ) : (
-          <div className="px-4 py-16 text-center text-[13px] text-white/40">
+          <div className="px-4 py-16 text-center text-[13px] text-white/65">
             No reimbursement activity synced for <span className="text-white/70 font-semibold">{tab}</span> yet.
           </div>
         )}
@@ -793,7 +794,7 @@ const APPSTORE_URL = 'https://sellercentral.amazon.com/selling-partner-appstore/
 function SellerCredBand() {
   return (
     <div className="mt-10 mx-auto max-w-2xl">
-      <p className="text-center text-[13px] font-semibold text-white/45 uppercase tracking-[0.15em] mb-4">
+      <p className="text-center text-[13px] font-semibold text-white/67 uppercase tracking-[0.15em] mb-4">
         We sell on Amazon too
       </p>
       <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 rounded-2xl border border-white/10 bg-white/[0.03] px-7 py-6">
@@ -808,12 +809,12 @@ function SellerCredBand() {
         <div className="flex items-center gap-7 sm:gap-9">
           <div className="text-center">
             <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-[-0.02em]">10 years</div>
-            <div className="text-[11px] font-medium uppercase tracking-[0.15em] text-white/45 mt-1">on Amazon</div>
+            <div className="text-[11px] font-medium uppercase tracking-[0.15em] text-white/67 mt-1">on Amazon</div>
           </div>
           <div className="w-px h-11 bg-white/10" />
           <div className="text-center">
             <div className="text-2xl sm:text-3xl font-extrabold tracking-[-0.02em] bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">8 figures</div>
-            <div className="text-[11px] font-medium uppercase tracking-[0.15em] text-white/45 mt-1">sold</div>
+            <div className="text-[11px] font-medium uppercase tracking-[0.15em] text-white/67 mt-1">sold</div>
           </div>
         </div>
       </div>
@@ -832,14 +833,14 @@ function ReimbursementAuditIntro() {
   return (
     <div className="max-w-4xl mx-auto mb-12">
       <div className="text-center">
-        <p className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
+        <p className="text-[11px] font-bold text-white/65 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
           Shipment refunds
         </p>
-        <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
+        <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
           Connect your account.{' '}
           <span className="bg-gradient-to-r from-[#FF9900] to-[#FFC266] bg-clip-text text-transparent">See what Amazon owes you.</span>
-        </h4>
-        <p className="mt-4 text-[15px] text-white/55 max-w-2xl mx-auto leading-relaxed">
+        </h2>
+        <p className="mt-4 text-[15px] text-white/70 max-w-2xl mx-auto leading-relaxed">
           The best way to find out what FBA reimbursements are worth to you is to take a look together.
           Connect in two minutes over Amazon's official API — read-only — and Dragon Refunds audits your entire history.
         </p>
@@ -851,7 +852,7 @@ function ReimbursementAuditIntro() {
             <span className="mt-0.5 shrink-0 text-[#98CC65]">{p.icon}</span>
             <span>
               <span className="block text-[13px] font-bold text-white/85">{p.title}</span>
-              <span className="block text-[12px] text-white/50 leading-relaxed mt-0.5">{p.desc}</span>
+              <span className="block text-[12px] text-white/70 leading-relaxed mt-0.5">{p.desc}</span>
             </span>
           </div>
         ))}
@@ -865,7 +866,7 @@ function ReimbursementAuditIntro() {
           </a>
           <ReportEtaBadge />
         </div>
-        <span className="text-[12px] text-white/40">No card. No call. The audit is yours to keep.</span>
+        <span className="text-[12px] text-white/65">No card. No call. The audit is yours to keep.</span>
       </div>
     </div>
   );
@@ -935,7 +936,7 @@ function PanelHeader({ feature }) {
   return (
     <div className="flex items-center justify-between gap-2 px-4 py-3 border-b border-white/10">
       <div className="flex items-center gap-2 min-w-0">
-        <Icon className="w-[15px] h-[15px] text-white/50 shrink-0" />
+        <Icon className="w-[15px] h-[15px] text-white/70 shrink-0" />
         <span className="text-[13px] font-semibold text-white/80 truncate">{feature.source}</span>
       </div>
       <span className={`inline-flex items-center gap-1.5 text-[10px] font-semibold px-2 py-1 rounded-full border shrink-0 ${badge.cls}`}>
@@ -958,7 +959,7 @@ const DEADLINE_TONE = {
   urgent:  'text-[#F87171] bg-[#F87171]/10 border-[#F87171]/30',
   ok:      'text-[#98CC65] bg-[#2F7D4F]/15 border-[#2F7D4F]/30',
   waiting: 'text-[#7BA9E0] bg-[#7BA9E0]/10 border-[#7BA9E0]/25',
-  closed:  'text-white/35 bg-white/5 border-white/10',
+  closed:  'text-white/62 bg-white/5 border-white/10',
 };
 const REMOVAL_REASONS = {
   Liquidation: ['Units cancelled, never returned to inventory', 'Recovery value never paid', 'Recovery value below policy', 'Processing or referral fee incorrect'],
@@ -1041,7 +1042,7 @@ function RemovalsPanel({ feature }) {
             ← Back to removals
           </button>
           <span className="inline-flex items-center gap-2 shrink-0">
-            <span className="text-[11px] font-semibold text-white/45" style={{ fontFamily: monoFont }}>{row.id}</span>
+            <span className="text-[11px] font-semibold text-white/67" style={{ fontFamily: monoFont }}>{row.id}</span>
             <span className="text-[10px] font-semibold px-2 py-1 rounded-full border border-white/15 bg-white/5 text-white/70">{row.type} · {row.source}</span>
           </span>
         </div>
@@ -1049,7 +1050,7 @@ function RemovalsPanel({ feature }) {
         <div className="grid sm:grid-cols-2 gap-px bg-white/5">
           {[['Product', <ProductCell p={row.p} />], ['FNSKU', row.fnsku], ['Quantities', row.qty], ['Tracking', row.tracking]].map(([k, v]) => (
             <div key={k} className="bg-[#141618] px-4 py-2.5">
-              <div className="text-[10px] uppercase tracking-wider text-white/35" style={{ fontFamily: monoFont }}>{k}</div>
+              <div className="text-[10px] uppercase tracking-wider text-white/62" style={{ fontFamily: monoFont }}>{k}</div>
               <div className="text-[12px] text-white/75 mt-0.5">{v}</div>
             </div>
           ))}
@@ -1064,7 +1065,7 @@ function RemovalsPanel({ feature }) {
             className="w-full bg-[#0F0F0F] border border-white/15 rounded-lg px-3 py-2.5 text-[13px] text-white/85 focus:outline-none focus:border-[#2F7D4F]">
             {reasonsFor(row).map(r => <option key={r} value={r}>{r}</option>)}
           </select>
-          <p className="mt-2 text-[11px] text-white/40 leading-relaxed">{REMOVAL_NOTE[row.type]}</p>
+          <p className="mt-2 text-[11px] text-white/65 leading-relaxed">{REMOVAL_NOTE[row.type]}</p>
         </div>
 
         {row.evidence.length > 0 && (
@@ -1077,7 +1078,7 @@ function RemovalsPanel({ feature }) {
                     ? <Check className="w-3.5 h-3.5 text-[#98CC65] mt-0.5 shrink-0" />
                     : <span className="w-3.5 h-3.5 rounded-full border border-[#F5C451]/60 mt-0.5 shrink-0" />}
                   <span className={e.have ? 'text-white/60' : 'text-white/75'}>
-                    {e.t}{e.have ? <span className="text-white/30"> · attached automatically</span> : <span className="text-[#F5C451]"> · from you</span>}
+                    {e.t}{e.have ? <span className="text-white/60"> · attached automatically</span> : <span className="text-[#F5C451]"> · from you</span>}
                   </span>
                 </div>
               ))}
@@ -1087,7 +1088,7 @@ function RemovalsPanel({ feature }) {
 
         <div className="px-4 py-3.5 border-t border-white/10">
           <div className="text-[12px] font-bold text-white/80 mb-2">Drafted claim</div>
-          <p className="text-[12px] text-white/55 leading-relaxed bg-[#0F0F0F] border border-white/10 rounded-lg px-3 py-2.5">{row.draft}</p>
+          <p className="text-[12px] text-white/70 leading-relaxed bg-[#0F0F0F] border border-white/10 rounded-lg px-3 py-2.5">{row.draft}</p>
         </div>
 
         <div className="flex flex-wrap items-center gap-2 px-4 py-3 border-t border-white/10">
@@ -1111,14 +1112,14 @@ function RemovalsPanel({ feature }) {
         ].map((k, i) => (
           <div key={k.l} className={`bg-[#141618] px-4 py-3 ${i === 2 ? 'col-span-2 sm:col-span-1' : ''}`}>
             <div className={`text-lg sm:text-xl font-extrabold ${KPI_TONE[k.tone]}`}>{k.v}</div>
-            <div className="text-[11px] text-white/45 mt-0.5">{k.l}</div>
+            <div className="text-[11px] text-white/67 mt-0.5">{k.l}</div>
           </div>
         ))}
       </div>
       <div className="overflow-x-auto">
         <table className="w-full text-left text-[12px]" style={{ minWidth: 960 }}>
           <thead>
-            <tr className="text-[10px] uppercase tracking-wider text-white/35" style={{ fontFamily: monoFont }}>
+            <tr className="text-[10px] uppercase tracking-wider text-white/62" style={{ fontFamily: monoFont }}>
               <th className="font-semibold px-3 py-2">Removal order</th>
               <th className="font-semibold px-3 py-2">Product</th>
               <th className="font-semibold px-3 py-2">What we found</th>
@@ -1132,12 +1133,12 @@ function RemovalsPanel({ feature }) {
               <tr key={r.id} className="border-t border-white/[0.06]">
                 <td className="px-3 py-2.5">
                   <MonoCell>{r.id}</MonoCell>
-                  <div className="text-[10px] text-white/35 mt-0.5">{r.type} · {r.source}</div>
+                  <div className="text-[10px] text-white/62 mt-0.5">{r.type} · {r.source}</div>
                 </td>
                 <td className="px-3 py-2.5"><ProductCell p={r.p} wrap /></td>
                 <td className="px-3 py-2.5 text-white/60">
                   {r.issue}
-                  <div className="text-[10px] text-white/30 mt-0.5">{r.qty}</div>
+                  <div className="text-[10px] text-white/60 mt-0.5">{r.qty}</div>
                 </td>
                 <td className="px-3 py-2.5 text-right font-bold text-white">{r.value}</td>
                 <td className="px-3 py-2.5">
@@ -1145,7 +1146,7 @@ function RemovalsPanel({ feature }) {
                 </td>
                 <td className="px-3 py-2.5 text-right whitespace-nowrap">
                   {r.deadline === 'closed'
-                    ? <span className="text-[11px] text-white/25">Expired</span>
+                    ? <span className="text-[11px] text-white/60">Expired</span>
                     : (
                       <button type="button" onClick={() => setDisputing(r.id)}
                         className={`text-[11px] font-semibold rounded px-2 py-0.5 transition-colors ${r.deadline === 'waiting' ? 'text-white/80 border border-white/15 hover:border-white/30' : 'text-[#0F0F0F] bg-[#98CC65] hover:bg-white'}`}>
@@ -1159,7 +1160,7 @@ function RemovalsPanel({ feature }) {
         </table>
       </div>
       <div className="px-4 py-3 border-t border-white/10">
-        <p className="text-[11px] text-white/40 leading-relaxed">
+        <p className="text-[11px] text-white/65 leading-relaxed">
           Ranked by what expires first — not by value. The $310 disposal above aged out before anyone looked at it.
         </p>
       </div>
@@ -1187,10 +1188,10 @@ const FEATURE_TABS = [
     columns: [
       { label: 'Order', align: 'left', cell: r => <MonoCell>{r.order}</MonoCell> },
       { label: 'Product', align: 'left', cell: r => <ProductCell p={r.p} /> },
-      { label: 'Refunded', align: 'left', cell: r => <span className="text-white/50 whitespace-nowrap">{r.refunded}</span> },
+      { label: 'Refunded', align: 'left', cell: r => <span className="text-white/70 whitespace-nowrap">{r.refunded}</span> },
       { label: 'Days', align: 'right', cell: r => <span className="text-white/60">{r.days}</span> },
       { label: 'Status', align: 'left', cell: r => <Pill tone={r.tone}>{r.status}</Pill> },
-      { label: 'Action', align: 'right', cell: r => r.action === 'watch' ? <span className="text-[11px] text-white/30">Tracking</span> : <SolidBtn>File claim</SolidBtn> },
+      { label: 'Action', align: 'right', cell: r => r.action === 'watch' ? <span className="text-[11px] text-white/60">Tracking</span> : <SolidBtn>File claim</SolidBtn> },
     ],
   },
   {
@@ -1219,11 +1220,11 @@ const FEATURE_TABS = [
     columns: [
       { label: 'SKU', align: 'left', cell: r => <MonoCell>{r.p.sku}</MonoCell> },
       { label: 'Product', align: 'left', cell: r => <ProductCell p={r.p} /> },
-      { label: 'Amazon’s size', align: 'left', cell: r => <span className="text-white/50 whitespace-nowrap" style={{ fontFamily: monoFont }}>{r.size}</span> },
+      { label: 'Amazon’s size', align: 'left', cell: r => <span className="text-white/70 whitespace-nowrap" style={{ fontFamily: monoFont }}>{r.size}</span> },
       { label: 'Tier now', align: 'left', cell: r => <span className={`whitespace-nowrap ${r.tone === 'red' ? 'text-[#F87171]' : 'text-white/60'}`}>{r.tier}</span> },
       { label: 'Fee / unit', align: 'right', cell: r => <span className="font-bold text-white">{r.fee}</span> },
       { label: 'Should be', align: 'left', cell: r => r.action === 'ok' ? <Pill tone="green"><Check className="w-3.5 h-3.5" />Correct</Pill> : <span className="text-white/80 whitespace-nowrap">{r.should}</span> },
-      { label: 'Action', align: 'right', cell: r => r.action === 'ok' ? <span className="text-[11px] text-white/30">—</span> : <SolidBtn>Request re-measure</SolidBtn> },
+      { label: 'Action', align: 'right', cell: r => r.action === 'ok' ? <span className="text-[11px] text-white/60">—</span> : <SolidBtn>Request re-measure</SolidBtn> },
     ],
   },
   {
@@ -1245,7 +1246,7 @@ const FEATURE_TABS = [
       { label: 'Gap / unit', align: 'right', cell: r => (
         <span className="whitespace-nowrap">
           <span className={`font-bold ${REIMB2_TONE[r.tone].text}`}>{r.gap}</span>
-          {r.pct !== '—' && <span className="text-white/35 ml-1.5">{r.pct}</span>}
+          {r.pct !== '—' && <span className="text-white/62 ml-1.5">{r.pct}</span>}
         </span>
       ) },
       { label: 'Action', align: 'right', cell: r => (
@@ -1266,7 +1267,7 @@ function FeaturePanel({ feature }) {
         {feature.kpis.map((k, i) => (
           <div key={k.l} className={`bg-[#141618] px-4 py-3 ${i === 2 ? 'col-span-2 sm:col-span-1' : ''}`}>
             <div className={`text-lg sm:text-xl font-extrabold ${KPI_TONE[k.tone]}`}>{k.v}</div>
-            <div className="text-[11px] text-white/45 mt-0.5">{k.l}</div>
+            <div className="text-[11px] text-white/67 mt-0.5">{k.l}</div>
           </div>
         ))}
       </div>
@@ -1274,7 +1275,7 @@ function FeaturePanel({ feature }) {
       <div className="overflow-x-auto">
         <table className="w-full text-left text-[12px]" style={{ minWidth: feature.minW }}>
           <thead>
-            <tr className="text-[10px] uppercase tracking-wider text-white/35" style={{ fontFamily: monoFont }}>
+            <tr className="text-[10px] uppercase tracking-wider text-white/62" style={{ fontFamily: monoFont }}>
               {feature.columns.map(c => (
                 <th key={c.label} className={`font-semibold px-3 py-2 ${c.align === 'right' ? 'text-right' : ''}`}>{c.label}</th>
               ))}
@@ -1301,14 +1302,14 @@ function ReimbursementFeatures() {
   return (
     <div className="w-full max-w-5xl mx-auto">
       <div className="text-center mb-8">
-        <p className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
+        <p className="text-[11px] font-bold text-white/65 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
           More Refunds
         </p>
-        <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
+        <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
           Shipments was just the start.{' '}
           <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">4 more ways Amazon keeps your money.</span>
-        </h4>
-        <p className="mt-4 text-[15px] text-white/55 max-w-2xl mx-auto leading-relaxed">
+        </h2>
+        <p className="mt-4 text-[15px] text-white/70 max-w-2xl mx-auto leading-relaxed">
           You saw shipment refunds above. Amazon quietly holds onto money in four other places too —
           here’s each one, and how sure we are we can get it back.
         </p>
@@ -1320,7 +1321,7 @@ function ReimbursementFeatures() {
           const on = t.key === active;
           return (
             <button key={t.key} type="button" onClick={() => setActive(t.key)}
-              className={`inline-flex items-center gap-2 text-[13px] font-semibold px-3.5 py-2 rounded-lg border transition-colors ${on ? 'bg-[#2F7D4F] text-white border-[#2F7D4F]' : 'text-white/55 border-white/10 hover:text-white/80 hover:border-white/20'}`}>
+              className={`inline-flex items-center gap-2 text-[13px] font-semibold px-3.5 py-2 rounded-lg border transition-colors ${on ? 'bg-[#2F7D4F] text-white border-[#2F7D4F]' : 'text-white/70 border-white/10 hover:text-white/80 hover:border-white/20'}`}>
               <Icon className="w-4 h-4" />{t.label}
             </button>
           );
@@ -1330,7 +1331,7 @@ function ReimbursementFeatures() {
       <motion.div key={f.key} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35 }}>
         <div className="text-center mb-6 max-w-2xl mx-auto">
           <h5 className="font-extrabold text-xl sm:text-2xl tracking-[-0.02em]">{renderSegs(f.headline)}</h5>
-          <p className="mt-2.5 text-[14px] text-white/55 leading-relaxed">{f.blurb}</p>
+          <p className="mt-2.5 text-[14px] text-white/70 leading-relaxed">{f.blurb}</p>
         </div>
         {f.Component ? <f.Component feature={f} /> : <FeaturePanel feature={f} />}
       </motion.div>
@@ -1374,14 +1375,14 @@ function ReimbursementReportsPanel() {
   return (
     <div className="w-full max-w-5xl mx-auto">
       <div className="text-center mb-7">
-        <p className="text-[10px] font-bold text-white/35 uppercase tracking-[0.2em] mb-2.5" style={{ fontFamily: monoFont }}>
+        <p className="text-[10px] font-bold text-white/62 uppercase tracking-[0.2em] mb-2.5" style={{ fontFamily: monoFont }}>
           Reporting
         </p>
         <h5 className="font-extrabold text-xl sm:text-2xl tracking-[-0.02em]">
           You shouldn't have to{' '}
           <span className="bg-gradient-to-r from-[#FF9900] to-[#FFC266] bg-clip-text text-transparent">remember to check.</span>
         </h5>
-        <p className="mt-4 text-[15px] text-white/55 max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-4 text-[15px] text-white/70 max-w-2xl mx-auto leading-relaxed">
           A dashboard only helps the day you open it. Dragon Refunds pushes what changed to your inbox or your Slack —
           what's newly recoverable, what's about to expire, and what actually hit your account.
         </p>
@@ -1394,7 +1395,7 @@ function ReimbursementReportsPanel() {
             <img src="/logos/connections/slack.svg" alt="" className="w-4 h-4" />
             <span className="text-[12px] font-semibold text-white/70">Slack</span>
           </span>
-          <span className="text-[12px] text-white/40">— or both</span>
+          <span className="text-[12px] text-white/65">— or both</span>
         </div>
       </div>
 
@@ -1406,7 +1407,7 @@ function ReimbursementReportsPanel() {
                 <img src={c.logo} alt="" className="w-[15px] h-[15px] shrink-0" />
                 <span className="text-[13px] font-semibold text-white/80 truncate" style={{ fontFamily: monoFont }}>{c.where}</span>
               </div>
-              <span className="text-[10px] font-semibold text-white/40 shrink-0 ml-2" style={{ fontFamily: monoFont }}>{c.cadence}</span>
+              <span className="text-[10px] font-semibold text-white/65 shrink-0 ml-2" style={{ fontFamily: monoFont }}>{c.cadence}</span>
             </div>
             <div className="px-4 py-3.5 border-b border-white/[0.06]">
               <p className="text-[14px] font-bold text-white/90 leading-snug">{c.subject}</p>
@@ -1416,19 +1417,19 @@ function ReimbursementReportsPanel() {
                 <div key={l.k} className="flex items-baseline gap-2 text-[12px]">
                   <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${REIMB2_TONE[l.t].dot}`} />
                   <span className={`font-bold whitespace-nowrap ${REIMB2_TONE[l.t].text}`}>{l.k}</span>
-                  <span className="text-white/50">{l.v}</span>
+                  <span className="text-white/70">{l.v}</span>
                 </div>
               ))}
             </div>
             <div className="px-4 py-3 border-t border-white/10">
-              <p className="text-[11px] text-white/45 leading-relaxed">{c.foot}</p>
+              <p className="text-[11px] text-white/67 leading-relaxed">{c.foot}</p>
             </div>
           </div>
         ))}
       </div>
 
       <div className="flex flex-wrap items-center justify-center gap-2 mt-6">
-        <span className="text-[12px] text-white/45 mr-1">Every alert is yours to set:</span>
+        <span className="text-[12px] text-white/67 mr-1">Every alert is yours to set:</span>
         {REPORT_CONTROLS.map(c => (
           <span key={c} className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-white/70 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1">
             <Check className="w-3 h-3 text-[#98CC65]" />{c}
@@ -1455,14 +1456,14 @@ function ReimbursementCasesPanel() {
   return (
     <div className="w-full max-w-5xl mx-auto">
       <div className="text-center mb-7">
-        <p className="text-[10px] font-bold text-white/35 uppercase tracking-[0.2em] mb-2.5" style={{ fontFamily: monoFont }}>
+        <p className="text-[10px] font-bold text-white/62 uppercase tracking-[0.2em] mb-2.5" style={{ fontFamily: monoFont }}>
           Case follow-through
         </p>
         <h5 className="font-extrabold text-xl sm:text-2xl tracking-[-0.02em]">
           Filing is the easy part.{' '}
           <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">Getting paid isn't.</span>
         </h5>
-        <p className="mt-4 text-[15px] text-white/55 max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-4 text-[15px] text-white/70 max-w-2xl mx-auto leading-relaxed">
           Cases stall. Denials arrive as boilerplate. Most money is lost after the claim is filed, not before —
           so Dragon Refunds watches every case until it closes, and tells you the move.
         </p>
@@ -1474,7 +1475,7 @@ function ReimbursementCasesPanel() {
             <img src="/DragonBot-avatar.png" alt="Dragon Refunds" className="w-[18px] h-[18px] object-contain" />
             <span className="text-[13px] font-semibold text-white/80">Open cases</span>
           </div>
-          <span className="text-[10px] font-semibold text-white/40" style={{ fontFamily: monoFont }}>4 tracked · 2 need you</span>
+          <span className="text-[10px] font-semibold text-white/65" style={{ fontFamily: monoFont }}>4 tracked · 2 need you</span>
         </div>
 
         <div className="divide-y divide-white/[0.06]">
@@ -1487,9 +1488,9 @@ function ReimbursementCasesPanel() {
                     {c.id}<ExternalLink className="w-3 h-3 opacity-60" />
                   </span>
                   <span className={`text-[12px] font-bold ${REIMB2_TONE[c.tone].text}`}>{c.state}</span>
-                  <span className="text-[11px] text-white/35">{c.age}</span>
+                  <span className="text-[11px] text-white/62">{c.age}</span>
                 </div>
-                <p className="text-[12px] text-white/50 leading-relaxed mt-1">{c.detail}</p>
+                <p className="text-[12px] text-white/70 leading-relaxed mt-1">{c.detail}</p>
               </div>
               <span className="shrink-0 self-center">
                 {c.state === 'Stalled' && <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#F59E0B]"><Clock className="w-3.5 h-3.5" />Nudged</span>}
@@ -1545,7 +1546,7 @@ function ReimbCompareCell({ value, isUs }) {
     return <Check className={`w-[18px] h-[18px] mx-auto ${isUs ? 'text-[#98CC65]' : 'text-white/60'}`} />;
   }
   if (value === 'no') {
-    return <span className="block text-center text-white/25 text-lg leading-none">–</span>;
+    return <span className="block text-center text-white/60 text-lg leading-none">–</span>;
   }
   if (value === 'partial') {
     return <span className="block text-center text-[11px] font-semibold text-[#F5C451]">Partial</span>;
@@ -1562,14 +1563,14 @@ function ReimbursementComparePanel() {
   return (
     <div className="w-full max-w-4xl mx-auto">
       <div className="text-center mb-8">
-        <p className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
+        <p className="text-[11px] font-bold text-white/65 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
           How we compare
         </p>
-        <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
+        <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
           Everyone claims to recover your money.{' '}
           <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">We show you where it came from.</span>
-        </h4>
-        <p className="mt-4 text-[15px] text-white/55 max-w-2xl mx-auto leading-relaxed">
+        </h2>
+        <p className="mt-4 text-[15px] text-white/70 max-w-2xl mx-auto leading-relaxed">
           Most services hand you a number, take 25%, and ask you to trust it. Dragon Refunds pinpoints the exact
           source of every claim — a lost shipment, damaged inventory, a dimension mismatch, a COGS error — keeps the
           whole trail visible, and charges 15% only if you want it filed for you. For operators who want everything
@@ -1591,7 +1592,7 @@ function ReimbursementComparePanel() {
         {REIMB_COMPARE_GROUPS.map(group => (
           <div key={group.label}>
             <div className="grid grid-cols-[1.6fr_1fr_1fr_1fr] bg-white/[0.02] border-b border-white/[0.06]">
-              <div className="px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/35" style={{ fontFamily: monoFont }}>
+              <div className="px-4 py-2 text-[10px] font-bold uppercase tracking-[0.18em] text-white/62" style={{ fontFamily: monoFont }}>
                 {group.label}
               </div>
               <div className="bg-[#2F7D4F]/[0.06] border-x border-[#2F7D4F]/20" />
@@ -1601,7 +1602,7 @@ function ReimbursementComparePanel() {
               <div key={row.feature} className="grid grid-cols-[1.6fr_1fr_1fr_1fr] items-center border-b border-white/[0.06] last:border-b-0">
                 <div className="px-4 py-3.5">
                   <div className="text-[13px] font-medium text-white/85 leading-snug">{row.feature}</div>
-                  {row.note && <div className="text-[11px] text-white/35 mt-0.5">{row.note}</div>}
+                  {row.note && <div className="text-[11px] text-white/62 mt-0.5">{row.note}</div>}
                 </div>
                 {row.values.map((v, i) => (
                   <div key={i} className={`px-3 py-3.5 self-stretch flex items-center justify-center ${i === 0 ? 'bg-[#2F7D4F]/[0.06] border-x border-[#2F7D4F]/20' : ''}`}>
@@ -1644,14 +1645,14 @@ function ReimbursementCalculator() {
   return (
     <div className="reimb-calc w-full max-w-3xl mx-auto">
       <div className="text-center mb-8">
-        <p className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
+        <p className="text-[11px] font-bold text-white/65 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
           Reimbursement calculator
         </p>
-        <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
+        <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
           Calculate your{' '}
           <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">potential reimbursement.</span>
-        </h4>
-        <p className="mt-4 text-[15px] text-white/55 max-w-xl mx-auto leading-relaxed">
+        </h2>
+        <p className="mt-4 text-[15px] text-white/70 max-w-xl mx-auto leading-relaxed">
           Select your gross annual FBA revenue to see roughly how much Amazon may owe you — and how much of it you keep.
         </p>
       </div>
@@ -1659,20 +1660,20 @@ function ReimbursementCalculator() {
       <div className="rounded-2xl border border-white/10 shadow-2xl bg-[#141618] p-6 sm:p-8" style={{ fontFamily: sysFont }}>
         {/* slider */}
         <div className="flex items-baseline justify-between mb-3">
-          <label htmlFor="reimb-calc-range" className="text-[13px] font-semibold text-white/60">FBA revenue range<span className="block text-[11px] font-normal text-white/35">gross annual revenue</span></label>
+          <label htmlFor="reimb-calc-range" className="text-[13px] font-semibold text-white/60">FBA revenue range<span className="block text-[11px] font-normal text-white/62">gross annual revenue</span></label>
           <span className="text-2xl font-extrabold text-white tracking-[-0.02em]">{fmt(revenue)}</span>
         </div>
         <input id="reimb-calc-range" type="range" min={MIN} max={MAX} step={50000} value={revenue}
           onChange={e => setRevenue(Number(e.target.value))}
           className="w-full cursor-pointer" style={{ accentColor: '#2F7D4F' }}
           aria-label="FBA revenue range — gross annual revenue" />
-        <div className="flex justify-between text-[11px] text-white/35 mt-1" style={{ fontFamily: monoFont }}>
+        <div className="flex justify-between text-[11px] text-white/62 mt-1" style={{ fontFamily: monoFont }}>
           <span>{shortUsd(MIN)}</span><span>{shortUsd(MAX)}+</span>
         </div>
 
         {/* headline recoverable */}
         <div className="mt-7 text-center">
-          <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-white/45 mb-1">Amount you could recover / year</div>
+          <div className="text-[11px] font-semibold uppercase tracking-[0.15em] text-white/67 mb-1">Amount you could recover / year</div>
           <div className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent tracking-[-0.03em]">
             {fmt(recoverable)}
           </div>
@@ -1691,9 +1692,9 @@ function ReimbursementCalculator() {
                   : bad ? 'calc-bad-card'
                   : 'border-white/10 bg-white/[0.02]'}`}>
                 <div className="text-[12px] font-semibold text-white/70">{t.label}</div>
-                <div className={`text-[11px] mb-2 ${bad ? 'calc-lose font-semibold' : 'text-white/40'}`}>{t.fee}</div>
+                <div className={`text-[11px] mb-2 ${bad ? 'calc-lose font-semibold' : 'text-white/65'}`}>{t.fee}</div>
                 <div className={`text-xl font-extrabold tracking-[-0.02em] ${best ? 'calc-keep' : 'text-white'}`}>{fmt(t.keep)}</div>
-                <div className="text-[10px] text-white/35 mt-0.5">you keep</div>
+                <div className="text-[10px] text-white/62 mt-0.5">you keep</div>
 
                 {/* kept (solid) vs taken by fees (red track) */}
                 <div className={`mt-3 h-2 w-full rounded-full overflow-hidden flex ${bad ? 'calc-bar-track-strong' : 'calc-bar-track'}`}>
@@ -1722,7 +1723,7 @@ function ReimbursementCalculator() {
           </p>
         </div>
 
-        <p className="mt-5 text-center text-[11px] text-white/35 leading-relaxed">
+        <p className="mt-5 text-center text-[11px] text-white/62 leading-relaxed">
           Estimate only, based on a typical ~1.5% FBA recovery rate. Your actual recoverable amount depends on your
           shipments, fees, and claim history — connect your account and the exact, itemized figure is yours
           within {REPORT_ETA_HOURS} hours.
@@ -1778,7 +1779,7 @@ function SkillsShowcase() {
             </div>
             <h3 className="font-bold text-base text-white">{s.name}</h3>
           </div>
-          <p className="text-[13px] text-white/55 leading-relaxed">{s.desc}</p>
+          <p className="text-[13px] text-white/70 leading-relaxed">{s.desc}</p>
         </div>
       ))}
     </div>
@@ -1896,7 +1897,7 @@ function PermissionsDemo({ light }) {
         {PERMISSION_MODES.map(m => (
           <button key={m.id} onClick={() => { setSelected(m.id); setClicked(true); }}
             className={`flex-1 py-1.5 text-[10px] font-semibold transition-all ${
-              selected === m.id ? 'bg-[#2F7D4F] text-white' : 'bg-white/5 text-white/40 hover:text-white/60'
+              selected === m.id ? 'bg-[#2F7D4F] text-white' : 'bg-white/5 text-white/65 hover:text-white/60'
             }`}>
             {m.label}
           </button>
@@ -1904,7 +1905,7 @@ function PermissionsDemo({ light }) {
       </div>
       <AnimatePresence mode="wait">
         <motion.p key={selected} initial={{ opacity: 0, y: 4 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -4 }} transition={{ duration: 0.2 }}
-          className="text-[11px] leading-relaxed text-white/50">
+          className="text-[11px] leading-relaxed text-white/70">
           {mode.desc}
         </motion.p>
       </AnimatePresence>
@@ -2171,7 +2172,7 @@ export default function LandingV4({ page = null }) {
               )}
             </h1>
 
-            <p className="text-[17px] sm:text-[19px] text-white/55 max-w-2xl mx-auto mb-10 leading-[1.6] tracking-[-0.01em]">
+            <p className="text-[17px] sm:text-[19px] text-white/70 max-w-2xl mx-auto mb-10 leading-[1.6] tracking-[-0.01em]">
               {(page?.hero?.paragraph || 'Give your AI chat secure access to your Amazon data — orders, ads, inventory, reviews, customer messages, and more. Plug DragonBot into Claude, ChatGPT, Cursor, or any MCP client in seconds.')
                 .split('\n').map((line, i, arr) => (
                   <span key={i}>{line}{i < arr.length - 1 ? <br /> : null}</span>
@@ -2210,12 +2211,12 @@ export default function LandingV4({ page = null }) {
                 <span className="underline decoration-[#98CC65]/40 underline-offset-2">Amazon approved</span>
                 <ExternalLink className="w-3 h-3 opacity-60" />
               </a>
-              <span className="flex items-center gap-2 text-white/50">
+              <span className="flex items-center gap-2 text-white/70">
                 <Shield className="w-4 h-4 text-[#2F7D4F]" />
                 Amazon ToS Compliant
               </span>
               {page?.demo?.type !== 'dashboard2' && (
-                <span className="flex items-center gap-2 text-white/50">
+                <span className="flex items-center gap-2 text-white/70">
                   <DollarSign className="w-4 h-4 text-[#2F7D4F]" />
                   Basic plan is <strong className="font-bold text-[#98CC65]" style={{ fontFamily: monoFont }}>FREE FOREVER</strong>
                 </span>
@@ -2228,7 +2229,7 @@ export default function LandingV4({ page = null }) {
             {page?.demo?.type === 'dashboard2' ? <SellerCredBand /> : (
               <>
                 <p className="text-[15px] font-semibold text-white/60 mb-2">We sell on Amazon too</p>
-                <p className="text-[11px] font-medium text-white/50 uppercase tracking-[0.15em]">10 years on Amazon · 8 figures sold · DragonBot is the employee we always wanted</p>
+                <p className="text-[11px] font-medium text-white/70 uppercase tracking-[0.15em]">10 years on Amazon · 8 figures sold · DragonBot is the employee we always wanted</p>
               </>
             )}
           </motion.div>
@@ -2273,13 +2274,13 @@ export default function LandingV4({ page = null }) {
           <Section id="automated-workflow" className="!py-16">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6 }}
               className="text-center max-w-2xl mx-auto mb-14">
-              <p className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
+              <p className="text-[11px] font-bold text-white/65 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
                 Automated workflow
               </p>
               <h4 className="font-extrabold text-3xl sm:text-4xl tracking-[-0.03em]">
                 On <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">autopilot.</span>
               </h4>
-              <p className="mt-4 text-[15px] text-white/55 leading-relaxed">
+              <p className="mt-4 text-[15px] text-white/70 leading-relaxed">
                 The audit runs once. After that, Dragon Refunds becomes part of how you operate — surfacing what changed
                 the moment it changes, and chasing every filed case until it closes. You approve; it does the rest.
               </p>
@@ -2309,10 +2310,10 @@ export default function LandingV4({ page = null }) {
       {/* ─── SELLER VIDEOS ─── */}
       <Section id="seller-videos">
         <div className="text-center mb-10">
-          <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
+          <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
             See what <span className="bg-gradient-to-r from-[#FF9900] to-[#FFC266] bg-clip-text text-transparent">Amazon Sellers</span> have been building with{' '}
             <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">DragonBot</span>
-          </h4>
+          </h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
           {sellerVideos.map(v => (
@@ -2343,13 +2344,13 @@ export default function LandingV4({ page = null }) {
       {/* ─── WHAT'S IN THE BOX ─── */}
       <Section id="whats-in-the-box">
         <div className="text-center mb-12">
-          <p className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
+          <p className="text-[11px] font-bold text-white/65 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
             What you get
           </p>
-          <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
+          <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
             Here is what{' '}
             <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">DragonBot gives you.</span>
-          </h4>
+          </h2>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {PILLARS.map((p, i) => (
@@ -2358,7 +2359,7 @@ export default function LandingV4({ page = null }) {
                 {p.icon}
               </div>
               <h3 className="font-bold text-xl text-white mb-2">{p.title}</h3>
-              <p className="text-[14px] text-white/55 leading-relaxed mb-4">{p.desc}</p>
+              <p className="text-[14px] text-white/70 leading-relaxed mb-4">{p.desc}</p>
               <span className="inline-block text-[10px] font-bold uppercase tracking-widest text-[#98CC65]/80 bg-[#2F7D4F]/10 border border-[#2F7D4F]/30 rounded-full px-2.5 py-1" style={{ fontFamily: monoFont }}>
                 {p.badge}
               </span>
@@ -2370,14 +2371,14 @@ export default function LandingV4({ page = null }) {
       {/* ─── WHY ETL ─── */}
       <Section id="why-etl">
         <div className="text-center mb-10">
-          <p className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
+          <p className="text-[11px] font-bold text-white/65 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
             Why ETL?
           </p>
-          <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
+          <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
             Other MCP servers wait on SP-API.{' '}
             <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">We don't.</span>
-          </h4>
-          <p className="mt-4 text-base text-white/50 max-w-2xl mx-auto">
+          </h2>
+          <p className="mt-4 text-base text-white/70 max-w-2xl mx-auto">
             Live SP-API calls are rate-limited, latent, and brittle. We pre-pull everything so your AI gets answers the moment you ask.
           </p>
         </div>
@@ -2413,14 +2414,14 @@ export default function LandingV4({ page = null }) {
       {/* ─── SKILLS ─── */}
       <Section id="skills">
         <div className="text-center mb-12">
-          <p className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
+          <p className="text-[11px] font-bold text-white/65 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
             Skills
           </p>
-          <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em] mb-4">
+          <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em] mb-4">
             Pre-built workflows your{' '}
             <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">AI runs on command.</span>
-          </h4>
-          <p className="text-base text-white/50 max-w-2xl mx-auto">
+          </h2>
+          <p className="text-base text-white/70 max-w-2xl mx-auto">
             Skills wrap real Amazon work — audits, analyses, alerts, reports — so your AI delivers finished output, not a prompt-engineering project.
           </p>
         </div>
@@ -2430,10 +2431,10 @@ export default function LandingV4({ page = null }) {
       {/* ─── SECURITY ─── */}
       <Section id="security">
         <div className="text-center mb-14">
-          <h4 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
+          <h2 className="font-extrabold text-2xl sm:text-3xl tracking-[-0.03em]">
             Let's talk <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">security</span> and <span className="bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">accountability</span>
-          </h4>
-          <p className="mt-4 text-lg text-white/50 max-w-2xl mx-auto">
+          </h2>
+          <p className="mt-4 text-lg text-white/70 max-w-2xl mx-auto">
             Your Amazon account is your business. We treat it that way.
           </p>
         </div>
@@ -2448,7 +2449,7 @@ export default function LandingV4({ page = null }) {
               <div className="p-6 pb-4">
                 <h3 className="font-bold text-xl mb-1">{f.title}</h3>
                 {f.subtitle && <p className="text-[#98CC65] text-sm font-semibold mb-1">{f.subtitle}</p>}
-                <p className="text-white/50 text-sm leading-relaxed">{f.desc}</p>
+                <p className="text-white/70 text-sm leading-relaxed">{f.desc}</p>
               </div>
               <div className="mt-auto">
                 {f.title === 'Supervised mode' ? (
@@ -2461,7 +2462,7 @@ export default function LandingV4({ page = null }) {
                   <div className="w-full h-36"><SPAPIConnectionDemo light={light} /></div>
                 ) : (
                   <div className="w-full h-36 bg-gradient-to-b from-white/5 to-white/10 flex items-end justify-center">
-                    <span className="text-xs text-white/20 mb-4">Illustration</span>
+                    <span className="text-xs text-white/60 mb-4">Illustration</span>
                   </div>
                 )}
               </div>
@@ -2473,7 +2474,7 @@ export default function LandingV4({ page = null }) {
       {/* ─── PLANS ─── */}
       <Section id="plans">
         <div className="text-center mb-12">
-          <p className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
+          <p className="text-[11px] font-bold text-white/65 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>
             Plans
           </p>
           <h4 className="font-extrabold text-3xl sm:text-4xl tracking-[-0.03em] leading-tight">
@@ -2485,13 +2486,13 @@ export default function LandingV4({ page = null }) {
           {/* Free Forever */}
           <div className="bg-white/5 border border-white/10 rounded-2xl p-8 flex flex-col">
             <div className="mb-6">
-              <p className="text-[11px] font-bold text-white/40 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>Basic</p>
+              <p className="text-[11px] font-bold text-white/65 uppercase tracking-[0.2em] mb-3" style={{ fontFamily: monoFont }}>Basic</p>
               <h3 className="font-extrabold text-2xl text-white mb-1">Free forever</h3>
               <div className="flex items-baseline gap-2">
                 <span className="text-4xl font-extrabold text-white">$0</span>
-                <span className="text-white/40 text-sm">/ month</span>
+                <span className="text-white/65 text-sm">/ month</span>
               </div>
-              <p className="mt-3 text-sm text-white/55 leading-relaxed">
+              <p className="mt-3 text-sm text-white/70 leading-relaxed">
                 Read-only access. Pull data, run analyses, build reports — as much as you want.
               </p>
             </div>
@@ -2525,7 +2526,7 @@ export default function LandingV4({ page = null }) {
               <h3 className="font-extrabold text-2xl text-white mb-1">Take actions on Amazon</h3>
               <div className="flex items-baseline gap-2">
                 <span className="text-4xl font-extrabold bg-gradient-to-r from-[#2F7D4F] to-[#98CC65] bg-clip-text text-transparent">$50</span>
-                <span className="text-white/40 text-sm">/ month</span>
+                <span className="text-white/65 text-sm">/ month</span>
               </div>
               <p className="mt-3 text-sm text-white/65 leading-relaxed">
                 Everything in Free, plus your AI can take action — pause campaigns, send refunds, edit listings, and more.
@@ -2575,16 +2576,16 @@ export default function LandingV4({ page = null }) {
                 <span className="font-bold text-lg text-white">DragonBot</span>
               </div>
               <div className="flex flex-wrap justify-center gap-8">
-                <a href="/" className="text-sm text-white/50 hover:text-white transition-colors">Product</a>
-                <a href="/pricing" className="text-sm text-white/50 hover:text-white transition-colors">Pricing</a>
-                <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Privacy</a>
-                <a href="/tos" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Terms</a>
-                <a href="/support" target="_blank" rel="noopener noreferrer" className="text-sm text-white/50 hover:text-white transition-colors">Support</a>
-                <a href="mailto:info@dragonrefunds.com" className="text-sm text-white/50 hover:text-white transition-colors">info@dragonrefunds.com</a>
+                <a href="/" className="text-sm text-white/70 hover:text-white transition-colors">Product</a>
+                <a href="/pricing" className="text-sm text-white/70 hover:text-white transition-colors">Pricing</a>
+                <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white transition-colors">Privacy</a>
+                <a href="/tos" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white transition-colors">Terms</a>
+                <a href="/support" target="_blank" rel="noopener noreferrer" className="text-sm text-white/70 hover:text-white transition-colors">Support</a>
+                <a href="mailto:info@dragonrefunds.com" className="text-sm text-white/70 hover:text-white transition-colors">info@dragonrefunds.com</a>
               </div>
               <div className="text-center md:text-right">
-                <p className="text-sm text-white/30">&copy; {new Date().getFullYear()} Chacha Advisory LLC. All rights reserved.</p>
-                <p className="text-xs text-white/20 mt-1">30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
+                <p className="text-sm text-white/60">&copy; {new Date().getFullYear()} Chacha Advisory LLC. All rights reserved.</p>
+                <p className="text-xs text-white/60 mt-1">30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
               </div>
             </div>
           </div>

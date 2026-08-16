@@ -216,7 +216,7 @@ export default function ChatViewer({ chat, dark, theme, onSetTheme }) {
 
   if (!chat) {
     return (
-      <div className={`flex-1 flex items-center justify-center font-satoshi ${dark ? 'text-white/40' : 'text-gray-400'}`}>
+      <div className={`flex-1 flex items-center justify-center font-satoshi ${dark ? 'text-white/65' : 'text-gray-400'}`}>
         Select a chat to view
       </div>
     );
@@ -244,7 +244,7 @@ export default function ChatViewer({ chat, dark, theme, onSetTheme }) {
             <div className="relative">
               <button
                 onClick={() => setShareOpen(!shareOpen)}
-                className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-satoshi font-medium rounded-lg transition-colors ${dark ? 'text-white/50 hover:text-white hover:bg-white/10' : 'text-[#1A1A1A]/60 hover:text-[#1A1A1A] hover:bg-gray-100'}`}
+                className={`flex items-center gap-1.5 px-3 py-1.5 text-sm font-satoshi font-medium rounded-lg transition-colors ${dark ? 'text-white/70 hover:text-white hover:bg-white/10' : 'text-[#1A1A1A]/60 hover:text-[#1A1A1A] hover:bg-gray-100'}`}
               >
                 <Share2 size={15} />
                 Share
@@ -254,7 +254,7 @@ export default function ChatViewer({ chat, dark, theme, onSetTheme }) {
             <div className="relative">
               <button
                 onClick={() => setThemeOpen(!themeOpen)}
-                className={`p-1.5 rounded-lg transition-colors ${dark ? 'text-white/50 hover:text-white hover:bg-white/10' : 'text-[#1A1A1A]/60 hover:text-[#1A1A1A] hover:bg-gray-100'}`}
+                className={`p-1.5 rounded-lg transition-colors ${dark ? 'text-white/70 hover:text-white hover:bg-white/10' : 'text-[#1A1A1A]/60 hover:text-[#1A1A1A] hover:bg-gray-100'}`}
               >
                 {theme === 'system' ? <Monitor size={18} /> : theme === 'light' ? <Sun size={18} /> : <Moon size={18} />}
               </button>
@@ -329,7 +329,7 @@ export default function ChatViewer({ chat, dark, theme, onSetTheme }) {
                     {!isUser && (
                       <img src="/logos/dragonbot_fire.png" alt="" className="w-4 h-4" />
                     )}
-                    <span className={`text-xs font-satoshi font-medium ${dark ? 'text-white/40' : 'text-[#1A1A1A]/50'}`}>
+                    <span className={`text-xs font-satoshi font-medium ${dark ? 'text-white/65' : 'text-[#1A1A1A]/50'}`}>
                       {msg.name}
                     </span>
                   </div>
@@ -354,7 +354,7 @@ export default function ChatViewer({ chat, dark, theme, onSetTheme }) {
           <div className={`shrink-0 border-l hidden lg:flex flex-col transition-all duration-300 ${summaryOpen ? 'w-64' : 'w-10'} ${dark ? 'bg-[#1a1a1a] border-white/10' : 'bg-white border-gray-200'}`}>
             <button
               onClick={() => setSummaryOpen(!summaryOpen)}
-              className={`shrink-0 flex items-center justify-center w-full py-2 transition-colors ${dark ? 'text-white/40 hover:text-white/70 hover:bg-white/5' : 'text-[#1A1A1A]/40 hover:text-[#1A1A1A]/70 hover:bg-gray-50'}`}
+              className={`shrink-0 flex items-center justify-center w-full py-2 transition-colors ${dark ? 'text-white/65 hover:text-white/70 hover:bg-white/5' : 'text-[#1A1A1A]/40 hover:text-[#1A1A1A]/70 hover:bg-gray-50'}`}
             >
               {summaryOpen ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
             </button>
@@ -364,7 +364,7 @@ export default function ChatViewer({ chat, dark, theme, onSetTheme }) {
                   Summary
                 </h2>
                 {summary && (
-                  <p className={`text-sm leading-relaxed font-satoshi mb-4 whitespace-pre-line break-words ${dark ? 'text-white/50' : 'text-[#1A1A1A]/60'}`}>
+                  <p className={`text-sm leading-relaxed font-satoshi mb-4 whitespace-pre-line break-words ${dark ? 'text-white/70' : 'text-[#1A1A1A]/60'}`}>
                     {formatText(summary, false, dark)}
                   </p>
                 )}
@@ -384,7 +384,7 @@ export default function ChatViewer({ chat, dark, theme, onSetTheme }) {
                               ? 'text-[#4ADE80] bg-white/5 font-medium'
                               : 'text-[#2F7D4F] bg-[#2F7D4F]/5 font-medium'
                             : dark
-                              ? 'text-white/50 hover:text-white/80 hover:bg-white/5'
+                              ? 'text-white/70 hover:text-white/80 hover:bg-white/5'
                               : 'text-[#1A1A1A]/60 hover:text-[#1A1A1A] hover:bg-gray-50'
                         }`}
                       >
@@ -406,7 +406,7 @@ export default function ChatViewer({ chat, dark, theme, onSetTheme }) {
           <input
             type="text"
             placeholder="Ask DragonBot to do anything..."
-            className={`text-sm font-satoshi flex-1 bg-transparent outline-none ${dark ? 'text-white placeholder:text-white/30' : 'text-[#1A1A1A] placeholder:text-gray-400'}`}
+            className={`text-sm font-satoshi flex-1 bg-transparent outline-none ${dark ? 'text-white placeholder:text-white/60' : 'text-[#1A1A1A] placeholder:text-gray-400'}`}
           />
           <div className="w-8 h-8 rounded-full bg-[#2F7D4F] flex items-center justify-center shrink-0">
             <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">

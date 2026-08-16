@@ -18,7 +18,7 @@ export default function Terms() {
             <span className="text-sm font-medium text-[#2F7D4F] bg-[#2F7D4F]/10 px-3 py-1 rounded-full">Legal</span>
           </div>
           <h1 className="font-extrabold text-4xl">Terms of Service</h1>
-          <p className="mt-3 text-white/40 text-sm">Last updated: April 2026</p>
+          <p className="mt-3 text-white/65 text-sm">Last updated: April 2026</p>
         </div>
       </div>
 
@@ -157,8 +157,8 @@ export default function Terms() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-white/10 text-center">
-          <p className="text-sm text-white/30">&copy; {new Date().getFullYear()} Chacha Advisory LLC. All rights reserved.</p>
-          <p className="text-xs text-white/20 mt-1">30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
+          <p className="text-sm text-white/60">&copy; {new Date().getFullYear()} Chacha Advisory LLC. All rights reserved.</p>
+          <p className="text-xs text-white/60 mt-1">30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
         </div>
       </div>
     </div>

@@ -18,7 +18,7 @@ export default function Support() {
             <span className="text-sm font-medium text-[#2F7D4F] bg-[#2F7D4F]/10 px-3 py-1 rounded-full">Support</span>
           </div>
           <h1 className="font-extrabold text-4xl">Support &amp; Help Center</h1>
-          <p className="mt-3 text-white/50 text-lg leading-relaxed max-w-xl">
+          <p className="mt-3 text-white/70 text-lg leading-relaxed max-w-xl">
             Need help? We're here for you. Reach out and we'll get back to you as soon as possible.
           </p>
         </div>
@@ -71,7 +71,7 @@ export default function Support() {
             ].map((topic, i) => (
               <a key={i} href={topic.href} className="bg-white/5 border border-white/10 rounded-xl p-5 hover:border-[#2F7D4F]/30 transition-colors block">
                 <h3 className="font-semibold mb-1">{topic.title}</h3>
-                <p className="text-sm text-white/50 leading-relaxed">{topic.desc}</p>
+                <p className="text-sm text-white/70 leading-relaxed">{topic.desc}</p>
               </a>
             ))}
           </div>
@@ -90,10 +90,10 @@ export default function Support() {
         </section>
 
         <div className="mt-16 pt-8 border-t border-white/10 text-center">
-          <p className="text-sm text-white/30">
+          <p className="text-sm text-white/60">
             &copy; {new Date().getFullYear()} Chacha Advisory LLC. All rights reserved.
           </p>
-          <p className="text-xs text-white/20 mt-1">30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
+          <p className="text-xs text-white/60 mt-1">30 N Gould St Ste R, Sheridan, WY 82801, USA</p>
         </div>
       </div>
     </div>

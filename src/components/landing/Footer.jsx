@@ -17,7 +17,7 @@ export default function Footer() {
               <a
                 key={label}
                 href={`#${label.toLowerCase().replace(/\s/g, '-')}`}
-                className="text-sm font-satoshi text-white/50 hover:text-white transition-colors"
+                className="text-sm font-satoshi text-white/70 hover:text-white transition-colors"
               >
                 {label}
               </a>
@@ -25,7 +25,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <p className="text-sm font-satoshi text-white/30">
+          <p className="text-sm font-satoshi text-white/60">
             © 2026 DragonBot. All rights reserved.
           </p>
         </div>
