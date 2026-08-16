@@ -115,23 +115,6 @@ for (const route of routes) {
   const page = await browser.newPage();
   await page.setViewport({ width: 1280, height: 900 });
 
-  // 🚨 Freeze time-based animation BEFORE any app code runs.
-  //
-  // Several demos (the animated chat especially) reveal themselves through
-  // setTimeout/setInterval chains started in mount effects. Those fire between
-  // React's first commit and our snapshot no matter how early we snapshot, so
-  // the captured DOM is a few animation steps ahead of what the client renders
-  // on ITS first commit. React then fails hydration (#418 → #423), throws the
-  // prerendered DOM away and client-renders everything — the cost lands in
-  // Total Blocking Time, 30% of the Lighthouse performance score.
-  //
-  // Neutering the timers pins every such component at its initial state, which
-  // is exactly the tree the client will build, so hydration matches. React's
-  // scheduler uses MessageChannel in the browser, so it is unaffected.
-  await page.evaluateOnNewDocument(() => {
-    window.setTimeout = function () { return 0; };
-    window.setInterval = function () { return 0; };
-  });
   await page.setRequestInterception(true);
   page.on('request', r => {
     if (BLOCKED.some(h => r.url().includes(h))) r.abort().catch(() => {});
@@ -140,16 +123,14 @@ for (const route of routes) {
 
   const file = join(dist, route === '/' ? '' : route, 'index.html');
   try {
-    // 🚨 domcontentloaded, NOT networkidle0. Waiting for the network to settle
-    // lets setTimeout-driven demos (the animated chat) advance several steps
-    // before we snapshot, so the captured DOM no longer matches what React
-    // renders on the client's FIRST commit. That mismatch made hydration FAIL
-    // outright on getdragonbot (React #418 then #423), and React's fallback is
-    // to throw the prerendered DOM away and client-render the whole page — the
-    // cost lands in Total Blocking Time, which is 30% of the Lighthouse
-    // performance score. Snapshot the first commit and hydration matches.
+    // Let animations RUN before snapshotting. Snapshotting React's first
+    // commit instead makes hydration match, but framer-motion's initial state
+    // is `opacity: 0`, so the prerendered content lands in the DOM invisible —
+    // measured FCP 5.0s / LCP 7.5s on mobile with nothing render-blocking,
+    // because there was literally nothing to paint. Visible content beats
+    // clean hydration: FCP+LCP are 35 of the 100 performance points, TBT is 30.
     await page.goto(`http://127.0.0.1:${port}${route}`, {
-      waitUntil: 'domcontentloaded', timeout: 45_000,
+      waitUntil: 'networkidle0', timeout: 45_000,
     });
     // React has rendered when #root holds real markup rather than step 1's
     // placeholder. Guards against snapshotting the text block we're replacing.
@@ -161,7 +142,12 @@ for (const route of routes) {
       { timeout: 20_000 },
     );
 
-    const rendered = await page.$eval('#root', el => el.innerHTML);
+    let rendered = await page.$eval('#root', el => el.innerHTML);
+    // Belt and braces: strip any residual entry-animation state so the
+    // prerendered markup can never ship invisible, whatever the timing.
+    rendered = rendered
+      .replace(/opacity:\s*0(?![.\d])/g, 'opacity: 1')
+      .replace(/transform:\s*translateY\([^)]*\)/g, 'transform: none');
     if (!rendered || rendered.length < 200) throw new Error(`suspiciously small (${rendered.length}b)`);
 
     const html = readFileSync(file, 'utf8');
