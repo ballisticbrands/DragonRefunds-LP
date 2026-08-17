@@ -1818,6 +1818,151 @@ export const refundsCompetitors = {
       },
     ],
   },
+
+  'threecolts': {
+    name: 'Threecolts Margin Pro',
+    metaTitle: 'Dragon Refunds vs Threecolts Margin Pro: FBA Reimbursements Compared (2026)',
+    metaDescription:
+      'Honest comparison of Dragon Refunds and Threecolts Margin Pro for Amazon FBA reimbursements. Threecolts charges 15% commission on top of a $69–$1,199/month Seller 365 subscription (5% on the $199 Pro tier). Dragon Refunds is free to self-file, or 15% managed with no subscription at all.',
+    eyebrow: 'Dragon Refunds vs Threecolts Margin Pro',
+    h1: {
+      plain: 'Threecolts charges 15% — plus $69 a month.',
+      accent: 'Dragon Refunds charges 15%, and nothing else.',
+    },
+    subhead:
+      'Threecolts is the big consolidator of the Amazon seller-tool world — it bought Tactical Arbitrage, InventoryLab, FeedbackWhiz, SmartRepricer and ScoutIQ and bundled them into Seller 365. Reimbursements are one module of that bundle, and of the enterprise Margin Pro service, which means the commission is only half the price: you also need a subscription. Here is an honest, side-by-side breakdown of the reimbursement side specifically.',
+    tldr: {
+      them:
+        'Choose Threecolts if you want ten seller tools in one subscription with reimbursements riding along inside it — especially if you recover enough each year to justify the $199/month Pro tier, where the commission drops to 5%, or if you are a multichannel or 1P brand that needs Walmart, Target and carrier recovery too.',
+      us:
+        'Choose Dragon Refunds if you only want reimbursements: a free audit that shows every recoverable dollar in about two minutes, free SOPs to file it yourself and keep 100%, or managed filing at 15% — with no monthly fee, no bundle, and nothing to cancel.',
+    },
+    compare: [
+      {
+        label: 'Price & model',
+        rows: [
+          { feature: 'Free tier — find and file yourself at no cost', note: 'DIY',
+            values: ['yes', 'no'] },
+          { feature: 'Monthly subscription required', values: [{ t: 'None' }, { t: '$69–$1,199/mo' }] },
+          { feature: 'Managed commission', values: [{ t: '15%' }, { t: '15% (5% on $199 Pro)' }] },
+          { feature: 'Who files', values: [{ t: 'You, or us' }, { t: 'They do' }] },
+        ],
+      },
+      {
+        label: 'What gets recovered',
+        rows: [
+          { feature: 'Lost / damaged shipments', values: ['yes', 'yes'] },
+          { feature: 'Fee overcharges', note: 'weight, dimensional, commission fees',
+            values: ['yes', 'yes'] },
+          { feature: 'Warehouse-damaged & destroyed inventory', values: ['yes', 'yes'] },
+          { feature: 'Underpaid claims reopened', values: ['partial', 'yes'] },
+          { feature: 'COGS & sourcing-cost errors', values: ['yes', 'no'] },
+          { feature: 'Beyond Amazon FBA', note: 'Walmart WFS, 1P vendor, carrier audits',
+            values: ['no', 'yes'] },
+        ],
+      },
+      {
+        label: 'Experience & transparency',
+        rows: [
+          { feature: 'How you start',
+            values: [{ t: 'SP-API, results in ~2 min' }, { t: 'Paid plan, or a booked call' }] },
+          { feature: 'Time to first numbers', values: [{ t: '~2 minutes' }, { t: 'Audit runs ~10 days' }] },
+          { feature: 'Shows the cause of each claim', note: 'lost / damaged / dimension / COGS',
+            values: [{ t: 'Itemized per claim' }, 'partial'] },
+          { feature: 'Full claim ledger', note: 'found → filed → paid → denied',
+            values: ['yes', 'partial'] },
+          { feature: 'Nothing to cancel', values: ['yes', 'no'] },
+        ],
+      },
+    ],
+    themWins: [
+      {
+        title: 'The lowest managed rate in the category — 5%',
+        desc:
+          'On Seller 365 Pro ($199/month) and Brands 10K ($1,199/month), Threecolts drops the reimbursement commission to 5%. Nobody else in this comparison set goes below 15%. If you recover enough each year for the subscription to disappear into the savings, 5% is genuinely the cheapest per-dollar managed filing you can buy.',
+      },
+      {
+        title: 'Ten tools for the price of one subscription',
+        desc:
+          'Threecolts spent years acquiring the tools sellers already pay for — Tactical Arbitrage for sourcing, InventoryLab for accounting, FeedbackWhiz for reviews, SmartRepricer, ScoutIQ — and packaged them as Seller 365 from $69/month. If you were going to buy several of those anyway, reimbursements come along at no extra subscription cost, and that is a real bargain we do not try to match.',
+      },
+      {
+        title: 'Recovery well beyond Amazon FBA',
+        desc:
+          'Margin Pro is three services, not one: 3P seller reimbursements, 1P vendor deduction recovery, and carrier optimization. It covers Walmart WFS, Target, TikTok Shop, Home Depot and Best Buy among others, plus FedEx, UPS and DHL shipping-cost recovery. Dragon Refunds is Amazon FBA only. A multichannel brand or a 1P vendor has leakage we simply do not look at.',
+      },
+      {
+        title: 'They reopen claims Amazon underpaid',
+        desc:
+          'Threecolts explicitly challenges "reimbursement revaluations" — claims Amazon already settled, but settled too low. That is a fiddly, high-effort category, and building it into an automated audit is a real piece of engineering worth crediting.',
+      },
+    ],
+    usWins: [
+      {
+        title: 'Their 15% is not the whole price. Ours is.',
+        desc:
+          'Threecolts\' published rate is 15% on Seller 365 Standard ($69/month), Teams ($129), Brands 1K ($179) and Brands 5K ($599) — the same 15% Dragon Refunds charges for managed filing. The difference is that ours is the entire cost. Theirs sits on top of at least $828 a year in subscription, which you pay whether or not a single claim is recovered.',
+      },
+      {
+        title: 'The 5% tier needs ~$24,000 a year recovered to pay off',
+        desc:
+          'Seller 365 Pro costs $2,388 a year ($2,196 billed annually) to unlock the 5% rate. Against our flat 15% you save 10 percentage points on every dollar — so you need to recover roughly $24,000 a year before that subscription earns its keep, about $22,000 on annual billing. Below that line, our 15% with no subscription is cheaper. Against our free self-file tier it never wins on price at all.',
+      },
+      {
+        title: 'You can keep 100%',
+        desc:
+          'Threecolts has no self-file path — their team files, and a commission comes out either way. Dragon Refunds runs the audit free, shows you exactly which claims are recoverable, and hands you a step-by-step SOP to file each one through Seller Central yourself. Do that and you pay nothing at all. Hand off only the messy ones at 15% if you would rather not.',
+      },
+      {
+        title: 'See your number in two minutes, not after a sales call',
+        desc:
+          'To get reimbursement numbers out of Margin Pro you book a 15-minute call and pick your revenue bracket, then their AI audit scans up to nine months of data over the following ten days. Dragon Refunds connects through Amazon\'s official SP-API — read-only by default — and shows your full recoverable total in about two minutes, before you talk to anyone or pay anything.',
+      },
+      {
+        title: 'Nothing to cancel',
+        desc:
+          'Threecolts\' Trustpilot reviews are mixed, and the recurring complaint is about the subscription rather than the recovery work: sellers reporting difficulty cancelling Seller 365 and disputed charges. That risk is structural — it exists because there is a subscription. Dragon Refunds has none. If you stop using it you stop paying, and the SP-API connection is revocable from Seller Central in one click.',
+      },
+      {
+        title: 'An itemized ledger, and the category they skip',
+        desc:
+          'Dragon Refunds itemizes the cause of every claim — the exact lost shipment, damaged unit, fee mismatch or COGS error — and keeps the full found → filed → paid → denied ledger visible. It also chases COGS and sourcing-cost errors, where Amazon reimburses lost units below what they actually cost you. That category is not in Threecolts\' published scope.',
+      },
+    ],
+    commission: {
+      us: '15%',
+      them: '15% + $69/mo',
+      themAmount: '$7,672',
+      line:
+        'On a $10,000 recovery, Threecolts\' Seller 365 Standard takes 15% ($1,500) plus $828 a year in subscription — about $7,672 kept. Dragon Refunds\' managed filing at 15% leaves you $8,500, and filing yourself with our free SOPs leaves you the full $10,000. (Their 5% Pro tier keeps more — but only once you recover more than about $24,000 a year.)',
+    },
+    faq: [
+      {
+        q: 'How much does Threecolts charge for FBA reimbursements?',
+        a: 'It depends on the plan, and the commission is never the whole price. Seller 365 Standard ($69/month), Teams ($129) and the Brands 1K/5K plans ($179/$599) all carry a 15% reimbursement commission. Seller 365 Pro ($199/month) and Brands 10K ($1,199/month) drop it to 5%. The standalone Margin Pro service for larger brands is quoted per account on a "no savings, no fee" basis. Dragon Refunds is free to audit and free to self-file — you keep 100% — with optional managed filing at 15% and no subscription.',
+      },
+      {
+        q: 'Is Threecolts\' 5% commission cheaper than Dragon Refunds\' 15%?',
+        a: 'Per dollar recovered, yes — but only after the subscription is paid for. The 5% rate requires Seller 365 Pro at $199/month, or $2,388 a year. You save 10 percentage points against our 15%, so the maths break even at roughly $24,000 recovered per year ($22,000 on annual billing). Recover less than that and our flat 15% costs you less. And if you file yourself through our free tier, there is nothing to beat — you keep everything.',
+      },
+      {
+        q: 'What is the difference between Margin Pro and Seller 365 reimbursements?',
+        a: 'They are the same recovery engine sold two ways. Seller 365 is the self-serve subscription bundle where reimbursements are one of ten tools, at a 15% or 5% commission depending on tier. Margin Pro is the enterprise-facing service — 3P seller reimbursements plus 1P vendor deduction recovery and carrier optimization — sold through a booked profit-audit call with custom pricing. If you are a straightforward FBA seller, the Seller 365 tiers are the ones whose price you can actually look up.',
+      },
+      {
+        q: 'Does Threecolts have a free option or a self-file path?',
+        a: 'There is a free profit audit, but it runs through a booked 15-minute call and their scan of up to nine months of data takes about ten days. There is no self-file path — Threecolts files on your behalf and takes a commission. Dragon Refunds shows your recoverable total free in about two minutes over SP-API, then gives you the SOP to file each claim yourself and keep 100%, with managed filing as an option rather than the only mode.',
+      },
+      {
+        q: 'Should I use Threecolts if I sell on Walmart or as a 1P vendor?',
+        a: 'Quite possibly — that is where they are genuinely stronger. Margin Pro covers Walmart WFS, Amazon Vendor Central 1P deductions, and carrier audits across FedEx, UPS and DHL, alongside Target, TikTok Shop and other retailers. Dragon Refunds is Amazon FBA only and does not compete on that ground. If Amazon FBA is where your money is, the comparison above applies; if you are leaking margin across five channels and a 1P account, they cover more surface.',
+      },
+      {
+        q: 'Is Dragon Refunds Amazon-compliant?',
+        a: 'Yes. Dragon Refunds connects through Amazon\'s official Selling Partner API (SP-API), read-only by default — no scraping, no gray areas, 100% Amazon Terms of Service compliant. Amazon pays reimbursements directly into your seller account; we never sit in the money flow, and you can revoke the connection from Seller Central in one click.',
+      },
+    ],
+  },
 };
 
 export function getRefundsCompetitor(slug) {
